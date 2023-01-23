@@ -122,7 +122,7 @@ const Card = ({ project }) => {
   return (
     <CardContainer>
       <div className="img-container">
-        <Link to={`projects/${name}`} state={project}>
+        <Link to={`${name}`} state={project}>
           <img src={`../../assets/${imageName}`} alt={name + " picture"} />
         </Link>
       </div>
@@ -132,7 +132,7 @@ const Card = ({ project }) => {
           <LinkButton name={"Github"} link={github} />
         </div>
         <div className="description-container">
-          <Link to={`projects/${name}`} state={project}>
+          <Link to={`${name}`} state={project}>
             <h3>{name}</h3>
           </Link>
           <p>{description}</p>

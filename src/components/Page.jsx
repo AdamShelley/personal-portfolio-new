@@ -16,7 +16,7 @@ const PageContainer = styled.section`
     background-color: #ccc;
     border: 2px solid #eee;
     min-height: 80vh;
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -96,7 +96,7 @@ const Page = () => {
     <PageContainer>
       {project && (
         <div>
-          <Link to="/">{"<- Back"}</Link>
+          <Link to="/projects">{"<- Back"}</Link>
           <h2>{project.name}</h2>
           <LinkSection>
             {project.liveLink && (

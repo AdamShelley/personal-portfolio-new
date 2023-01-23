@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 
@@ -10,6 +10,7 @@ const ProjectContainer = styled.section`
   justify-content: center;
   /* min-height: 100%; */
   margin-top: 2rem;
+  width: 100%;
 
   @media screen and (max-width: 800px){
     flex-direction: column;
@@ -17,7 +18,14 @@ const ProjectContainer = styled.section`
   }
 `;
 
+
 const Projects = () => {
+
+
+useEffect(()=>{
+  document.title = '{Adam Shelley - Projects}'
+}, [])
+
   return (
     <>
       <h2>Projects</h2>
