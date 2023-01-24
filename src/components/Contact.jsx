@@ -1,21 +1,38 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import ContactForm from "./ContactForm";
 
 const StyledContact = styled.section`
-margin-top: 3rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   flex-grow: 1;
-`
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+`;
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "{Adam Shelley - Contact}";
+  }, []);
 
-  useEffect(()=>{
-    document.title = '{Adam Shelley - Contact}'
-  }, [])
-  return <StyledContact>Contact</StyledContact>;
+  return (
+    <StyledContact>
+      <div>
+        <h2>Contact</h2>
+        <p>If you want to get a contact, please use the following form</p>
+      </div>
+      <ContactForm />
+    </StyledContact>
+  );
 };
 
 export default Contact;

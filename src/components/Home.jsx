@@ -4,20 +4,34 @@ import styled from "styled-components";
 
 const HomeContainer = styled.section`
   flex-grow: 1;
+  margin-top: 6rem;
 
   h1 {
     font-size: 3rem;
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+  }
+
+  p:last-of-type {
     font-size: 1.5rem;
+    color: #d9d4d4;
   }
 
   a {
     color: #ccc;
     background-color: green;
     font-weight: 900;
+    padding: .5rem;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 5px 20px #00000090;
+
+    &:hover {
+      background-color: #11ff003f;
+
+    }
   }
 `;
 

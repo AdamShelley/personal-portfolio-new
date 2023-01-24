@@ -12,15 +12,21 @@ const StyledNav = styled.nav`
   }
 
   li {
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
 
   a {
     color: inherit;
     text-decoration: none;
-
+    letter-spacing: 1px;
     cursor: pointer;
+
+    &:hover {
+      color: #ccc;
+    }
   }
+
+
 `;
 
 const Navbar = () => {

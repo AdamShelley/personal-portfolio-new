@@ -17,7 +17,6 @@ const CardContainer = styled.article`
   min-width: 25vw;
   min-height: 35rem; // temp height
   transition: all 0.2s ease-in-out;
-
   border: 1px solid #1a1a1a;
 
   &:not(:last-of-type) {
@@ -29,7 +28,7 @@ const CardContainer = styled.article`
   }
 
   &:hover img {
-    transform: scale(1.2);
+    transform: scale(1.05);
   }
 
   &:hover a h3 {

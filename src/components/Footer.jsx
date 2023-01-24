@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { FaGithub } from "react-icons/fa";
+
 
 const StyledFooter = styled.footer`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -11,13 +14,36 @@ const StyledFooter = styled.footer`
   ul {
     list-style: none;
   }
+
+  p {
+    margin-top: 0.8rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
 `;
 
 const Footer = () => {
   return (
     <StyledFooter>
       <ul>
-        <li>github</li>
+        <li>
+          <a
+            href="https://github.com/AdamShelley"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+        </li>
       </ul>
       <p>Adam Shelley 2023</p>
     </StyledFooter>
