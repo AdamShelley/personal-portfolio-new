@@ -8,10 +8,15 @@ const AboutContainer = styled.section`
   justify-content: flex-start;
   width: 60vw;
   flex-grow: 1;
-  /* margin-top: 2rem; */
+  
+
+
+  p:first-of-type {
+    margin-top: 10rem;
+  }
 
   p {
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
   }
 `;

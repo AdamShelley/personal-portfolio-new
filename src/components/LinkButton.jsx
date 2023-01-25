@@ -3,12 +3,11 @@ import styled from "styled-components";
 
 const StyledLinkButton = styled.a`
   background-color: #56c16d;
-  border: 1px solid #ccc;
   text-decoration: none;
   color: inherit;
-  padding: 0.4rem 0.3rem;
+  padding: 0.4rem 0.5rem;
   font-weight: 900;
-  border-radius: 5px;
+  border-radius: 2px;
   min-width: 10%;
   text-align: center;
 

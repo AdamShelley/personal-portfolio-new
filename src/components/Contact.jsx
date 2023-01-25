@@ -10,12 +10,13 @@ const StyledContact = styled.section`
   flex-grow: 1;
 
   h3 {
+
     font-size: 2rem;
   }
 
   p {
-    margin-top: 2rem;
-    font-size: 1rem;
+    margin-top: 10rem;
+    font-size: 1.2rem;
   }
 `;
 

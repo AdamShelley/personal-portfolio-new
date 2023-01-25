@@ -25,17 +25,18 @@ const PageContainer = styled.section`
     border-radius: 2px;
     color: #1a1a1a;
 
+    h2 {
+      margin-top: 4rem;
+    }
+
     section {
       margin-top: 1rem;
-
-      h4 {
-        font-weight: 900;
-        font-size: 1.1rem;
-      }
 
       ul {
         list-style: none;
         display: flex;
+        align-items: center;
+        justify-content: flex-start;
 
         li {
           font-size: 0.8rem;
@@ -60,25 +61,39 @@ const PageContainer = styled.section`
           }
         }
       }
+
+      img {
+        margin-top: 1rem;
+        width: 100%;
+        max-height: 15vh;
+        object-fit: cover;
+
+        border-radius: 2px;
+      }
     }
 
     > a {
       text-decoration: none;
-      color: inherit;
       transition: all 0.2s ease;
-      font-size: 2rem;
+      font-size: 1.5rem;
       width: 2rem;
+      height: 2rem;
+      background-color: #1a1a1a;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         font-weight: 900;
-        color: #595959;
+        color: #eee;
       }
     }
   }
 
   h2 {
     margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -107,8 +122,6 @@ const Page = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  
 
   return (
     <PageContainer>
@@ -171,16 +184,28 @@ const Page = () => {
 
           <section>
             <h4>Screenshots</h4>
+            <ul>
+              <li>
+                <img
+                  src={`../../assets/${project.imageName}`}
+                  alt="cover screenshot"
+                />
+              </li>
+              {project.screenshots &&
+                project.screenshots.map((screen) => (
+                  <li>
+                    <img
+                      src={`../../assets/${project.name}/${screen}`}
+                      alt={project.name + " screenshot"}
+                    />
+                  </li>
+                ))}
+            </ul>
           </section>
 
           <section>
             <ParagraphStyles>{project.description}</ParagraphStyles>
             <ParagraphStyles>{project.longDescription}</ParagraphStyles>
-            <ParagraphStyles>{project.longDescription}</ParagraphStyles>
-            <ParagraphStyles>{project.longDescription}</ParagraphStyles>
-          </section>
-          <section>
-            <img src={project.image} alt="" />
           </section>
         </div>
       )}

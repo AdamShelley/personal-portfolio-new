@@ -6,11 +6,12 @@ import { projectData } from "../../projects-data";
 
 const ProjectContainer = styled.section`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   /* min-height: 100%; */
   margin-top: 2rem;
   width: 100%;
+  flex-grow: 1;
 
   @media screen and (max-width: 800px){
     flex-direction: column;

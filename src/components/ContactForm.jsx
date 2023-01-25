@@ -10,11 +10,16 @@ const StyledForm = styled.form`
   justify-content: center;
   border: 1px solid #ebeaea;
   background-color: #ebeaea;
-  box-shadow: 0 14px 40px #000;
+  box-shadow: 0 10px 10px #000;
   color: #1a1a1a;
   padding: 2rem;
-  border-radius: 3px;
+  border-radius: 2px;
   width: 50%;
+
+
+  /* border: 1px solid #1a1a1a;
+  background-color: #1a1a1a;
+  color: #eee !important; */
 
   label {
     font-size: 1.5rem;
