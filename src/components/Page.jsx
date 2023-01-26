@@ -193,7 +193,7 @@ const Page = () => {
               </li>
               {project.screenshots &&
                 project.screenshots.map((screen) => (
-                  <li>
+                  <li key={`${project.name}/${screen}`}>
                     <img
                       src={`../../assets/${project.name}/${screen}`}
                       alt={project.name + " screenshot"}

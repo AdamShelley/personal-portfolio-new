@@ -1,13 +1,15 @@
+import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import "./App.css";
-import Page from "./components/Page";
-import Projects from "./components/Projects";
 import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+const Projects = React.lazy(() => import("./components/Projects"));
+const About = React.lazy(() => import("./components/About"));
+const Contact = React.lazy(() => import("./components/Contact"));
+const Page = React.lazy(() => import("./components/Page"));
 
 const HeaderLayout = () => (
   <>
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/about",
@@ -31,7 +33,6 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Projects />,
-        
       },
       {
         path: "/projects/:projectname",
@@ -41,18 +42,18 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      
     ],
   },
-
 ]);
 
 function App() {
   return (
     <div className="App">
       <div>
-        <RouterProvider router={router} />
-        <Footer/>
+        <React.Suspense fallback={<>...Loading </>}>
+          <RouterProvider router={router} />
+        </React.Suspense>
+        <Footer />
       </div>
     </div>
   );

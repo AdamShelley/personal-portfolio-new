@@ -14,7 +14,7 @@ const StyledForm = styled.form`
   color: #1a1a1a;
   padding: 2rem;
   border-radius: 2px;
-  width: 50%;
+  width: 40%;
 
 
   /* border: 1px solid #1a1a1a;
@@ -56,7 +56,7 @@ const StyledForm = styled.form`
 const ContactForm = () => {
   const [state, handleSubmit] = useForm("mjvdkdql");
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return <p>Thanks for your message!</p>;
   }
   return (
     <StyledForm onSubmit={handleSubmit}>
