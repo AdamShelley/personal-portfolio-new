@@ -12,12 +12,16 @@ const AboutContainer = styled.section`
 
 
   p:first-of-type {
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 800px){
+    width: 95vw;
   }
 `;
 

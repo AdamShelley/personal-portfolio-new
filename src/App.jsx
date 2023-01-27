@@ -3,12 +3,13 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 import Home from "./components/Home";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ErrorPage from "./components/ErrorPage";
 
-const Projects = React.lazy(() => import("./components/Projects"));
-const About = React.lazy(() => import("./components/About"));
-const Contact = React.lazy(() => import("./components/Contact"));
 const Page = React.lazy(() => import("./components/Page"));
 
 const HeaderLayout = () => (
@@ -21,6 +22,7 @@ const HeaderLayout = () => (
 const router = createBrowserRouter([
   {
     element: <HeaderLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -50,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <React.Suspense fallback={<>...Loading </>}>
+        <React.Suspense fallback={<></>}>
           <RouterProvider router={router} />
         </React.Suspense>
         <Footer />

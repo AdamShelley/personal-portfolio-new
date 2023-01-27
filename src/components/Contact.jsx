@@ -10,13 +10,21 @@ const StyledContact = styled.section`
   flex-grow: 1;
 
   h3 {
-
     font-size: 2rem;
   }
 
   p {
-    margin-top: 10rem;
+    margin-top: 8rem;
     font-size: 1.2rem;
+    line-height: 2;
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+
+    p {
+      margin-top: 5rem;
+    }
   }
 `;
 
@@ -29,7 +37,7 @@ const Contact = () => {
     <StyledContact>
       <div>
         <h2>Contact</h2>
-        <p>If you want to get a contact, please use the following form</p>
+        <p>If you want to get a contact, please use the following form.</p>
       </div>
       <ContactForm />
     </StyledContact>

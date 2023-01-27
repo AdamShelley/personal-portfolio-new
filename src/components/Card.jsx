@@ -20,7 +20,7 @@ const CardContainer = styled.article`
   border: 1px solid #1a1a1a;
 
   &:not(:last-of-type) {
-    margin-right: 2rem;
+    margin-right: 3rem;
   }
 
   &:hover {
@@ -110,7 +110,14 @@ const CardContainer = styled.article`
   }
 
   @media screen and (max-width: 800px){
-   min-width: 95%;
+   min-width: 90%;
+   align-self: center;
+   margin-top: 5rem;
+
+   &:not(:last-of-type) {
+    margin-right: 0rem;
+  }
+
   }
 `;
 

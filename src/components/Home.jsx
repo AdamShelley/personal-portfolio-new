@@ -33,6 +33,17 @@ const HomeContainer = styled.section`
 
     }
   }
+
+  @media screen and (max-width: 800px){
+
+    h1 {
+      white-space: nowrap;
+    }
+
+    p {
+      line-height: 2;
+    }
+  }
 `;
 
 const Home = () => {
@@ -41,11 +52,11 @@ const Home = () => {
   }, []);
   return (
     <HomeContainer>
-      <h1>Hey! I'm Adam</h1>
+      <h1>Hey! I'm Adam.</h1>
       <p>Web Developer</p>
       <p>
         Take a look at my <Link to="/projects">projects</Link> or{" "}
-        <Link to="/contact">contact me</Link>
+        <Link to="/contact">contact me.</Link>
       </p>
     </HomeContainer>
   );

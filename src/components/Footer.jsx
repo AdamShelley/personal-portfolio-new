@@ -40,6 +40,7 @@ const Footer = () => {
             href="https://github.com/AdamShelley"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="github link"
           >
             <FaGithub />
           </a>

@@ -16,6 +16,8 @@ const StyledForm = styled.form`
   border-radius: 2px;
   width: 40%;
 
+  
+
 
   /* border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
@@ -50,6 +52,19 @@ const StyledForm = styled.form`
     cursor: pointer;
     padding: 1rem;
     width: 50%;
+  }
+
+  @media screen and (max-width: 800px){
+    margin-top: 5rem;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
   }
 `;
 

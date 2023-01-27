@@ -32,19 +32,25 @@ const PageContainer = styled.section`
     section {
       margin-top: 1rem;
 
-      ul {
+      h4 {
+        margin-top: 1rem;
+      }
+
+      > ul {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: flex-start;
 
-        li {
+        > li {
           font-size: 0.8rem;
           margin-top: 0.5rem;
           margin-right: 1rem;
           border: 1px solid #eee;
           padding: 0.3rem 0.4rem;
-          background-color: #1a1a1a;
+          /* background-color: #1a1a1a; */
+          /* background: linear-gradient(to right, #1a1a1a, #38384d); */
+          background: linear-gradient(to right, #1a1a1a, #393945);
           color: #ccc;
           min-width: 3rem;
           text-align: center;
@@ -63,11 +69,10 @@ const PageContainer = styled.section`
       }
 
       img {
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
         width: 100%;
-        max-height: 15vh;
+        max-height: 30vh;
         object-fit: cover;
-
         border-radius: 2px;
       }
     }
@@ -94,6 +99,18 @@ const PageContainer = styled.section`
   h2 {
     margin-top: 1rem;
     font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 800px){
+    width: 100%;
+
+    > div {
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -204,8 +221,9 @@ const Page = () => {
           </section>
 
           <section>
-            <ParagraphStyles>{project.description}</ParagraphStyles>
-            <ParagraphStyles>{project.longDescription}</ParagraphStyles>
+            <ParagraphStyles>{project?.description}</ParagraphStyles>
+            <ParagraphStyles>{project?.longDescription}</ParagraphStyles>
+            <ParagraphStyles>{project?.learnings}</ParagraphStyles>
           </section>
         </div>
       )}
