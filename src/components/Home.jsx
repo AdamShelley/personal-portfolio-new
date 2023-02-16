@@ -41,7 +41,7 @@ const HomeContainer = styled.section`
     }
 
     p {
-      line-height: 2;
+      line-height: 2.0;
     }
   }
 `;

@@ -56,9 +56,16 @@ const StyledForm = styled.form`
 
   @media screen and (max-width: 800px){
     margin-top: 5rem;
-    width: 100%;
+    align-self: center;
+    width: 90%;
+    border-radius: 5px;
+
+    label{
+      font-size: 1.2rem;
+    }
 
     input {
+      margin-top: .5rem;
       width: 100%;
     }
 

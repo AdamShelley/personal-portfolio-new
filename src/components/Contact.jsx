@@ -22,6 +22,11 @@ const StyledContact = styled.section`
   @media screen and (max-width: 800px) {
     flex-direction: column;
 
+    h2 {
+      font-size: 2rem;
+
+    }
+    
     p {
       margin-top: 5rem;
     }

@@ -26,7 +26,22 @@ const StyledNav = styled.nav`
     }
   }
 
+  @media screen and (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
+    ul {
+      align-items: space-between;
+      justify-content: space-between;
+      width: 100%;
+
+      li {
+        margin: 0;
+      }
+    }
+  }
 `;
 
 const Navbar = () => {

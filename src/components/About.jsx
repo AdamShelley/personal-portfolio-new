@@ -22,6 +22,15 @@ const AboutContainer = styled.section`
 
   @media screen and (max-width: 800px){
     width: 95vw;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p:first-of-type {
+      margin-top: 4rem;
+    }
+    
   }
 `;
 

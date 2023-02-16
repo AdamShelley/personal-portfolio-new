@@ -121,6 +121,14 @@ const ParagraphStyles = styled.p`
   &:first-of-type {
     margin-top: 5rem;
   }
+
+  span{ 
+    font-size: 1.1rem;
+    background-color: #eee;
+    margin-right: .5rem;
+    padding: .2rem;
+    border-radius: 2px;
+  }
 `;
 
 const Page = () => {
@@ -222,8 +230,8 @@ const Page = () => {
 
           <section>
             <ParagraphStyles>{project?.description}</ParagraphStyles>
-            <ParagraphStyles>{project?.longDescription}</ParagraphStyles>
-            <ParagraphStyles>{project?.learnings}</ParagraphStyles>
+            <ParagraphStyles><span>Background:</span>{project?.background}</ParagraphStyles>
+            <ParagraphStyles><span>Learnings:</span>{project?.learnings}</ParagraphStyles>
           </section>
         </div>
       )}

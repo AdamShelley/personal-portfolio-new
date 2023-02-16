@@ -109,15 +109,25 @@ const CardContainer = styled.article`
     }
   }
 
-  @media screen and (max-width: 800px){
-   min-width: 90%;
-   align-self: center;
-   margin-top: 5rem;
+  @media screen and (max-width: 800px) {
+    min-width: 90%;
+    align-self: center;
+    margin-top: 5rem;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
 
-   &:not(:last-of-type) {
-    margin-right: 0rem;
-  }
+    &:first-child {
+      margin-top: 3rem;
+    }
 
+    &:not(:last-of-type) {
+      margin-right: 0rem;
+    }
+
+    .img-container {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
   }
 `;
 
