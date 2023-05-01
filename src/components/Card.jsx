@@ -18,9 +18,11 @@ const CardContainer = styled.article`
   min-height: 35rem; // temp height
   transition: all 0.2s ease-in-out;
   border: 1px solid #1a1a1a;
+  margin-right: 3rem;
+  margin-top: 2rem;
 
   &:not(:last-of-type) {
-    margin-right: 3rem;
+    /* margin-right: 1rem; */
   }
 
   &:hover {

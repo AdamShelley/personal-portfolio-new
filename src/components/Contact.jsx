@@ -4,8 +4,8 @@ import ContactForm from "./ContactForm";
 
 const StyledContact = styled.section`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   width: 100%;
   flex-grow: 1;
 
@@ -24,9 +24,8 @@ const StyledContact = styled.section`
 
     h2 {
       font-size: 2rem;
-
     }
-    
+
     p {
       margin-top: 5rem;
     }
@@ -42,7 +41,10 @@ const Contact = () => {
     <StyledContact>
       <div>
         <h2>Contact</h2>
-        <p>If you want to get a contact, please use the following form.</p>
+        <p>
+          If you would like to get into contact with me about anything - please
+          use the following form.
+        </p>
       </div>
       <ContactForm />
     </StyledContact>

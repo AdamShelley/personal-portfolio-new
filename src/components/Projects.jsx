@@ -14,6 +14,7 @@ const ProjectContainer = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 2rem;
   width: 100%;
   flex-grow: 1;

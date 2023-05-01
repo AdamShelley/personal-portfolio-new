@@ -1,5 +1,19 @@
 export const projectData = [
   {
+    name: "Guesswords - Word game",
+    liveLink: "https://guesswords.vercel.app",
+    image: "./src/assets/guesswords-screenshot1.png",
+    imageName: "guesswords-screenshot1.png",
+    github: "https://github.com/AdamShelley/word-flow",
+    npm: "",
+    skills: ["NextJS", "Typescript", "Tailwind", "Prisma"],
+    screenshots: ["guesswords-screenshot1.png"],
+    description: "A word guessing game, with new refreshed letters and scores.",
+    background:
+      "With the success of Wordle, I think everyone has tried making their own small game. This is my version.",
+    learnings: "First time using a lot of these technologies",
+  },
+  {
     name: "react-onboarder-tool",
     liveLink: "https://onboarder-demonstration.web.app/",
     image: "./src/assets/onboarder-tool.png",
@@ -31,7 +45,7 @@ export const projectData = [
   {
     name: "Passy - Password Manager",
     liveLink: "",
-    image: "./src/assets/passy-screenshot.png.png",
+    image: "./src/assets/passy-screenshot.png",
     imageName: "passy-screenshot.png",
     github: "https://github.com/AdamShelley/Passy-desktop",
     npm: "",
