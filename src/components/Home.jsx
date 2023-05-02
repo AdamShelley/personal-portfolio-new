@@ -24,24 +24,23 @@ const HomeContainer = styled.section`
     color: #ccc;
     background-color: green;
     font-weight: 900;
-    padding: .5rem;
-    transition: all .3s ease-in-out;
+    padding: 0.5rem;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 5px 20px #00000090;
 
     &:hover {
       background-color: #11ff003f;
-
     }
   }
 
-  @media screen and (max-width: 800px){
-
+  @media screen and (max-width: 800px) {
     h1 {
       white-space: nowrap;
     }
 
     p {
-      line-height: 2.0;
+      margin-top: 3rem;
+      line-height: 2.2;
     }
   }
 `;

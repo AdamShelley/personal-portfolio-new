@@ -16,8 +16,11 @@ const CardContainer = styled.article`
   max-width: 25vw;
   min-width: 25vw;
   min-height: 35rem; // temp height
-  transition: all 0.2s ease-in-out;
-  border: 1px solid #1a1a1a;
+  transition: all 1s ease-in;
+
+  /* border: 1px solid #1a1a1a; */
+  border: 3px solid #ebe2e2;
+  border-radius: 5px;
   margin-right: 3rem;
   margin-top: 2rem;
 
@@ -26,7 +29,7 @@ const CardContainer = styled.article`
   }
 
   &:hover {
-    border: 1px solid #1a1a1a;
+    border: 3px solid #56c16d;
   }
 
   &:hover img {
@@ -58,6 +61,7 @@ const CardContainer = styled.article`
     max-height: 15rem;
     width: 100%;
     overflow: hidden;
+    background-color: #e6e6e6;
 
     img {
       overflow: hidden;
@@ -112,23 +116,29 @@ const CardContainer = styled.article`
   }
 
   @media screen and (max-width: 800px) {
-    min-width: 90%;
+    min-width: 80%;
+    min-height: 20vh;
     align-self: center;
     margin-top: 5rem;
     border-radius: 5px;
     border: 1px solid #e1e1e1;
+    margin-right: 0;
 
     &:first-child {
       margin-top: 3rem;
     }
 
-    &:not(:last-of-type) {
-      margin-right: 0rem;
-    }
-
     .img-container {
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
+    }
+    .skills-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      p {
+        margin: 0.2rem;
+      }
     }
   }
 `;

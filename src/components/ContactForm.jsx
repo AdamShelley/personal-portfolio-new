@@ -21,7 +21,7 @@ const StyledForm = styled.form`
   color: #eee !important; */
 
   label {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 1rem;
   }
   input {
@@ -50,10 +50,20 @@ const StyledForm = styled.form`
   }
 
   button {
+    background-color: #56c16d;
+    border: none;
     margin-top: 1rem;
     cursor: pointer;
     padding: 1rem;
     width: 60%;
+    font-weight: 600;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    transition: all 0.2s ease-in;
+  }
+
+  button:hover {
+    background-color: #63e27e;
   }
 
   @media screen and (max-width: 800px) {

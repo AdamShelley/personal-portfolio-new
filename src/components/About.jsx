@@ -6,10 +6,8 @@ const AboutContainer = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 60vw;
+  width: 70vw;
   flex-grow: 1;
-  
-
 
   p:first-of-type {
     margin-top: 8rem;
@@ -20,7 +18,7 @@ const AboutContainer = styled.section`
     font-size: 1.2rem;
   }
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 800px) {
     width: 95vw;
 
     h2 {
@@ -30,7 +28,6 @@ const AboutContainer = styled.section`
     p:first-of-type {
       margin-top: 4rem;
     }
-    
   }
 `;
 
@@ -43,7 +40,7 @@ const About = () => {
       <h2>About</h2>
       <p>
         Hi! My name is Adam and I am a developer from the UK 🇬🇧 currently living
-        and working in Johor Bahru, Malaysia 🇲🇾.
+        in Singapore 🇸🇬.
       </p>
 
       <p>Open to opportunities.</p>
