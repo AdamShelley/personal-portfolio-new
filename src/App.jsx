@@ -9,8 +9,7 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
-
-const Page = React.lazy(() => import("./components/Page"));
+import Page from "./components/Page";
 
 const HeaderLayout = () => (
   <>

@@ -22,6 +22,7 @@ const CardContainer = styled.article`
   border: 3px solid #ebe2e2;
   border-radius: 5px;
   margin-right: 3rem;
+  margin-left: 3rem;
   margin-top: 2rem;
 
   &:not(:last-of-type) {
@@ -120,17 +121,18 @@ const CardContainer = styled.article`
     min-height: 20vh;
     align-self: center;
     margin-top: 5rem;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 1px solid #e1e1e1;
     margin-right: 0;
+    margin-left: 0;
 
     &:first-child {
       margin-top: 3rem;
     }
 
     .img-container {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
     }
     .skills-container {
       flex-wrap: wrap;
