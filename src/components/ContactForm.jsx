@@ -69,7 +69,7 @@ const StyledForm = styled.form`
   @media screen and (max-width: 800px) {
     margin-top: 5rem;
     align-self: center;
-    width: 90%;
+    width: 100%;
     border-radius: 5px;
 
     label {

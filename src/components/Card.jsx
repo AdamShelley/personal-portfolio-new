@@ -117,7 +117,7 @@ const CardContainer = styled.article`
   }
 
   @media screen and (max-width: 800px) {
-    min-width: 80%;
+    min-width: 90%;
     min-height: 20vh;
     align-self: center;
     margin-top: 5rem;

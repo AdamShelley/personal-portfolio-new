@@ -21,6 +21,8 @@ const StyledContact = styled.section`
 
   @media screen and (max-width: 800px) {
     flex-direction: column;
+    width: 80vw;
+    align-self: center;
 
     h2 {
       font-size: 2rem;

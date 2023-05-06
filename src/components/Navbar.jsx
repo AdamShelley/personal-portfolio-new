@@ -31,6 +31,9 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
 
     ul {
       align-items: space-between;
@@ -39,6 +42,7 @@ const StyledNav = styled.nav`
 
       li {
         margin: 0;
+        font-size: 1.2rem;
       }
     }
   }

@@ -7,11 +7,11 @@ export const projectData = [
     github: "https://github.com/AdamShelley/word-flow",
     npm: "",
     skills: ["NextJS", "Typescript", "Tailwind", "Prisma"],
-    screenshots: ["guesswords-screenshot1.png"],
-    description: "A word guessing game, with new refreshed letters and scores.",
+    screenshots: [],
+    description: "A word guessing game, automatically reset daily.",
     background:
       "With the success of Wordle, I think everyone has tried making their own small game. This is my version.",
-    learnings: "First time using a lot of these technologies",
+    learnings: "First time using prisma to link to a postgres database.",
   },
   {
     name: "react-onboarder-tool",

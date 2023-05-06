@@ -48,8 +48,6 @@ const PageContainer = styled.section`
           margin-right: 1rem;
           border: 1px solid #eee;
           padding: 0.3rem 0.4rem;
-          /* background-color: #1a1a1a; */
-          /* background: linear-gradient(to right, #1a1a1a, #38384d); */
           background: linear-gradient(to right, #1a1a1a, #393945);
           color: #ccc;
           min-width: 3rem;
@@ -101,11 +99,40 @@ const PageContainer = styled.section`
     font-size: 2.5rem;
   }
 
-  @media screen and (max-width: 800px){
-    width: 100%;
+  @media screen and (max-width: 800px) {
+    width: 105%;
 
     > div {
       margin-top: 0;
+      background-color: transparent;
+      border: 2px solid transparent;
+      color: white;
+
+      h2 {
+        margin-top: 2rem;
+      }
+
+      section {
+        color: white;
+        ul {
+          li {
+            padding: 0.5rem;
+            min-width: auto;
+          }
+        }
+      }
+
+      > a {
+        background-color: #eee;
+        color: #484444;
+        width: 20%;
+        border-radius: 5px;
+
+        svg {
+          font-weight: 900;
+          font-size: 2rem;
+        }
+      }
     }
 
     h2 {
@@ -122,12 +149,19 @@ const ParagraphStyles = styled.p`
     margin-top: 5rem;
   }
 
-  span{ 
+  span {
     font-size: 1.1rem;
     background-color: #eee;
-    margin-right: .5rem;
-    padding: .2rem;
+    margin-right: 0.5rem;
+    padding: 0.2rem;
     border-radius: 2px;
+  }
+
+  @media screen and (max-width: 800px) {
+    line-height: 2;
+    span {
+      color: #484444;
+    }
   }
 `;
 
@@ -230,8 +264,14 @@ const Page = () => {
 
           <section>
             <ParagraphStyles>{project?.description}</ParagraphStyles>
-            <ParagraphStyles><span>Background:</span>{project?.background}</ParagraphStyles>
-            <ParagraphStyles><span>Learnings:</span>{project?.learnings}</ParagraphStyles>
+            <ParagraphStyles>
+              <span>Background:</span>
+              {project?.background}
+            </ParagraphStyles>
+            <ParagraphStyles>
+              <span>Learnings:</span>
+              {project?.learnings}
+            </ParagraphStyles>
           </section>
         </div>
       )}

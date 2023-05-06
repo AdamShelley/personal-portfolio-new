@@ -19,7 +19,8 @@ const AboutContainer = styled.section`
   }
 
   @media screen and (max-width: 800px) {
-    width: 95vw;
+    width: 80vw;
+    align-self: center;
 
     h2 {
       font-size: 2rem;
