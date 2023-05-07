@@ -118,15 +118,17 @@ const PageContainer = styled.section`
           li {
             padding: 0.5rem;
             min-width: auto;
+            background: linear-gradient(to right, #e6e6e6, #eee);
+            color: black;
           }
         }
       }
 
       > a {
-        background-color: #eee;
+        background-color: #e6e6e6;
         color: #484444;
-        width: 20%;
-        border-radius: 5px;
+        width: 10%;
+        border-radius: 2px;
 
         svg {
           font-weight: 900;
