@@ -7,6 +7,7 @@ import { projectData } from "../../projects-data";
 const StyledH2 = styled.h2`
   @media screen and (max-width: 800px) {
     font-size: 2rem;
+    margin-left: 1rem;
   }
 `;
 
@@ -21,7 +22,6 @@ const ProjectContainer = styled.section`
 
   @media screen and (max-width: 800px) {
     flex-direction: column;
-    width: 100%;
   }
 `;
 

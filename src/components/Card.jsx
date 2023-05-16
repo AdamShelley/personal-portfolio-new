@@ -18,20 +18,10 @@ const CardContainer = styled.article`
   min-height: 35rem; // temp height
   transition: all 1s ease-in;
 
-  /* border: 1px solid #1a1a1a; */
-  border: 3px solid #ebe2e2;
   border-radius: 5px;
   margin-right: 3rem;
   margin-left: 3rem;
-  margin-top: 2rem;
-
-  &:not(:last-of-type) {
-    /* margin-right: 1rem; */
-  }
-
-  &:hover {
-    border: 3px solid #56c16d;
-  }
+  margin-top: 4rem;
 
   &:hover img {
     transform: scale(1.05);
@@ -52,15 +42,17 @@ const CardContainer = styled.article`
   .card-bottom .link-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 0 2rem;
   }
 
   .img-container {
     border-top: 1px solid #1a1a1a;
-    height: 15rem;
     min-height: 15rem;
     max-height: 15rem;
     width: 100%;
+    /* height: 100%; */
+    height: 15rem;
     overflow: hidden;
     background-color: #e6e6e6;
 
@@ -85,12 +77,14 @@ const CardContainer = styled.article`
       color: inherit;
       text-decoration: none;
       border-bottom: 1px solid transparent;
+      align-self: center;
     }
 
     h3 {
       font-size: 1.4rem;
       border-bottom: 1px solid transparent;
       cursor: pointer;
+      text-align: center;
     }
 
     p {
@@ -122,7 +116,7 @@ const CardContainer = styled.article`
     align-self: center;
     margin-top: 5rem;
     border-radius: 2px;
-    border: 1px solid #e1e1e1;
+
     margin-right: 0;
     margin-left: 0;
 

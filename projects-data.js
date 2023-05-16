@@ -1,13 +1,27 @@
 export const projectData = [
   {
+    name: "Samantha Foo Pottery",
+    liveLink: "https://sam-foo-pottery.vercel.app/",
+    image: "./src/assets/pottery-screenshot.png",
+    imageName: "pottery-screenshot.png",
+    github: "",
+    npm: "",
+    skills: ["React", "ThreeJS", "Blender"],
+    screenshots: ["pottery1.png", "pottery2.png", "pottery3.png"],
+    description: "A portfolio website for Samantha Foo.",
+    background:
+      "This portfolio is built with ReactJS and ThreeJs to handle the 3D model that I made in Blender of Samantha's studio. I used the GSAP animation package to handle the movement of the 3D model and HTML around the screen.",
+    learnings: "Using ThreeJS to display models built in blender.",
+  },
+  {
     name: "Guesswords - Word game",
     liveLink: "https://guesswords.vercel.app",
-    image: "./src/assets/guesswords-screenshot1.png",
-    imageName: "guesswords-screenshot1.png",
+    image: "./src/assets/guesswords-screenshot.png",
+    imageName: "guesswords-screenshot.png",
     github: "https://github.com/AdamShelley/word-flow",
     npm: "",
     skills: ["NextJS", "Typescript", "Tailwind", "Prisma"],
-    screenshots: [],
+    screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
     description: "A word guessing game, automatically reset daily.",
     background:
       "With the success of Wordle, I think everyone has tried making their own small game. This is my version.",
@@ -21,7 +35,7 @@ export const projectData = [
     github: "https://github.com/AdamShelley/react-onboarder-tool",
     npm: "https://www.npmjs.com/package/react-onboarder-tool",
     skills: ["React", "npm"],
-    screenshots: ["onboarding-tool-1.jpg"],
+    screenshots: [, "onboarding2.png", "onboarding3.png", "onboarding1.jpg"],
     description:
       "This is a tool for React that is easily implemented into your website to create an onboarding experience for first-time users. ",
     background: `I created this tool as a way to introduce new users to my websites. Instead of creating an introduction or a guide page for each individual website, I could provide an interactive experience.`,
@@ -37,22 +51,16 @@ export const projectData = [
     description:
       "A online markdown editor that organises your notes and keeps them stored.",
     skills: ["React", "Firebase", "Authentication"],
-    screenshots: ["scribbler-1.jpg", "scribbler-2.jpg"],
+    screenshots: [
+      "scribbler3.png",
+      "scribbler4.png",
+      "scribbler5.png",
+      "scribbler6.png",
+      "scribbler7.png",
+      "scribbler2.jpg",
+    ],
     background: `I wanted to create a website that would be both helpful for my learning and useful in daily life. This tool is built using react on the frontend with firebase storage on the backend.`,
     learnings:
       "Firebase deployment, authentication using email, authentication using github signin. ",
-  },
-  {
-    name: "Passy - Password Manager",
-    liveLink: "",
-    image: "./src/assets/passy-screenshot.png",
-    imageName: "passy-screenshot.png",
-    github: "https://github.com/AdamShelley/Passy-desktop",
-    npm: "",
-    skills: ["Electron", "React", "Bootstrap"],
-    description:
-      "A Desktop application built with Electron and React, stores and generates random passwords.",
-    background: `This application is a password store and generator. Built with Electron and React.`,
-    learnings: "Electron, React in Electron",
   },
 ];

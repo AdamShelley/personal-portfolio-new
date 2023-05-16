@@ -11,10 +11,13 @@ const StyledLinkButton = styled.a`
   min-width: 10%;
   text-align: center;
 
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
 
   &:hover {
     background-color: #63e27e;
+  }
+
+  @media screen and (max-width: 800px) {
   }
 `;
 

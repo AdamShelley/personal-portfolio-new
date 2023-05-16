@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
@@ -20,9 +20,19 @@ const StyledNav = styled.nav`
     text-decoration: none;
     letter-spacing: 1px;
     cursor: pointer;
+    padding: 1rem;
 
     &:hover {
       color: #ccc;
+    }
+
+    &.pending {
+      color: orange;
+    }
+
+    &.active {
+      color: green;
+      border: 1px solid green;
     }
   }
 
@@ -32,8 +42,6 @@ const StyledNav = styled.nav`
     justify-content: center;
     width: 100%;
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #ccc;
 
     ul {
       align-items: space-between;
@@ -44,6 +52,13 @@ const StyledNav = styled.nav`
         margin: 0;
         font-size: 1.2rem;
       }
+      a {
+        padding: 0.5rem;
+      }
+
+      a.active {
+        border: none;
+      }
     }
   }
 `;
@@ -53,16 +68,44 @@ const Navbar = () => {
     <StyledNav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <NavLink
+            to="/projects"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            Projects
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <NavLink
+            to="/contact"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </StyledNav>

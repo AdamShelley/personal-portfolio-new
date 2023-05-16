@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { projectData } from "../../projects-data";
-
 import { IoMdArrowBack } from "react-icons/io";
+import { useState } from "react";
 
 const PageContainer = styled.section`
   display: flex;
@@ -36,43 +37,77 @@ const PageContainer = styled.section`
         margin-top: 1rem;
       }
 
+      .project-images {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-img {
+        margin-top: 2rem;
+        max-width: 100%;
+        cursor: pointer;
+
+        img {
+          padding-right: 0.2rem;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
       > ul {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: flex-start;
 
-        > li {
-          font-size: 0.8rem;
-          margin-top: 0.5rem;
-          margin-right: 1rem;
-          border: 1px solid #eee;
-          padding: 0.3rem 0.4rem;
-          background: linear-gradient(to right, #1a1a1a, #393945);
-          color: #ccc;
-          min-width: 3rem;
+        .small-box {
+          background-color: #1a1a1a;
+          color: #eee;
+          border: 1px solid #1a1a1a;
+          padding: 5px 15px;
           text-align: center;
-          border-radius: 2px;
+          text-decoration: none;
+          font-size: 16px;
+          margin: 4px 0px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          width: 6rem;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 1rem;
 
-          a {
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
+          > .small-box:hover {
+            background-color: #f8f8f8;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
           }
 
-          a:hover li {
-            background-color: #595959;
+          > a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+              color: #fff;
+            }
           }
         }
-      }
 
-      img {
-        /* margin-top: 1rem; */
-        width: 100%;
-        max-height: 30vh;
-        object-fit: cover;
-        border-radius: 2px;
+        a:hover li {
+          background-color: #595959;
+        }
       }
+    }
+
+    img {
+      /* margin-top: 1rem; */
+      width: 100%;
+      max-height: 30vh;
+      object-fit: cover;
+      border-radius: 2px;
     }
 
     > a {
@@ -109,30 +144,88 @@ const PageContainer = styled.section`
       color: white;
 
       h2 {
-        margin-top: 2rem;
+        margin-top: 0;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
       }
 
       section {
         color: white;
+
         ul {
-          li {
-            padding: 0.5rem;
-            min-width: auto;
-            background: linear-gradient(to right, #e6e6e6, #eee);
-            color: black;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          .small-box {
+            background-color: #eee;
+            color: #1a1a1a;
+            border: 1px solid #eee;
+            padding: 5px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 0px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 6rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .small-box:hover {
+              background-color: #f8f8f8;
+              box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+              transform: translateY(-2px);
+            }
+          }
+        }
+
+        .project-images {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .carousel-img {
+          margin-top: 1rem;
+          max-width: 100%;
+
+          img {
+            padding-right: 0.2rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
       }
 
       > a {
-        background-color: #e6e6e6;
-        color: #484444;
-        width: 10%;
-        border-radius: 2px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: #f8f8f8;
+        color: #1a1a1a;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 10;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-        svg {
-          font-weight: 900;
-          font-size: 2rem;
+        &:hover {
+          background-color: #e6e6e6;
+        }
+
+        & > svg {
+          font-size: 1.5rem;
         }
       }
     }
@@ -167,9 +260,29 @@ const ParagraphStyles = styled.p`
   }
 `;
 
+const ModalPortalStyles = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  img {
+    max-height: 80vh;
+    max-width: 80vw;
+    object-fit: contain;
+  }
+`;
+
 const Page = () => {
   const location = useLocation();
   let project = location.state;
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const fetchCorrectProject = (projectName) => {
     project = projectData.filter((project) => project.name === projectName)[0];
@@ -179,6 +292,14 @@ const Page = () => {
     const projectName = location.pathname.split("/")[2];
     fetchCorrectProject(projectName);
   }
+
+  const openImage = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -197,7 +318,9 @@ const Page = () => {
             <h4>Stack</h4>
             <ul>
               {project.skills.map((skill) => (
-                <li key={skill}>{skill}</li>
+                <li className="small-box" key={skill}>
+                  {skill}
+                </li>
               ))}
             </ul>
           </section>
@@ -205,7 +328,7 @@ const Page = () => {
             <h4>Deployment</h4>
             <ul>
               {project.liveLink && (
-                <li>
+                <li className="small-box">
                   <a
                     href={project.liveLink}
                     target="_blank"
@@ -216,7 +339,7 @@ const Page = () => {
                 </li>
               )}
               {project.npm && (
-                <li>
+                <li className="small-box">
                   <a
                     href={project.npm}
                     target="_blank"
@@ -231,7 +354,7 @@ const Page = () => {
           <section>
             <h4>Source Code</h4>
             <ul>
-              <li>
+              <li className="small-box">
                 <a
                   href={project.github}
                   target="_blank"
@@ -245,16 +368,16 @@ const Page = () => {
 
           <section>
             <h4>Screenshots</h4>
-            <ul>
-              <li>
-                <img
-                  src={`../../assets/${project.imageName}`}
-                  alt="cover screenshot"
-                />
-              </li>
+            <ul className="project-images">
               {project.screenshots &&
                 project.screenshots.map((screen) => (
-                  <li key={`${project.name}/${screen}`}>
+                  <li
+                    key={`${project.name}/${screen}`}
+                    className="carousel-img"
+                    onClick={() =>
+                      openImage(`../../assets/${project.name}/${screen}`)
+                    }
+                  >
                     <img
                       src={`../../assets/${project.name}/${screen}`}
                       alt={project.name + " screenshot"}
@@ -265,20 +388,41 @@ const Page = () => {
           </section>
 
           <section>
-            <ParagraphStyles>{project?.description}</ParagraphStyles>
             <ParagraphStyles>
               <span>Background:</span>
-              {project?.background}
+              {project.background}
             </ParagraphStyles>
             <ParagraphStyles>
               <span>Learnings:</span>
-              {project?.learnings}
+              {project.learnings}
             </ParagraphStyles>
           </section>
+
+          {selectedImage && (
+            <ModalPortal>
+              <ModalPortalStyles onClick={closeModal}>
+                <img src={selectedImage} alt="Expanded view" />
+              </ModalPortalStyles>
+            </ModalPortal>
+          )}
         </div>
       )}
     </PageContainer>
   );
+};
+
+const ModalPortal = ({ children }) => {
+  const modalRoot = document.getElementById("modal-root");
+  const el = document.createElement("div");
+
+  useEffect(() => {
+    modalRoot.appendChild(el);
+    return () => {
+      modalRoot.removeChild(el);
+    };
+  }, [el, modalRoot]);
+
+  return ReactDOM.createPortal(children, el);
 };
 
 export default Page;
