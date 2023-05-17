@@ -32,8 +32,9 @@ const StyledNav = styled.nav`
     }
 
     &.active {
-      color: #56c16d;
       border: 1px solid #56c16d;
+      color: #56c16d;
+      border-radius: 2px;
     }
   }
 

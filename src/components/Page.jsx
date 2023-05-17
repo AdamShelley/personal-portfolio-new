@@ -248,16 +248,19 @@ const ParagraphStyles = styled.p`
 
   span {
     font-size: 1.1rem;
-    background-color: #eee;
+    background-color: #1a1a1a;
+    color: white;
     margin-right: 0.5rem;
-    padding: 0.2rem;
+    padding: 0.4rem;
     border-radius: 2px;
   }
 
   @media screen and (max-width: 800px) {
     line-height: 2;
+
     span {
-      color: #484444;
+      background-color: #f8f8f8;
+      color: #1a1a1a;
     }
   }
 `;
@@ -354,18 +357,22 @@ const Page = () => {
             </ul>
           </section>
           <section>
-            <h4>Source Code</h4>
-            <ul>
-              <li className="small-box">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </a>
-              </li>
-            </ul>
+            {project.github && (
+              <>
+                <h4>Source Code</h4>
+                <ul>
+                  <li className="small-box">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Github
+                    </a>
+                  </li>
+                </ul>
+              </>
+            )}
           </section>
 
           <section>

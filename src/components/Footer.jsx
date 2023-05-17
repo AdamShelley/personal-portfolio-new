@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
 
-
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
@@ -10,6 +9,7 @@ const StyledFooter = styled.footer`
   justify-content: center;
   width: 100%;
   margin: 3rem 0rem;
+  margin-top: 10rem;
 
   ul {
     list-style: none;
@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
     text-decoration: none;
     color: inherit;
     font-size: 1.5rem;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       color: #ccc;

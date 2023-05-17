@@ -14,8 +14,8 @@ export const projectData = [
     learnings: "Using ThreeJS to display models built in blender.",
   },
   {
-    name: "Guesswords - Word game",
-    liveLink: "https://guesswords.vercel.app",
+    name: "Guessagram",
+    liveLink: "https://guessagram.vercel.app/",
     image: "./src/assets/guesswords-screenshot.png",
     imageName: "guesswords-screenshot.png",
     github: "https://github.com/AdamShelley/word-flow",
@@ -24,7 +24,7 @@ export const projectData = [
     screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
     description: "A word guessing game, automatically reset daily.",
     background:
-      "With the success of Wordle, I think everyone has tried making their own small game. This is my version.",
+      "With the success of Wordle, everyone has tried making their own small game. This is my version.",
     learnings: "First time using prisma to link to a postgres database.",
   },
   {
@@ -50,7 +50,7 @@ export const projectData = [
     npm: "",
     description:
       "A online markdown editor that organises your notes and keeps them stored.",
-    skills: ["React", "Firebase", "Authentication"],
+    skills: ["React", "Firebase", "Auth"],
     screenshots: [
       "scribbler3.png",
       "scribbler4.png",

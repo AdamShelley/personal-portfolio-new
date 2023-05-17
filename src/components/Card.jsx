@@ -15,7 +15,8 @@ const CardContainer = styled.article`
   box-shadow: 0 14px 40px #000;
   max-width: 25vw;
   min-width: 25vw;
-  min-height: 35rem; // temp height
+  min-height: 35rem;
+  max-height: 35rem;
   transition: all 1s ease-in;
 
   border-radius: 2px;
@@ -105,7 +106,7 @@ const CardContainer = styled.article`
     justify-content: center;
     flex-wrap: wrap-reverse;
     padding: 1rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 
     p {
       margin-top: 0.2rem;
@@ -139,7 +140,7 @@ const CardContainer = styled.article`
     .skills-container {
       justify-content: center;
       margin: 0;
-      margin-top: 2rem;
+
       p {
         margin: 0.2rem;
       }
@@ -153,9 +154,9 @@ const Card = ({ project }) => {
 
   return (
     <CardContainer>
-      <div className="img-container">
+      <div className={`img-container`}>
         <Link to={`${name}`} state={project}>
-          <img src={`../../assets/${imageName}`} alt={name + " picture"} />
+          <img src={`/assets/${imageName}`} alt={name + " picture"} />
         </Link>
       </div>
       <div className="card-bottom">
