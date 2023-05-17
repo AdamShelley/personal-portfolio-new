@@ -16,8 +16,8 @@ const PageContainer = styled.section`
 
   > div {
     margin: 4rem 0rem;
-    background-color: #ccc;
-    border: 2px solid #ccc;
+    background-color: #e6e6e6;
+    border: 2px solid #e6e6e6;
     min-height: 80vh;
     width: 100%;
     display: flex;
@@ -35,6 +35,7 @@ const PageContainer = styled.section`
 
       h4 {
         margin-top: 1rem;
+        margin-bottom: 0.2rem;
       }
 
       .project-images {
@@ -154,7 +155,7 @@ const PageContainer = styled.section`
 
         ul {
           display: flex;
-          justify-content: space-between;
+          justify-content: flex-start;
           flex-wrap: wrap;
 
           .small-box {
@@ -173,6 +174,7 @@ const PageContainer = styled.section`
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 0.4rem;
 
             .small-box:hover {
               background-color: #f8f8f8;

@@ -6,8 +6,10 @@ const AboutContainer = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 70vw;
+  text-align: 
+  width: 80vw;
   flex-grow: 1;
+  text-align: justify-all;
 
   p:first-of-type {
     margin-top: 8rem;
@@ -16,6 +18,7 @@ const AboutContainer = styled.section`
   p {
     margin-top: 2rem;
     font-size: 1.2rem;
+    line-height: 1.7;
   }
 
   @media screen and (max-width: 800px) {
@@ -41,7 +44,7 @@ const About = () => {
       <h2>About</h2>
       <p>
         Hi! My name is Adam and I am a developer from the UK 🇬🇧 currently living
-        in Singapore 🇸🇬.
+        and working in Singapore 🇸🇬.
       </p>
 
       <p>Open to opportunities.</p>

@@ -18,10 +18,10 @@ const CardContainer = styled.article`
   min-height: 35rem; // temp height
   transition: all 1s ease-in;
 
-  border-radius: 5px;
-  margin-right: 3rem;
-  margin-left: 3rem;
-  margin-top: 4rem;
+  border-radius: 2px;
+  margin-right: 4rem;
+  margin-left: 4rem;
+  margin-top: 5rem;
 
   &:hover img {
     transform: scale(1.05);
@@ -48,6 +48,7 @@ const CardContainer = styled.article`
 
   .img-container {
     border-top: 1px solid #1a1a1a;
+
     min-height: 15rem;
     max-height: 15rem;
     width: 100%;
@@ -55,6 +56,7 @@ const CardContainer = styled.article`
     height: 15rem;
     overflow: hidden;
     background-color: #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     img {
       overflow: hidden;
@@ -72,6 +74,8 @@ const CardContainer = styled.article`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 1rem;
+    text-align: center;
 
     a {
       color: inherit;
@@ -81,10 +85,11 @@ const CardContainer = styled.article`
     }
 
     h3 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       border-bottom: 1px solid transparent;
       cursor: pointer;
       text-align: center;
+      white-space: nowrap;
     }
 
     p {
@@ -97,11 +102,13 @@ const CardContainer = styled.article`
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
     padding: 1rem;
     margin-top: 2rem;
 
     p {
+      margin-top: 0.2rem;
       background-color: #1a1a1a;
       padding: 0.5rem;
       color: #ccc;
@@ -119,19 +126,20 @@ const CardContainer = styled.article`
 
     margin-right: 0;
     margin-left: 0;
+    position: relative;
+
+    &:hover a h3 {
+      border-bottom: none;
+    }
 
     &:first-child {
       margin-top: 3rem;
     }
 
-    .img-container {
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-    }
     .skills-container {
-      flex-wrap: wrap;
       justify-content: center;
       margin: 0;
+      margin-top: 2rem;
       p {
         margin: 0.2rem;
       }
@@ -153,7 +161,7 @@ const Card = ({ project }) => {
       <div className="card-bottom">
         <div className="link-container">
           <LinkButton name={"Live"} link={liveLink} />
-          <LinkButton name={"Github"} link={github} />
+          {github && <LinkButton name={"Github"} link={github} />}
         </div>
         <div className="description-container">
           <Link to={`${name}`} state={project}>

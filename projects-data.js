@@ -6,7 +6,7 @@ export const projectData = [
     imageName: "pottery-screenshot.png",
     github: "",
     npm: "",
-    skills: ["React", "ThreeJS", "Blender"],
+    skills: ["ReactJS", "ThreeJS", "GSAP", "Blender"],
     screenshots: ["pottery1.png", "pottery2.png", "pottery3.png"],
     description: "A portfolio website for Samantha Foo.",
     background:
@@ -20,7 +20,7 @@ export const projectData = [
     imageName: "guesswords-screenshot.png",
     github: "https://github.com/AdamShelley/word-flow",
     npm: "",
-    skills: ["NextJS", "Typescript", "Tailwind", "Prisma"],
+    skills: ["NextJS", "Typescript", "Tailwind", "Prisma", "Railway"],
     screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
     description: "A word guessing game, automatically reset daily.",
     background:

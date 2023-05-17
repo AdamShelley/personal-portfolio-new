@@ -2,19 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledLinkButton = styled.a`
-  background-color: #56c16d;
+  background-color: #317873;
+
   text-decoration: none;
-  color: inherit;
-  padding: 0.4rem 0.5rem;
+  padding: 0.6rem 1rem;
   font-weight: 900;
-  border-radius: 2px;
+  border-radius: 3px;
   min-width: 10%;
   text-align: center;
-
-  /* margin-right: 2rem; */
+  color: #fff;
 
   &:hover {
     background-color: #63e27e;
+    color: #000;
   }
 
   @media screen and (max-width: 800px) {

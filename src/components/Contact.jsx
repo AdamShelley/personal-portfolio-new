@@ -44,7 +44,7 @@ const Contact = () => {
       <div>
         <h2>Contact</h2>
         <p>
-          If you would like to get into contact with me about anything - please
+          If you would like to get in contact with me about anything - please
           use the following form.
         </p>
       </div>

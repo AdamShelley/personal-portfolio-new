@@ -21,6 +21,7 @@ const StyledNav = styled.nav`
     letter-spacing: 1px;
     cursor: pointer;
     padding: 1rem;
+    border: 1px solid transparent;
 
     &:hover {
       color: #ccc;
@@ -31,8 +32,8 @@ const StyledNav = styled.nav`
     }
 
     &.active {
-      color: green;
-      border: 1px solid green;
+      color: #56c16d;
+      border: 1px solid #56c16d;
     }
   }
 
@@ -68,44 +69,16 @@ const Navbar = () => {
     <StyledNav>
       <ul>
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/projects"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            Projects
-          </NavLink>
+          <NavLink to="/projects">Projects</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            About
-          </NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            Contact
-          </NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
     </StyledNav>
