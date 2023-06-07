@@ -27,7 +27,7 @@ const StyledForm = styled.form`
   input {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    width: 60%;
+    width: 100%;
     border-radius: 1px;
     border: 1px solid #e6e6e6;
     background-color: #d7d5e2;
@@ -55,7 +55,7 @@ const StyledForm = styled.form`
     margin-top: 1rem;
     cursor: pointer;
     padding: 1rem;
-    width: 60%;
+    width: 100%;
     font-weight: 600;
     font-size: 1rem;
     -webkit-appearance: none;
@@ -78,10 +78,6 @@ const StyledForm = styled.form`
 
     input {
       margin-top: 0.5rem;
-      width: 100%;
-    }
-
-    button {
       width: 100%;
     }
   }

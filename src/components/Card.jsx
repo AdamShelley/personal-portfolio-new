@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -64,7 +64,42 @@ const CardContainer = styled.article`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: all 0.8s ease-in-out;
+      opacity: ${(props) => props.loaded};
+    }
+  }
+  .blurred-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(1px);
+    background-image: ${(props) => props.image && `url(${props.image})`};
+  }
+
+  .blurred-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: pulse 2.5s infinite;
+    background-color: #424242;
+  }
+
+  .blurred-img.loaded {
+    animation: none;
+    content: none;
+    filter: blur(0);
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 
@@ -152,11 +187,23 @@ const Card = ({ project }) => {
   const { name, image, skills, liveLink, github, description, imageName } =
     project;
 
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  const loadedImg = () => setImgLoaded(true);
+
   return (
-    <CardContainer>
-      <div className={`img-container`}>
+    <CardContainer
+      loaded={imgLoaded ? 1 : 0}
+      image={`/assets/${imageName}-small.png`}
+    >
+      <div className={`img-container ${!imgLoaded ? "blurred-img" : "loaded"}`}>
         <Link to={`${name}`} state={project}>
-          <img src={`/assets/${imageName}`} alt={name + " picture"} />
+          <img
+            src={`/assets/${imageName}.png`}
+            alt={name + " picture"}
+            loading="lazy"
+            onLoad={loadedImg}
+          />
         </Link>
       </div>
       <div className="card-bottom">
