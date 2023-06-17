@@ -49,7 +49,7 @@ const CardContainer = styled.article`
 
   .img-container {
     border-top: 1px solid #1a1a1a;
-
+    position: relative;
     min-height: 15rem;
     max-height: 15rem;
     width: 100%;
@@ -64,7 +64,7 @@ const CardContainer = styled.article`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top left;
       transition: all 0.8s ease-in-out;
       opacity: ${(props) => props.loaded};
     }
@@ -148,8 +148,9 @@ const CardContainer = styled.article`
       background-color: #1a1a1a;
       padding: 0.5rem;
       color: #ccc;
-      border-radius: 5px;
+      border-radius: 2px;
       margin-left: 0.5rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -182,10 +183,22 @@ const CardContainer = styled.article`
     }
   }
 `;
+const WipBanner = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 
-const Card = ({ project }) => {
-  const { name, image, skills, liveLink, github, description, imageName } =
-    project;
+  text-align: center;
+  background-color: rgba(54, 8, 8, 0.8);
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  z-index: 999;
+`;
+
+const Card = ({ project, wipBanner, customPage }) => {
+  const { name, skills, liveLink, github, description, imageName } = project;
 
   const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -197,7 +210,8 @@ const Card = ({ project }) => {
       image={`/assets/${imageName}-small.png`}
     >
       <div className={`img-container ${!imgLoaded ? "blurred-img" : "loaded"}`}>
-        <Link to={`${name}`} state={project}>
+        {wipBanner && <WipBanner>Work In Progress</WipBanner>}
+        <Link to={wipBanner ? customPage : `${name}`} state={project}>
           <img
             src={`/assets/${imageName}.png`}
             alt={name + " picture"}
@@ -208,11 +222,11 @@ const Card = ({ project }) => {
       </div>
       <div className="card-bottom">
         <div className="link-container">
-          <LinkButton name={"Live"} link={liveLink} />
+          {liveLink && <LinkButton name={"Live"} link={liveLink} />}
           {github && <LinkButton name={"Github"} link={github} />}
         </div>
         <div className="description-container">
-          <Link to={`${name}`} state={project}>
+          <Link to={wipBanner ? customPage : `${name}`} state={project}>
             <h3>{name}</h3>
           </Link>
           <p>{description}</p>

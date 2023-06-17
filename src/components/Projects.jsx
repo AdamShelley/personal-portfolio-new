@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card from "./Card";
 
 import { projectData } from "../../projects-data";
+import { projectsWIP } from "../../projects-wip";
 
 const StyledH2 = styled.h2`
   @media screen and (max-width: 800px) {
@@ -33,7 +34,14 @@ const Projects = () => {
   return (
     <>
       <StyledH2>Projects</StyledH2>
+
       <ProjectContainer>
+        <Card
+          project={projectsWIP[0]}
+          key={"project-wip"}
+          customPage={projectsWIP[0].customPage}
+          wipBanner
+        />
         {projectData.map((project) => (
           <Card project={project} key={project.name} />
         ))}
