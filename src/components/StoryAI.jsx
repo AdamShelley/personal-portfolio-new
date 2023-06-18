@@ -33,16 +33,17 @@ const PageContainer = styled.section`
       justify-content: center;
       width: 100%;
       padding: 2rem;
+      font-size: 1.2rem;
 
       p {
-        font-weight: 900;
+        font-weight: 500;
       }
     }
 
     .set-image {
       max-width: 100%;
       width: 100%;
-      max-height: 600px;
+      max-height: 700px;
       object-fit: contain;
       /* height: 500px; */
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -150,8 +151,7 @@ const PageContainer = styled.section`
 
     img {
       /* margin-top: 1rem; */
-      /* width: 100%; */
-      /* max-height: 30vh; */
+      max-height: 50vh;
       object-fit: contain;
       border-radius: 2px;
     }
@@ -372,6 +372,22 @@ const ModalPortalStyles = styled.div`
   }
 `;
 
+const TechStackStyles = styled.ul`
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+
+  li {
+    margin-top: 2rem !important;
+    text-align: center;
+    width: 80%;
+  }
+`;
+
 const StoryAI = () => {
   const location = useLocation();
   let project = location.state;
@@ -400,7 +416,7 @@ const StoryAI = () => {
           <Link to="/projects">
             <IoMdArrowBack />
           </Link>
-          <h2>{project.name} - WIP</h2>
+          <h2>{project.name} - (Working Title)</h2>
 
           <section>
             <h4>Stack</h4>
@@ -419,21 +435,34 @@ const StoryAI = () => {
               learn a language (specifically Chinese). One of the major
               difficulties I found with the learning process was finding enough
               content at my level to practice reading with.
+              <h3 style={{ marginTop: "2rem" }}>
+                Note: This project is still work in progress.
+              </h3>
             </ParagraphStyles>
-            <li
-              key={`${project.name}/storyai1.png`}
-              className="carousel-img"
-              onClick={() =>
-                openImage(`../../assets/${project.name}/storyai1.png`)
-              }
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "5rem",
+              }}
             >
               <img
-                src={`../../assets/${project.name}/storyai1.png`}
+                style={{
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                  borderRadius: "5px",
+                  border: "3px solid #333",
+                }}
+                src={`../../assets/${project.name}/storyai-gif.gif`}
                 alt={project.name + " screenshot"}
               />
-            </li>
+            </div>
+
             <ParagraphStyles>
-              I decided that it should have the following goals in mind:
+              <span>
+                I decided that it should have the following goals in mind:
+              </span>
               <ul>
                 <li>
                   It should create interesting stories at different levels and
@@ -461,8 +490,7 @@ const StoryAI = () => {
             <section className="page-set">
               <div className="set-content">
                 <ParagraphStyles>
-                  This is the main story page. There are options to show/hide
-                  Pinyin.
+                  This is the story page, you can show/hide pinyin.
                 </ParagraphStyles>
               </div>
               <li
@@ -502,7 +530,52 @@ const StoryAI = () => {
                 </ParagraphStyles>
               </div>
             </section>
+            <section className="page-set">
+              <div className="set-content">
+                <ParagraphStyles>
+                  The stories can be filtered by genre and level.
+                </ParagraphStyles>
+              </div>
+              <li
+                key={`${project.name}/storyai4.png`}
+                className={`carousel-img`}
+                style={{ justifyContent: "flex-end" }}
+                onClick={() =>
+                  openImage(`../../assets/${project.name}/storyai4.png`)
+                }
+              >
+                <img
+                  className="set-image"
+                  src={`../../assets/${project.name}/storyai4.png`}
+                  alt={project.name + " screenshot"}
+                />
+              </li>
+            </section>
           </section>
+
+          <ParagraphStyles>
+            <span>Tech & API's</span>
+            <TechStackStyles>
+              <li>
+                <h3>Frontend</h3> React Native with Expo GO
+              </li>
+              <li>
+                <h3>Backend</h3> NodeJS (Express)
+              </li>
+              <li>
+                <h3>Database</h3> Supabase
+              </li>
+              <li>
+                <h3>Story AI</h3> OpenAI GPT
+              </li>
+              <li>
+                <h3>Image Creation</h3> DALL-E
+              </li>
+              <li>
+                <h3>Translations</h3> DeepL API
+              </li>
+            </TechStackStyles>
+          </ParagraphStyles>
 
           <ParagraphStyles>
             <span>The story so far...</span>
@@ -520,21 +593,6 @@ const StoryAI = () => {
               <li>The stories can be filtered by genre and level.</li>
             </ul>
           </ParagraphStyles>
-
-          <section>
-            <li
-              key={`${project.name}/storyai4.png`}
-              className="carousel-img"
-              onClick={() =>
-                openImage(`../../assets/${project.name}/storyai4.png`)
-              }
-            >
-              <img
-                src={`../../assets/${project.name}/storyai4.png`}
-                alt={project.name + " screenshot"}
-              />
-            </li>
-          </section>
 
           {selectedImage && (
             <ModalPortal>

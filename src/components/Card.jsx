@@ -53,7 +53,6 @@ const CardContainer = styled.article`
     min-height: 15rem;
     max-height: 15rem;
     width: 100%;
-    /* height: 100%; */
     height: 15rem;
     overflow: hidden;
     background-color: #e6e6e6;
@@ -64,7 +63,7 @@ const CardContainer = styled.article`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top left;
+      object-position: center center;
       transition: all 0.8s ease-in-out;
       opacity: ${(props) => props.loaded};
     }
