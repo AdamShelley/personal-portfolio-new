@@ -494,6 +494,20 @@ const StoryAI = () => {
                 </ParagraphStyles>
               </div>
               <li
+                key={`${project.name}/storyai1.5.png`}
+                className={`carousel-img`}
+                style={{ justifyContent: "flex-end", marginRight: "0.5rem" }}
+                onClick={() =>
+                  openImage(`../../assets/${project.name}/storyai1.5.png`)
+                }
+              >
+                <img
+                  className="set-image"
+                  src={`../../assets/${project.name}/storyai1.5.png`}
+                  alt={project.name + " screenshot"}
+                />
+              </li>
+              <li
                 key={`${project.name}/storyai2.png`}
                 className={`carousel-img`}
                 style={{ justifyContent: "flex-end" }}
@@ -550,6 +564,27 @@ const StoryAI = () => {
                   alt={project.name + " screenshot"}
                 />
               </li>
+            </section>
+            <section className="page-set">
+              <li
+                key={`${project.name}/voting-gif.gif`}
+                className={`carousel-img`}
+                style={{ justifyContent: "flex-end" }}
+                onClick={() =>
+                  openImage(`../../assets/${project.name}/voting-gif.gif`)
+                }
+              >
+                <img
+                  className="set-image"
+                  src={`../../assets/${project.name}/voting-gif.gif`}
+                  alt={project.name + " screenshot"}
+                />
+              </li>
+              <div className="set-content">
+                <ParagraphStyles>
+                  NEW:Vote for where you want the story to go next.
+                </ParagraphStyles>
+              </div>
             </section>
           </section>
 
