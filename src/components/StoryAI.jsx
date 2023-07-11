@@ -203,6 +203,11 @@ const PageContainer = styled.section`
       border: 2px solid transparent;
       color: white;
 
+      img {
+        max-height: 80vh;
+        border: none !important;
+      }
+
       h2 {
         margin-top: 0;
         font-size: 2.5rem;
