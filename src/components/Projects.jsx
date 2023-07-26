@@ -21,7 +21,7 @@ const ProjectContainer = styled.section`
   width: 100%;
   flex-grow: 1;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
   }
 `;

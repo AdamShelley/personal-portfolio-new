@@ -153,7 +153,16 @@ const CardContainer = styled.article`
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
+    max-width: 32vw;
+    min-width: 25vw;
+    min-height: 35rem;
+    max-height: 35rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
     min-width: 90%;
     min-height: 20vh;
     align-self: center;

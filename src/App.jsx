@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 import Page from "./components/Page";
-import StoryAI from "./components/StoryAI";
+import LangAI from "./components/LangAI";
 
 const HeaderLayout = () => (
   <>
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
         element: <Page />,
       },
       {
-        path: "/projects/wip/storyai",
-        element: <StoryAI />,
+        path: "/projects/wip/LangAI",
+        element: <LangAI />,
       },
       {
         path: "/contact",
