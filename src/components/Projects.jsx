@@ -40,7 +40,7 @@ const Projects = () => {
           project={projectsWIP[0]}
           key={"project-wip"}
           customPage={projectsWIP[0].customPage}
-          wipBanner
+          // wipBanner
         />
         {projectData.map((project) => (
           <Card project={project} key={project.name} />

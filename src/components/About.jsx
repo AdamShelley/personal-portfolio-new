@@ -18,6 +18,7 @@ const AboutContainer = styled.section`
   p {
     margin-top: 2rem;
     font-size: 1.2rem;
+    font-weight: 100;
     line-height: 1.7;
   }
 

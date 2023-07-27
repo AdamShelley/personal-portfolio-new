@@ -17,6 +17,7 @@ const StyledContact = styled.section`
     margin-top: 8rem;
     font-size: 1.2rem;
     line-height: 2;
+    font-weight: 100;
   }
 
   @media screen and (max-width: 800px) {

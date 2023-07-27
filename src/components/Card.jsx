@@ -219,7 +219,7 @@ const Card = ({ project, wipBanner, customPage }) => {
     >
       <div className={`img-container ${!imgLoaded ? "blurred-img" : "loaded"}`}>
         {wipBanner && <WipBanner>Work In Progress</WipBanner>}
-        <Link to={wipBanner ? customPage : `${name}`} state={project}>
+        <Link to={customPage ? customPage : `${name}`} state={project}>
           <img
             src={`/assets/${imageName}.png`}
             alt={name + " picture"}

@@ -12,7 +12,7 @@ const PageContainer = styled.section`
   align-items: center;
   justify-content: center;
   align-self: center;
-  width: 60vw;
+  width: 70vw;
 
   .phone-screenshots {
     object-fit: contain;
@@ -33,10 +33,10 @@ const PageContainer = styled.section`
       justify-content: center;
       width: 100%;
       padding: 2rem;
-      font-size: 1.2rem;
 
       p {
-        font-weight: 500;
+        font-weight: 100;
+        font-size: 1.1rem;
       }
     }
 
