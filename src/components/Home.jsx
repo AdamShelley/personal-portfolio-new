@@ -8,11 +8,13 @@ const HomeContainer = styled.section`
 
   h1 {
     font-size: 3rem;
+    letter-spacing: 0.05rem;
   }
 
   p {
     margin-top: 2rem;
     font-size: 1.8rem;
+    line-height: 1.6;
   }
 
   p:last-of-type {
@@ -22,25 +24,30 @@ const HomeContainer = styled.section`
 
   a {
     color: #ccc;
-    background-color: green;
+    /* background-color: green; */
     font-weight: 900;
     padding: 0.5rem;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 20px #00000090;
+    /* box-shadow: 0 5px 20px #00000090; */
+    text-decoration: none;
+    border-bottom: 2px solid green;
 
     &:hover {
-      background-color: #11ff003f;
+      /* background-color: #11ff003f; */
+      color: green;
     }
   }
 
   @media screen and (max-width: 800px) {
     h1 {
+      font-size: 2.5rem;
       white-space: nowrap;
     }
 
     p {
       margin-top: 3rem;
-      line-height: 2.2;
+      font-size: 1.5rem;
+      line-height: 1.8;
     }
   }
 `;

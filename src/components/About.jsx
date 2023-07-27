@@ -11,27 +11,37 @@ const AboutContainer = styled.section`
   flex-grow: 1;
   text-align: justify-all;
 
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
   p:first-of-type {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 
   p {
     margin-top: 2rem;
-    font-size: 1.2rem;
-    font-weight: 100;
+    font-size: 1.4rem;
+    font-weight: 300;
     line-height: 1.7;
   }
 
   @media screen and (max-width: 800px) {
-    width: 80vw;
+    width: 90vw;
     align-self: center;
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     p:first-of-type {
-      margin-top: 4rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
     }
   }
 `;

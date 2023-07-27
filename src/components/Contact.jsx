@@ -9,28 +9,30 @@ const StyledContact = styled.section`
   width: 100%;
   flex-grow: 1;
 
-  h3 {
-    font-size: 2rem;
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
   }
 
   p {
-    margin-top: 8rem;
-    font-size: 1.2rem;
-    line-height: 2;
-    font-weight: 100;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-weight: 300;
   }
 
   @media screen and (max-width: 800px) {
     flex-direction: column;
-    width: 80vw;
+    width: 85vw;
     align-self: center;
+    padding: 1rem;
 
     h2 {
       font-size: 2rem;
     }
 
     p {
-      margin-top: 5rem;
+      margin-top: 2.5rem;
     }
   }
 `;

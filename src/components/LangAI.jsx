@@ -396,8 +396,9 @@ const TechStackStyles = styled.ul`
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 3rem 0;
+  margin-left: 1rem;
 
   a {
     display: inline-block;
@@ -407,10 +408,12 @@ const ButtonContainer = styled.div`
     color: #fff;
     background-color: #333;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transform: translateY(0px);
+    transition: all 0.3s ease;
 
     &:hover {
-      background-color: #666;
+      background-color: #56c16d;
+      transform: translateY(-2px);
       cursor: pointer;
     }
   }
@@ -490,9 +493,7 @@ const LangAI = () => {
                   .apk (v0.0.3)
                 </a>
               </ButtonContainer>
-              <p style={{ marginTop: "1rem", textAlign: "center" }}>
-                Thank you for testing my app.
-              </p>
+              <p style={{ marginTop: "1rem" }}>Thank you for testing my app.</p>
               <p style={{ marginTop: "2rem" }}>
                 Note - you might get a warning from Google Play Protect as this
                 app is not yet on the Play Store.

@@ -4,7 +4,7 @@ export const projectsWIP = [
     customPage: "/projects/wip/LangAI",
     image: "./src/assets/LangAI-screenshot.png",
     imageName: "LangAI-screenshot",
-    github: "",
+    github: "https://github.com/AdamShelley/lang-ai",
     skills: ["NodeJS", "ReactNative", "Supabase", "ChatGPT AI", "DALL-E AI"],
     screenshots: [],
     description:

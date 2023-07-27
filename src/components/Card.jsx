@@ -11,22 +11,18 @@ const CardContainer = styled.article`
   align-items: center;
   justify-content: flex-start;
   color: #1a1a1a;
-  /* margin: 1rem; */
   box-shadow: 0 14px 40px #000;
   max-width: 25vw;
   min-width: 25vw;
   min-height: 35rem;
   max-height: 35rem;
-  transition: all 1s ease-in;
+  transition: all 0.3 ease-in-out;
+  border-radius: 5px;
+  margin: 5rem 4rem;
 
-  border-radius: 2px;
-  margin-right: 4rem;
-  margin-left: 4rem;
-  margin-top: 5rem;
-
-  &:hover img {
+  /* &:hover img {
     transform: scale(1.05);
-  }
+  } */
 
   &:hover a h3 {
     border-bottom: 1px solid #1a1a1a;
@@ -37,7 +33,8 @@ const CardContainer = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex: 2;
+    /* justify-content: flex-start; */
+    flex: 1;
   }
 
   .card-bottom .link-container {
@@ -109,8 +106,9 @@ const CardContainer = styled.article`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     text-align: center;
+    flex: none;
 
     a {
       color: inherit;
@@ -120,16 +118,20 @@ const CardContainer = styled.article`
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       border-bottom: 1px solid transparent;
       cursor: pointer;
       text-align: center;
       white-space: nowrap;
+      font-weight: 400;
     }
 
     p {
       margin-top: 2rem;
       flex: 2;
+      font-weight: 100;
+      line-height: 1.5;
+      font-size: 0.9rem;
     }
   }
 
@@ -141,6 +143,7 @@ const CardContainer = styled.article`
     flex-wrap: wrap-reverse;
     padding: 1rem;
     /* margin-top: 2rem; */
+    flex: none;
 
     p {
       margin-top: 0.2rem;
@@ -234,7 +237,7 @@ const Card = ({ project, wipBanner, customPage }) => {
           {github && <LinkButton name={"Github"} link={github} />}
         </div>
         <div className="description-container">
-          <Link to={wipBanner ? customPage : `${name}`} state={project}>
+          <Link to={customPage ? customPage : `${name}`} state={project}>
             <h3>{name}</h3>
           </Link>
           <p>{description}</p>

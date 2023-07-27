@@ -6,8 +6,10 @@ import { projectData } from "../../projects-data";
 import { projectsWIP } from "../../projects-wip";
 
 const StyledH2 = styled.h2`
+  font-size: 2.4rem;
+
   @media screen and (max-width: 800px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-left: 1rem;
   }
 `;

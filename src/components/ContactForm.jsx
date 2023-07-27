@@ -11,55 +11,53 @@ const StyledForm = styled.form`
   /* border: 1px solid #051c2c; */
   /* background-color: #051c2c; */
   /* box-shadow: 0 10px 10px #000; */
-  color: #e6e6e6;
+  color: #ccc;
   /* padding: 2rem; */
-  border-radius: 1px;
+  border-radius: 5px;
   width: 40%;
+  font-family: "Ubuntu", sans-serif;
 
   /* border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
   color: #eee !important; */
 
   label {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-top: 1rem;
+    font-weight: 400;
   }
-  input {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    width: 100%;
-    border-radius: 1px;
-    border: 1px solid #e6e6e6;
-    background-color: #d7d5e2;
-    box-shadow: none;
-    font-weight: 900;
-    font-family: inherit;
-  }
-
+  input,
   textarea {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #1a1a1a;
+    color: #ccc;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-family: inherit;
+  }
+
+  textarea {
+    width: 100%;
     height: 10rem;
     resize: none;
-    border-radius: 1px;
-    border: 1px solid #e6e6e6;
-    background-color: #d7d5e2;
-    font-size: 1rem;
-    font-family: inherit;
   }
 
   button {
     background-color: #56c16d;
+    color: #1a1a1a;
     border: none;
-    margin-top: 1rem;
+    margin-top: 2rem;
     cursor: pointer;
     padding: 1rem;
     width: 100%;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
     -webkit-appearance: none;
-    transition: all 0.2s ease-in;
+    transition: background-color 0.2s ease-in;
   }
 
   button:hover {
@@ -72,7 +70,9 @@ const StyledForm = styled.form`
     width: 100%;
     border-radius: 5px;
 
-    label {
+    label,
+    input,
+    textarea {
       font-size: 1.2rem;
     }
 
