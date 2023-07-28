@@ -16,7 +16,7 @@ const StyledContact = styled.section`
 
   p {
     margin-top: 3rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     font-weight: 300;
   }
@@ -25,13 +25,16 @@ const StyledContact = styled.section`
     flex-direction: column;
     width: 85vw;
     align-self: center;
-    padding: 1rem;
+    /* padding: 1rem; */
 
     h2 {
       font-size: 2rem;
+      /* margin-left: 0.5rem; */
+      font-weight: 400;
     }
 
     p {
+      font-size: 1rem;
       margin-top: 2.5rem;
     }
   }

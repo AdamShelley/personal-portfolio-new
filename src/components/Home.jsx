@@ -39,6 +39,8 @@ const HomeContainer = styled.section`
   }
 
   @media screen and (max-width: 800px) {
+    width: 85vw;
+
     h1 {
       font-size: 2.5rem;
       white-space: nowrap;
@@ -61,8 +63,8 @@ const Home = () => {
       <h1>Hey! I'm Adam.</h1>
       <p>Web Developer</p>
       <p>
-        Take a look at my <Link to="/projects">projects</Link> or{" "}
-        <Link to="/contact">contact me.</Link>
+        Take a look at my <Link to="/projects">projects</Link> or
+        <Link to="/contact">contact me. </Link>
       </p>
     </HomeContainer>
   );

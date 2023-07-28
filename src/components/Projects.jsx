@@ -7,10 +7,12 @@ import { projectsWIP } from "../../projects-wip";
 
 const StyledH2 = styled.h2`
   font-size: 2.4rem;
+  font-weight: 500;
 
   @media screen and (max-width: 800px) {
-    font-size: 2.5rem;
-    margin-left: 1rem;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-weight: 400;
   }
 `;
 

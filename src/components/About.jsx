@@ -14,11 +14,12 @@ const AboutContainer = styled.section`
 
   h2 {
     font-size: 2.4rem;
-    font-weight: 600;
+    font-weight: 500;
+  
   }
 
   p:first-of-type {
-    margin-top: 4rem;
+    margin-top: 5rem;
   }
 
   p {
@@ -29,19 +30,21 @@ const AboutContainer = styled.section`
   }
 
   @media screen and (max-width: 800px) {
-    width: 90vw;
+    width: 85vw;
     align-self: center;
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      /* margin-left: 0.5rem; */
+      font-weight: 400;
     }
 
     p:first-of-type {
-      margin-top: 2rem;
+      margin-top: 5rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 `;
