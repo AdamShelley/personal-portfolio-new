@@ -12,17 +12,15 @@ const CardContainer = styled.article`
   justify-content: flex-start;
   color: #1a1a1a;
   box-shadow: 0 14px 40px #000;
-  max-width: 25vw;
+  width: 30vw;
+  max-width: 30vw;
   min-width: 25vw;
   min-height: 35rem;
   max-height: 35rem;
   transition: all 0.3 ease-in-out;
   border-radius: 5px;
-  margin: 5rem 4rem;
 
-  /* &:hover img {
-    transform: scale(1.05);
-  } */
+  margin: 1.5rem;
 
   &:hover a h3 {
     border-bottom: 1px solid #1a1a1a;
@@ -33,7 +31,6 @@ const CardContainer = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* justify-content: flex-start; */
     flex: 1;
   }
 
@@ -55,6 +52,7 @@ const CardContainer = styled.article`
     background-color: #e6e6e6;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
+    picture,
     img {
       overflow: hidden;
       width: 100%;
@@ -156,9 +154,15 @@ const CardContainer = styled.article`
     }
   }
 
+  @media screen and (min-width: 1800px) {
+    width: 25vw;
+    max-width: 20vw;
+    min-width: 20vw;
+  }
+
   @media screen and (max-width: 1024px) {
-    max-width: 32vw;
-    min-width: 25vw;
+    max-width: 35vw;
+    min-width: 35vw;
     min-height: 35rem;
     max-height: 35rem;
     margin-left: 1.5rem;

@@ -14,6 +14,14 @@ const PageContainer = styled.section`
   align-self: center;
   width: 70vw;
 
+  .strikethrough {
+    text-decoration: line-through !important;
+  }
+
+  .bolden {
+    font-weight: 900;
+  }
+
   .phone-screenshots {
     object-fit: contain;
     margin-top: 2rem;
@@ -22,7 +30,7 @@ const PageContainer = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 70%;
     margin-top: 2rem;
     padding: 2rem;
 
@@ -485,12 +493,11 @@ const LangAI = () => {
                 </li>
                 <li>Light mode needs testing.</li>
                 <li>Icons are WIP.</li>
-                <li>Haptics are not working for android.</li>
               </ul>
               <br />
               <ButtonContainer>
-                <a href="https://expo.dev/artifacts/eas/8vySvseYv1n6H6ukYtDFUP.apk">
-                  .apk (v0.0.3)
+                <a href="https://expo.dev/artifacts/eas/6ak3rXuqV2D7Hq1bfz2e5r.apk">
+                  .apk (v0.0.4)
                 </a>
               </ButtonContainer>
               <p style={{ marginTop: "1rem" }}>Thank you for testing my app.</p>
@@ -499,9 +506,16 @@ const LangAI = () => {
                 app is not yet on the Play Store.
               </p>
             </ParagraphStyles>
-
             <ParagraphStyles>
-              26/06/2023
+              <p class="bolden">V0.0.4 - 03/08/2023</p>
+              <ul>
+                <li>Fixed haptics for android.</li>
+                <li>Added loading skeleton for the home page.</li>
+                <li>Internal code cleanup.</li>
+              </ul>
+            </ParagraphStyles>
+            <ParagraphStyles>
+              <p class="bolden">V0.0.3 - 26/07/2023</p>
               <ul>
                 <li>Initial release of .apk files.</li>
                 <li>Backend updated to handle voting duration cutoff.</li>
@@ -567,105 +581,116 @@ const LangAI = () => {
                 </li>
               </ul>
             </ParagraphStyles>
-            <section className="page-set">
-              <div className="set-content">
-                <ParagraphStyles>
-                  This is the story page, you can show/hide pinyin.
-                </ParagraphStyles>
-              </div>
-              <li
-                key={`${project.name}/LangAI1.5.png`}
-                className={`carousel-img`}
-                style={{ justifyContent: "flex-end", marginRight: "0.5rem" }}
-                onClick={() =>
-                  openImage(`../../assets/${project.name}/LangAI1.5.png`)
-                }
-              >
-                <img
-                  className="set-image"
-                  src={`../../assets/${project.name}/LangAI1.5.png`}
-                  alt={project.name + " screenshot"}
-                />
-              </li>
-              <li
-                key={`${project.name}/LangAI2.png`}
-                className={`carousel-img`}
-                style={{ justifyContent: "flex-end" }}
-                onClick={() =>
-                  openImage(`../../assets/${project.name}/LangAI2.png`)
-                }
-              >
-                <img
-                  className="set-image"
-                  src={`../../assets/${project.name}/LangAI2.png`}
-                  alt={project.name + " screenshot"}
-                />
-              </li>
-            </section>
-            <section className="page-set">
-              <li
-                key={`${project.name}/LangAI3.png`}
-                className="carousel-img carousel-img-left"
-                style={{ justifyContent: "flex-start" }}
-                onClick={() =>
-                  openImage(`../../assets/${project.name}/LangAI3.png`)
-                }
-              >
-                <img
-                  className="set-image"
-                  src={`../../assets/${project.name}/LangAI3.png`}
-                  alt={project.name + " screenshot"}
-                />
-              </li>
-              <div className="set-content">
-                <ParagraphStyles>
-                  If you forget a word, it can be pressed and the definition
-                  will appear.
-                </ParagraphStyles>
-              </div>
-            </section>
-            <section className="page-set">
-              <div className="set-content">
-                <ParagraphStyles>
-                  The stories can be filtered by genre and level.
-                </ParagraphStyles>
-              </div>
-              <li
-                key={`${project.name}/LangAI4.png`}
-                className={`carousel-img`}
-                style={{ justifyContent: "flex-end" }}
-                onClick={() =>
-                  openImage(`../../assets/${project.name}/LangAI4.png`)
-                }
-              >
-                <img
-                  className="set-image"
-                  src={`../../assets/${project.name}/LangAI4.png`}
-                  alt={project.name + " screenshot"}
-                />
-              </li>
-            </section>
-            <section className="page-set">
-              <li
-                key={`${project.name}/voting-gif.gif`}
-                className={`carousel-img`}
-                style={{ justifyContent: "flex-end" }}
-                onClick={() =>
-                  openImage(`../../assets/${project.name}/voting-gif.gif`)
-                }
-              >
-                <img
-                  className="set-image"
-                  src={`../../assets/${project.name}/voting-gif.gif`}
-                  alt={project.name + " screenshot"}
-                />
-              </li>
-              <div className="set-content">
-                <ParagraphStyles>
-                  Vote for where you want the story to go next.
-                </ParagraphStyles>
-              </div>
-            </section>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignContent: "center",
+                justifyContent: "center",
+              }}
+            >
+              <section className="page-set">
+                <div className="set-content">
+                  <ParagraphStyles>
+                    This is the story page, you can show/hide pinyin.
+                  </ParagraphStyles>
+                </div>
+                <li
+                  key={`${project.name}/LangAI1.5.png`}
+                  className={`carousel-img`}
+                  style={{ justifyContent: "flex-end", marginRight: "0.5rem" }}
+                  onClick={() =>
+                    openImage(`../../assets/${project.name}/LangAI1.5.png`)
+                  }
+                >
+                  <img
+                    className="set-image"
+                    src={`../../assets/${project.name}/LangAI1.5.png`}
+                    alt={project.name + " screenshot"}
+                  />
+                </li>
+                <li
+                  key={`${project.name}/LangAI2.png`}
+                  className={`carousel-img`}
+                  style={{ justifyContent: "flex-end" }}
+                  onClick={() =>
+                    openImage(`../../assets/${project.name}/LangAI2.png`)
+                  }
+                >
+                  <img
+                    className="set-image"
+                    src={`../../assets/${project.name}/LangAI2.png`}
+                    alt={project.name + " screenshot"}
+                  />
+                </li>
+              </section>
+
+              <section className="page-set">
+                <li
+                  key={`${project.name}/LangAI3.png`}
+                  className="carousel-img carousel-img-left"
+                  style={{ justifyContent: "flex-start" }}
+                  onClick={() =>
+                    openImage(`../../assets/${project.name}/LangAI3.png`)
+                  }
+                >
+                  <img
+                    className="set-image"
+                    src={`../../assets/${project.name}/LangAI3.png`}
+                    alt={project.name + " screenshot"}
+                  />
+                </li>
+                <div className="set-content">
+                  <ParagraphStyles>
+                    If you forget a word, it can be pressed and the definition
+                    will appear.
+                  </ParagraphStyles>
+                </div>
+              </section>
+              <section className="page-set">
+                <div className="set-content">
+                  <ParagraphStyles>
+                    The stories can be filtered by genre and level.
+                  </ParagraphStyles>
+                </div>
+                <li
+                  key={`${project.name}/LangAI4.png`}
+                  className={`carousel-img`}
+                  style={{ justifyContent: "flex-end" }}
+                  onClick={() =>
+                    openImage(`../../assets/${project.name}/LangAI4.png`)
+                  }
+                >
+                  <img
+                    className="set-image"
+                    src={`../../assets/${project.name}/LangAI4.png`}
+                    alt={project.name + " screenshot"}
+                  />
+                </li>
+              </section>
+              <section className="page-set">
+                <li
+                  key={`${project.name}/voting-gif.gif`}
+                  className={`carousel-img`}
+                  style={{ justifyContent: "flex-end" }}
+                  onClick={() =>
+                    openImage(`../../assets/${project.name}/voting-gif.gif`)
+                  }
+                >
+                  <img
+                    className="set-image"
+                    src={`../../assets/${project.name}/voting-gif.gif`}
+                    alt={project.name + " screenshot"}
+                  />
+                </li>
+                <div className="set-content">
+                  <ParagraphStyles>
+                    Vote for where you want the story to go next.
+                  </ParagraphStyles>
+                </div>
+              </section>
+            </div>
           </section>
 
           <ParagraphStyles>
