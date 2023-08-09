@@ -56,7 +56,7 @@ const HomeContainer = styled.section`
 
 const Home = () => {
   useEffect(() => {
-    document.title = "{Adam Shelley}";
+    document.title = "{ Adam Shelley }";
   }, []);
   return (
     <HomeContainer>

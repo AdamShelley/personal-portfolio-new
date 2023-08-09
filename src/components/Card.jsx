@@ -1,37 +1,53 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import LinkButton from "./LinkButton";
-
 const CardContainer = styled.article`
-  background-color: #ebeaea;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   color: #1a1a1a;
-  box-shadow: 0 14px 40px #000;
-  width: 30vw;
+  width: 25vw;
   max-width: 30vw;
   min-width: 25vw;
-  min-height: 35rem;
-  max-height: 35rem;
+  min-height: 30rem;
+  max-height: 30rem;
   transition: all 0.3 ease-in-out;
   border-radius: 5px;
-
   margin: 1.5rem;
+  position: relative;
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.55);
 
-  &:hover a h3 {
-    border-bottom: 1px solid #1a1a1a;
+  /* Card Hover title transitions */
+  a h3 {
+    position: relative;
+    display: inline-block;
+  }
+
+  a h3::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #40bd27;
+    transition: width 0.3s ease-in-out;
+  }
+
+  a:hover h3::after {
+    width: 100%;
   }
 
   .card-bottom {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
     flex: 1;
+    width: 100%;
   }
 
   .card-bottom .link-container {
@@ -39,6 +55,7 @@ const CardContainer = styled.article`
     align-items: center;
     justify-content: space-evenly;
     margin: 0 2rem;
+    margin-bottom: auto;
   }
 
   .img-container {
@@ -49,8 +66,20 @@ const CardContainer = styled.article`
     width: 100%;
     height: 15rem;
     overflow: hidden;
-    background-color: #e6e6e6;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #1a1a1a;
+    background-position: center center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 20;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.45) inset;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
 
     picture,
     img {
@@ -60,53 +89,19 @@ const CardContainer = styled.article`
       object-fit: cover;
       object-position: center center;
       transition: all 0.8s ease-in-out;
-      opacity: ${(props) => props.loaded};
-    }
-  }
-  .blurred-img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(1px);
-    background-image: ${(props) => props.image && `url(${props.image})`};
-  }
-
-  .blurred-img::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    animation: pulse 2.5s infinite;
-    background-color: #424242;
-  }
-
-  .blurred-img.loaded {
-    animation: none;
-    content: none;
-    filter: blur(0);
-  }
-
-  @keyframes pulse {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.1;
-    }
-    100% {
-      opacity: 0;
     }
   }
 
   .description-container {
     width: 100%;
+    /* height: calc(100% - 2rem); */
     height: 100%;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* margin-top: 1rem; */
     text-align: center;
-    flex: none;
+    flex: 1;
 
     a {
       color: inherit;
@@ -116,20 +111,23 @@ const CardContainer = styled.article`
     }
 
     h3 {
-      font-size: 1.8rem;
+      margin-top: 1rem;
+      font-size: 1.5rem;
       border-bottom: 1px solid transparent;
       cursor: pointer;
       text-align: center;
       white-space: nowrap;
       font-weight: 400;
+      margin-bottom: 1rem;
     }
 
     p {
-      margin-top: 2rem;
-      flex: 2;
+      margin-top: 0.5rem;
+      flex: 1;
       font-weight: 100;
       line-height: 1.5;
       font-size: 0.9rem;
+      width: 100%;
     }
   }
 
@@ -140,7 +138,7 @@ const CardContainer = styled.article`
     justify-content: center;
     flex-wrap: wrap-reverse;
     padding: 1rem;
-    /* margin-top: 2rem; */
+    margin-top: auto;
     flex: none;
 
     p {
@@ -148,7 +146,7 @@ const CardContainer = styled.article`
       background-color: #1a1a1a;
       padding: 0.5rem;
       color: #ccc;
-      border-radius: 2px;
+      border-radius: 5px;
       margin-left: 0.5rem;
       font-size: 0.8rem;
     }
@@ -213,33 +211,17 @@ const WipBanner = styled.div`
 `;
 
 const Card = ({ project, wipBanner, customPage }) => {
-  const { name, skills, liveLink, github, description, imageName } = project;
-
-  const [imgLoaded, setImgLoaded] = useState(false);
-
-  const loadedImg = () => setImgLoaded(true);
+  const { name, skills, description, imageName } = project;
 
   return (
-    <CardContainer
-      loaded={imgLoaded ? 1 : 0}
-      image={`/assets/${imageName}-small.png`}
-    >
-      <div className={`img-container ${!imgLoaded ? "blurred-img" : "loaded"}`}>
+    <CardContainer image={`/assets/${imageName}-small.png`}>
+      <div className={`img-container`}>
         {wipBanner && <WipBanner>Work In Progress</WipBanner>}
         <Link to={customPage ? customPage : `${name}`} state={project}>
-          <img
-            src={`/assets/${imageName}.png`}
-            alt={name + " picture"}
-            loading="lazy"
-            onLoad={loadedImg}
-          />
+          <img src={`/assets/${imageName}.png`} alt={name + " picture"} />
         </Link>
       </div>
       <div className="card-bottom">
-        <div className="link-container">
-          {liveLink && <LinkButton name={"Live"} link={liveLink} />}
-          {github && <LinkButton name={"Github"} link={github} />}
-        </div>
         <div className="description-container">
           <Link to={customPage ? customPage : `${name}`} state={project}>
             <h3>{name}</h3>

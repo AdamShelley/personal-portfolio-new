@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { projectsWIP } from "../../projects-wip";
-import { IoMdArrowBack } from "react-icons/io";
-import { BiDownload } from "react-icons/bi";
-
+import { IoIosThumbsUp, IoMdArrowBack } from "react-icons/io";
+import { BiDownload, BiBookContent, BiBrain, BiWorld } from "react-icons/bi";
+import { GiButtonFinger, GiPiggyBank } from "react-icons/gi";
 import { useState } from "react";
 
 const PageContainer = styled.section`
@@ -28,10 +28,15 @@ const PageContainer = styled.section`
     object-fit: contain;
     margin-top: 2rem;
   }
+
+  .page-set:first-of-type {
+    margin-top: 5rem;
+  }
+
   .page-set {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 70%;
     height: 400px;
     height: 100%;
@@ -50,11 +55,11 @@ const PageContainer = styled.section`
         padding: 1rem;
         line-height: 1.5;
         border-radius: 5px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         margin: 1rem 0rem;
         min-width: 100%;
         color: #fff;
-        background-color: #474242;
+        background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+        box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
       }
     }
 
@@ -66,6 +71,7 @@ const PageContainer = styled.section`
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 15px;
       cursor: pointer;
+      box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -100,8 +106,6 @@ const PageContainer = styled.section`
       }
 
       .carousel-img {
-        margin-top: 5rem;
-        /* max-width: 100%; */
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -124,37 +128,41 @@ const PageContainer = styled.section`
         justify-content: flex-start;
 
         .small-box {
-          background-color: #1a1a1a;
+          /* background-color: #1a1a1a; */
+          background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
           color: #eee;
-          border: 1px solid #1a1a1a;
-          padding: 5px 15px;
-          text-align: center;
-          text-decoration: none;
-          font-size: 16px;
+          font-size: 1rem;
           margin: 4px 0px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          width: 6rem;
-          text-align: center;
+          transition: all 0.3s ease-in-out;
+          min-width: 6rem;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-right: 1rem;
-          white-space: nowrap;
+          border-radius: 5px;
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+          padding: 0.75rem 1.5rem;
+          letter-spacing: 0.5px;
+          font-size: 0.8rem;
+          font-weight: 500;
 
-          > .small-box:hover {
-            background-color: #f8f8f8;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          &:hover {
+            background: linear-gradient(115deg, green, green);
+            color: #fff;
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
           }
 
           > a {
             color: inherit;
+            font-family: inherit;
             text-decoration: none;
-
-            &:hover {
-              color: #fff;
-            }
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 0.5rem;
+            font-weight: 500;
+            text-align: left;
           }
         }
 
@@ -201,6 +209,7 @@ const PageContainer = styled.section`
     .page-set {
       flex-direction: column;
       padding: 0rem;
+      width: 90%;
 
       .set-content {
         padding: 0rem;
@@ -230,35 +239,19 @@ const PageContainer = styled.section`
 
       section {
         color: white;
+        width: 100%;
 
         ul {
           display: flex;
           justify-content: flex-start;
           flex-wrap: wrap;
+          width: 100%;
 
           .small-box {
-            background-color: #eee;
-            color: #1a1a1a;
-            border: 1px solid #eee;
-            padding: 5px 15px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 0px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 6rem;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0.4rem;
-
-            .small-box:hover {
-              background-color: #f8f8f8;
-              box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-              transform: translateY(-2px);
-            }
+            width: 8rem;
+            margin: 0;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
           }
         }
 
@@ -348,6 +341,27 @@ const ParagraphStyles = styled.p`
     }
   }
 
+  .goals {
+    list-style: none;
+
+    li {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    li > svg {
+      min-width: 30px;
+      min-height: 30px;
+      margin-right: 1rem;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   span {
     display: block;
     font-size: 1.1rem;
@@ -370,9 +384,13 @@ const ParagraphStyles = styled.p`
 
     ul {
       width: 100%;
+
       li {
         margin-left: 0rem;
       }
+    }
+    .goals li svg {
+      display: none;
     }
 
     span {
@@ -493,7 +511,7 @@ const LangAI = () => {
             </ul>
 
             <ParagraphStyles>
-              <span>Android Download (WIP)</span>
+              <span>Android Download</span>
               You can download the first .apk file below to try on android
               phones.
               <h3 className="mt-2">Features</h3>
@@ -591,26 +609,34 @@ const LangAI = () => {
               <span>
                 I decided that it should have the following goals in mind:
               </span>
-              <ul>
+              <ul className="goals">
                 <li>
+                  <BiBookContent />
                   It should create interesting stories at different levels and
                   about different topics.
                 </li>
                 <li>
+                  <BiBrain />
                   It should utilize AI to generate the stories and the cover
                   pictures for them.
                 </li>
-                <li>It should feel easy and comfortable to use.</li>
                 <li>
+                  <IoIosThumbsUp />
+                  It should feel easy and comfortable to use.
+                </li>
+
+                <li>
+                  <GiPiggyBank />
                   It should be cheap to run, bearing in the mind that AI APIs
                   cost money, so databases will be required to capture the data.
                 </li>
                 <li>
-                  It would be nice to include a user interactivity aspect.
-                  Giving the users the ability to vote on which direction the
-                  story should go in future, adding an interactive story aspect.
+                  <GiButtonFinger />A user interactivity aspect. Giving the
+                  users the ability to vote on which direction the story should
+                  go in future, adding an interactive story aspect.
                 </li>
                 <li>
+                  <BiWorld />
                   This app could be modified to include other languages too.
                 </li>
               </ul>

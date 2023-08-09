@@ -42,7 +42,7 @@ const StyledContact = styled.section`
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "{Adam Shelley - Contact}";
+    document.title = "Adam Shelley - Contact";
   }, []);
 
   return (

@@ -36,6 +36,7 @@ const PageContainer = styled.section`
       h4 {
         margin-top: 1rem;
         margin-bottom: 0.2rem;
+        color: #393737;
       }
 
       .project-images {
@@ -48,12 +49,14 @@ const PageContainer = styled.section`
         margin-top: 2rem;
         max-width: 100%;
         cursor: pointer;
+        border-radius: 10px;
 
         img {
           padding-right: 0.2rem;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 5px;
         }
       }
 
@@ -64,41 +67,43 @@ const PageContainer = styled.section`
         justify-content: flex-start;
 
         .small-box {
-          background-color: #1a1a1a;
+          /* background-color: #1a1a1a; */
+          background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
           color: #eee;
-          border: 1px solid #1a1a1a;
-          padding: 5px 15px;
-          text-align: center;
-          text-decoration: none;
-          font-size: 16px;
+          font-size: 1rem;
           margin: 4px 0px;
           cursor: pointer;
-          transition: all 0.3s ease;
-          width: 6rem;
-          text-align: center;
+          transition: all 0.3s ease-in-out;
+          min-width: 6rem;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-right: 1rem;
+          border-radius: 5px;
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+          padding: 0.75rem 1.5rem;
+          letter-spacing: 0.5px;
+          font-size: 0.8rem;
+          font-weight: 500;
 
-          > .small-box:hover {
-            background-color: #f8f8f8;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          &:hover {
+            background: linear-gradient(115deg, green, green);
+            color: #fff;
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
           }
 
           > a {
             color: inherit;
+            font-family: inherit;
             text-decoration: none;
-
-            &:hover {
-              color: #fff;
-            }
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 0.5rem;
+            font-weight: 500;
+            text-align: left;
           }
-        }
-
-        a:hover li {
-          background-color: #595959;
         }
       }
     }
@@ -122,6 +127,7 @@ const PageContainer = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 5px;
 
       &:hover {
         font-weight: 900;
@@ -159,28 +165,6 @@ const PageContainer = styled.section`
           flex-wrap: wrap;
 
           .small-box {
-            background-color: #eee;
-            color: #1a1a1a;
-            border: 1px solid #eee;
-            padding: 5px 15px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 0px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 6rem;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0.4rem;
-
-            .small-box:hover {
-              background-color: #f8f8f8;
-              box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-              transform: translateY(-2px);
-            }
           }
         }
 
@@ -247,12 +231,20 @@ const ParagraphStyles = styled.p`
   }
 
   span {
+    display: block;
     font-size: 1.1rem;
     background-color: #1a1a1a;
     color: white;
     margin-right: 0.5rem;
     padding: 0.4rem;
     border-radius: 2px;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  p {
+    font-weight: 100;
   }
 
   @media screen and (max-width: 800px) {
@@ -281,6 +273,7 @@ const ModalPortalStyles = styled.div`
     max-height: 80vh;
     max-width: 80vw;
     object-fit: contain;
+    border-radius: 10px;
   }
 `;
 
@@ -310,6 +303,10 @@ const Page = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    document.title = `${project.name} | Adam Shelley`;
+  }, []);
+
   return (
     <PageContainer>
       {project && (
@@ -320,17 +317,21 @@ const Page = () => {
           <h2>{project.name}</h2>
 
           <section>
-            <h4>Stack</h4>
+            <h4>Technologies</h4>
             <ul>
               {project.skills.map((skill) => (
-                <li className="small-box" key={skill}>
+                <li
+                  className="small-box"
+                  style={{ padding: "0.5rem" }}
+                  key={skill}
+                >
                   {skill}
                 </li>
               ))}
             </ul>
           </section>
           <section>
-            <h4>Deployment</h4>
+            <h4>Deployment & Source Code</h4>
             <ul>
               {project.liveLink && (
                 <li className="small-box">
@@ -339,7 +340,7 @@ const Page = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live
+                    Visit The Website
                   </a>
                 </li>
               )}
@@ -354,25 +355,19 @@ const Page = () => {
                   </a>
                 </li>
               )}
+
+              <ul>
+                <li className="small-box">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
+                </li>
+              </ul>
             </ul>
-          </section>
-          <section>
-            {project.github && (
-              <>
-                <h4>Source Code</h4>
-                <ul>
-                  <li className="small-box">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Github
-                    </a>
-                  </li>
-                </ul>
-              </>
-            )}
           </section>
 
           <section>
@@ -398,7 +393,7 @@ const Page = () => {
 
           <section>
             <ParagraphStyles>
-              <span>Background:</span>
+              <span>About this project</span>
               {project.background}
             </ParagraphStyles>
             <ParagraphStyles>

@@ -1,19 +1,5 @@
 export const projectData = [
   {
-    name: "Samantha Foo Pottery",
-    liveLink: "https://sam-foo-pottery.vercel.app/",
-    image: "./src/assets/pottery-screenshot.png",
-    imageName: "pottery-screenshot",
-    github: "https://github.com/AdamShelley/Samantha-Foo-Pottery",
-    npm: "",
-    skills: ["ReactJS", "ThreeJS", "GSAP", "Blender"],
-    screenshots: ["pottery1.png", "pottery2.png", "pottery3.png"],
-    description: "A portfolio website for Samantha Foo.",
-    background:
-      "This portfolio is built with ReactJS and ThreeJs to handle the 3D model that I made in Blender of Samantha's studio. I used the GSAP animation package to handle the movement of the 3D model and HTML around the screen.",
-    learnings: "Using ThreeJS to display models built in blender.",
-  },
-  {
     name: "Guessagram",
     liveLink: "https://guessagram.vercel.app/",
     image: "./src/assets/guesswords-screenshot.png",
@@ -24,8 +10,23 @@ export const projectData = [
     screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
     description: "A word guessing game, automatically reset daily.",
     background:
-      "With the success of Wordle, everyone has tried making their own small game. This is my version.",
+      "With the success of Wordle, many have tried making their own small addictive game. This is my version. I used NextJS to handle the frontend and Tailwind for the styling. I used Prisma to link to a postgres database hosted on Railway. The database is automatically reset daily using a cron job.  ",
     learnings: "First time using prisma to link to a postgres database.",
+  },
+  {
+    name: "Samantha Foo Pottery",
+    liveLink: "https://sam-foo-pottery.vercel.app/",
+    image: "./src/assets/pottery-screenshot.png",
+    imageName: "pottery-screenshot",
+    github: "https://github.com/AdamShelley/Samantha-Foo-Pottery",
+    npm: "",
+    skills: ["ReactJS", "ThreeJS", "GSAP", "Blender"],
+    screenshots: ["pottery1.png", "pottery2.png", "pottery3.png"],
+    description: "A portfolio website for Samantha Foo.",
+    background:
+      "This portfolio is built with ReactJS, and ThreeJs to handle the 3D model that I made in Blender of Samantha's studio. I used the GSAP animation package to handle the movement of the 3D model and HTML around the screen.",
+    learnings:
+      "This was my first deep dive into combining ReactJS with ThreeJS. I also honed my skills in 3D modeling using Blender and discovered the potential of GSAP for enhancing user interaction through animations",
   },
   {
     name: "react-onboarder-tool",
@@ -39,7 +40,8 @@ export const projectData = [
     description:
       "This is a tool for React that is easily implemented into your website to create an onboarding experience for first-time users. ",
     background: `I created this tool as a way to introduce new users to my websites. Instead of creating an introduction or a guide page for each individual website, I could provide an interactive experience.`,
-    learnings: "First time releasing an NPM package.",
+    learnings:
+      "Creating this tool was a lesson in package development and distribution. It was my first experience publishing to NPM, and I learned a lot about the process of creating a package, documenting and versioning it in an understandable way.",
   },
   {
     name: "Scribbler",

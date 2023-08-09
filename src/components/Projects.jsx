@@ -9,6 +9,8 @@ const StyledH2 = styled.h2`
   font-size: 2.4rem;
   font-weight: 500;
 
+  /* margin-left: 7.5rem; */
+
   @media screen and (max-width: 800px) {
     font-size: 2rem;
     margin-left: 0.5rem;
@@ -23,7 +25,8 @@ const ProjectContainer = styled.section`
   flex-wrap: wrap;
   margin-top: 2rem;
   width: 100%;
-  flex-grow: 1;
+  flex-grow: 1
+  margin-left: 0;;
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
@@ -32,12 +35,12 @@ const ProjectContainer = styled.section`
 
 const Projects = () => {
   useEffect(() => {
-    document.title = "{Adam Shelley - Projects}";
+    document.title = "Adam Shelley - Projects";
   }, []);
 
   return (
     <>
-      <StyledH2>Projects</StyledH2>
+      {/* <StyledH2>Projects</StyledH2> */}
 
       <ProjectContainer>
         <Card
