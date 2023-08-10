@@ -5,18 +5,18 @@ import Card from "./Card";
 import { projectData } from "../../projects-data";
 import { projectsWIP } from "../../projects-wip";
 
-const StyledH2 = styled.h2`
-  font-size: 2.4rem;
-  font-weight: 500;
+// const StyledH2 = styled.h2`
+//   font-size: 2.4rem;
+//   font-weight: 500;
 
-  /* margin-left: 7.5rem; */
+//   /* margin-left: 7.5rem; */
 
-  @media screen and (max-width: 800px) {
-    font-size: 2rem;
-    margin-left: 0.5rem;
-    font-weight: 400;
-  }
-`;
+//   @media screen and (max-width: 800px) {
+//     font-size: 2rem;
+//     margin-left: 0.5rem;
+//     font-weight: 400;
+//   }
+// `;
 
 const ProjectContainer = styled.section`
   display: flex;
@@ -36,6 +36,11 @@ const ProjectContainer = styled.section`
 const Projects = () => {
   useEffect(() => {
     document.title = "Adam Shelley - Projects";
+  }, []);
+
+  // If back button is pushed, scroll to the top
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (

@@ -159,6 +159,11 @@ const PageContainer = styled.section`
       section {
         color: white;
 
+        h4 {
+          color: #eee;
+          margin-bottom: 0.5rem;
+        }
+
         ul {
           display: flex;
           justify-content: flex-start;
@@ -225,6 +230,7 @@ const PageContainer = styled.section`
 const ParagraphStyles = styled.p`
   margin-top: 2rem;
   line-height: 1.5;
+  font-weight: 100;
 
   &:first-of-type {
     margin-top: 5rem;
