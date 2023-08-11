@@ -35,7 +35,7 @@ const ProjectContainer = styled.section`
 
 const Projects = () => {
   useEffect(() => {
-    document.title = "Adam Shelley - Projects";
+    document.title = "Adam Shelley | Projects";
   }, []);
 
   // If back button is pushed, scroll to the top

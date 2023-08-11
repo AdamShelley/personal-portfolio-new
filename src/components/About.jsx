@@ -51,7 +51,7 @@ const AboutContainer = styled.section`
 
 const About = () => {
   useEffect(() => {
-    document.title = "Adam Shelley - About";
+    document.title = "Adam Shelley | About";
   }, []);
   return (
     <AboutContainer>

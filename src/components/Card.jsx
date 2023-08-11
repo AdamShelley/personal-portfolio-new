@@ -17,7 +17,7 @@ const CardContainer = styled.article`
   border-radius: 5px;
   margin: 1.5rem;
   position: relative;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.85);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
 
   /* Card Hover title transitions */
   a h3 {

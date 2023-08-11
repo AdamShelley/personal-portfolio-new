@@ -48,6 +48,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/sitemap.xml",
+        element: <></>,
+      },
     ],
   },
 ]);

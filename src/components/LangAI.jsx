@@ -8,6 +8,9 @@ import { BiDownload, BiBookContent, BiBrain, BiWorld } from "react-icons/bi";
 import { GiButtonFinger, GiPiggyBank } from "react-icons/gi";
 import { useState } from "react";
 
+const lang_ai_android_build =
+  "https://expo.dev/artifacts/eas/eXbvroPVAikLoL31PhQ5b3.apk";
+
 const PageContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -88,6 +91,7 @@ const PageContainer = styled.section`
 
     h2 {
       margin-top: 4rem;
+      line-height: 1.5;
     }
 
     section {
@@ -209,20 +213,26 @@ const PageContainer = styled.section`
     .page-set {
       flex-direction: column;
       padding: 0rem;
-      width: 100%;
+      width: 80%;
       align-items: center;
 
       .set-content {
         padding: 0rem;
 
         p {
-          background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
+          /* background: linear-gradient(to bottom, #2a2a2a, #2a2a2a); */
+          background: #eee;
+          color: #615f5f;
+          box-shadow: none;
+          border-radius: 15px;
+          font-weight: 400;
         }
       }
 
       .set-image {
         border: none;
-        box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+        /* box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15); */
+        box-shadow: none;
       }
     }
 
@@ -231,6 +241,7 @@ const PageContainer = styled.section`
       background-color: transparent;
       border: 2px solid transparent;
       color: white;
+      padding: 1rem;
 
       img {
         max-height: 80vh;
@@ -424,14 +435,20 @@ const ParagraphStyles = styled.p`
 
       .top-section-image {
         width: 100%;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-        margin-left: 0;
+        margin: 5rem 0;
+        border-radius: 5px;
+
+        > img {
+          /* width: 100%; */
+          border-radius: 5px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+        }
       }
     }
 
     ul {
       width: 100%;
+      align-items: flex-start;
 
       li {
         margin-left: 0rem;
@@ -550,7 +567,9 @@ const LangAI = () => {
           <Link to="/projects">
             <IoMdArrowBack />
           </Link>
-          <h2>{project.name} - (Working Title)</h2>
+          <h2>
+            {project.name} <p>(Working Title)</p>
+          </h2>
 
           <section>
             <h4>Stack</h4>
@@ -595,7 +614,7 @@ const LangAI = () => {
                 <br />
                 <ButtonContainer>
                   <a
-                    href="https://expo.dev/artifacts/eas/6ak3rXuqV2D7Hq1bfz2e5r.apk"
+                    href={lang_ai_android_build}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
@@ -626,7 +645,24 @@ const LangAI = () => {
             </ParagraphStyles>
             <ParagraphStyles>
               <span>Patch Notes</span>
-              <p>Last Updated: 03/08/2023</p>
+              <p>Last Updated: 11/08/2023</p>
+
+              <p class="bolden mt-2">V0.0.5</p>
+              <ul>
+                <li>Fixed heading border issue on stories page. </li>
+                <li>Non-styling improvements to all pages. </li>
+                <li>
+                  When the device is offline, the stories should now load
+                  correctly from cache.
+                </li>
+                <li>Data fetching optimized / Cleaned up. </li>
+                <li>
+                  On the backend - votes automatically calculated after duration
+                  has been reached (WIP).
+                </li>
+                <li>Punctuation improvements on the backend.</li>
+              </ul>
+
               <p class="bolden mt-2">V0.0.4</p>
               <ul>
                 <li>Fixed haptics for android.</li>
