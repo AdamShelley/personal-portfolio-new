@@ -170,6 +170,7 @@ const PageContainer = styled.section`
           flex-wrap: wrap;
 
           .small-box {
+            min-width: 5rem;
           }
         }
 

@@ -265,7 +265,7 @@ const PageContainer = styled.section`
           width: 100%;
 
           .small-box {
-            width: 8rem;
+            min-width: 4rem;
             margin: 0;
             margin-right: 0.5rem;
             margin-top: 0.5rem;
