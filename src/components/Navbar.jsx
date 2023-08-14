@@ -15,7 +15,7 @@ const StyledNav = styled.nav`
 
   li {
     /* margin-right: 2rem; */
-    padding: calc(var(--_gap) / 2);
+    padding: calc(var(--_gap) / 2) 0;
     position: relative;
     overflow: hidden;
   }

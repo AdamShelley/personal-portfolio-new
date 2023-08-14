@@ -5,7 +5,7 @@ export const projectsWIP = [
     image: "./src/assets/LangAI-screenshot.png",
     imageName: "LangAI-screenshot",
     github: "https://github.com/AdamShelley/lang-ai",
-    skills: ["NodeJS", "ReactNative", "Supabase", "ChatGPT AI", "DALL-E AI"],
+    skills: ["NodeJS", "Supabase", "ChatGPT AI", "DALL-E AI", "React Native"],
     screenshots: [],
     description:
       "A language learning app that uses AI to generate stories for your level.",

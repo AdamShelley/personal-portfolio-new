@@ -35,7 +35,6 @@ const AboutContainer = styled.section`
 
     h2 {
       font-size: 2rem;
-      /* margin-left: 0.5rem; */
       font-weight: 400;
     }
 

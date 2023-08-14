@@ -14,10 +14,12 @@ const CardContainer = styled.article`
   min-height: 30rem;
   max-height: 30rem;
   transition: all 0.3 ease-in-out;
-  border-radius: 5px;
+  border-radius: 6px;
   margin: 1.5rem;
   position: relative;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.65);
+  border: 1px solid #585858;
+  overflow: hidden;
 
   /* Card Hover title transitions */
   a h3 {

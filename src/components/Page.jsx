@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { projectData } from "../../projects-data";
 import { IoMdArrowBack } from "react-icons/io";
+import { HiExternalLink } from "react-icons/hi";
 import { useState } from "react";
 
 const PageContainer = styled.section`
@@ -86,11 +87,21 @@ const PageContainer = styled.section`
           font-size: 0.8rem;
           font-weight: 500;
 
+          svg {
+            font-size: 1.5rem;
+            color: #ccc;
+            transition: all 250ms ease-in-out;
+          }
+
           &:hover {
             background: linear-gradient(115deg, green, green);
             color: #fff;
             box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
+          }
+
+          &:hover svg {
+            color: #fff;
           }
 
           > a {
@@ -170,7 +181,13 @@ const PageContainer = styled.section`
           flex-wrap: wrap;
 
           .small-box {
-            min-width: 5rem;
+            min-width: 3rem;
+            margin: 0;
+            margin-right: 0.4rem;
+            margin-top: 0.4rem;
+            /* background: #fff;
+            color: #1a1a1a; */
+            background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
           }
         }
 
@@ -349,6 +366,7 @@ const Page = () => {
                   >
                     Visit The Website
                   </a>
+                  <HiExternalLink />
                 </li>
               )}
               {project.npm && (
@@ -360,6 +378,7 @@ const Page = () => {
                   >
                     npm
                   </a>
+                  <HiExternalLink />
                 </li>
               )}
 
@@ -372,6 +391,7 @@ const Page = () => {
                   >
                     Github
                   </a>
+                  <HiExternalLink />
                 </li>
               </ul>
             </ul>

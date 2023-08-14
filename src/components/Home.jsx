@@ -24,16 +24,13 @@ const HomeContainer = styled.section`
 
   a {
     color: #ccc;
-    /* background-color: green; */
     font-weight: 900;
     padding: 0.5rem;
     transition: all 0.3s ease-in-out;
-    /* box-shadow: 0 5px 20px #00000090; */
     text-decoration: none;
     border-bottom: 2px solid green;
 
     &:hover {
-      /* background-color: #11ff003f; */
       color: green;
     }
   }

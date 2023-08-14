@@ -142,7 +142,7 @@ const PageContainer = styled.section`
           align-items: center;
           justify-content: center;
           margin-right: 1rem;
-          border-radius: 5px;
+          border-radius: 6px;
           box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
           padding: 0.75rem 1.5rem;
           letter-spacing: 0.5px;
@@ -265,10 +265,10 @@ const PageContainer = styled.section`
           width: 100%;
 
           .small-box {
-            min-width: 4rem;
+            min-width: 3rem;
             margin: 0;
-            margin-right: 0.5rem;
-            margin-top: 0.5rem;
+            margin-right: 0.4rem;
+            margin-top: 0.4rem;
             /* background: #fff;
             color: #1a1a1a; */
             background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
@@ -567,9 +567,7 @@ const LangAI = () => {
           <Link to="/projects">
             <IoMdArrowBack />
           </Link>
-          <h2>
-            {project.name} <p>(Working Title)</p>
-          </h2>
+          <h2>{project.name}</h2>
 
           <section>
             <h4>Stack</h4>
@@ -635,7 +633,7 @@ const LangAI = () => {
               <div className="top-section-image">
                 <img
                   style={{
-                    boxShadow: "4px 8px 0 rgba(0, 0, 0, 0.45)",
+                    boxShadow: "6px 8px 0 rgba(0,0,0,0.15)",
                     borderRadius: "15px",
                   }}
                   src={`../../assets/${project.name}/LangAI-gif.gif`}

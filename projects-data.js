@@ -6,7 +6,7 @@ export const projectData = [
     imageName: "guesswords-screenshot",
     github: "https://github.com/AdamShelley/Guessagram",
     npm: "",
-    skills: ["NextJS", "Typescript", "Tailwind", "Prisma", "Railway"],
+    skills: ["Typescript", "Tailwind", "Prisma", "Railway", "NextJS"],
     screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
     description: "A word guessing game, automatically reset daily.",
     background:

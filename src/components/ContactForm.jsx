@@ -8,18 +8,10 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  /* border: 1px solid #051c2c; */
-  /* background-color: #051c2c; */
-  /* box-shadow: 0 10px 10px #000; */
   color: #ccc;
-  /* padding: 2rem; */
   border-radius: 5px;
   width: 40%;
   font-family: "Ubuntu", sans-serif;
-
-  /* border: 1px solid #1a1a1a;
-  background-color: #1a1a1a;
-  color: #eee !important; */
 
   label {
     font-size: 1.4rem;

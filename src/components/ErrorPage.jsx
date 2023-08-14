@@ -21,8 +21,10 @@ const StyledErrorPage = styled.section`
 
   a {
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
-    color: inherit;
+    color: #f6cd5d;
+    text-decoration: none;
   }
 `;
 
@@ -31,10 +33,12 @@ const ErrorPage = () => {
   console.error(error);
   return (
     <StyledErrorPage>
-      <h2>404 - Not found!</h2>
-      <p>Sorry, an unexpected error has occurred.</p>
+      <h2>How did you even get here?!</h2>
+      <p> </p>
 
       <Link to="/">Go back home!</Link>
+      <Link to="/projects">Or take a look at my projects.</Link>
+      <Link to="/contact">Or contact me.</Link>
     </StyledErrorPage>
   );
 };
