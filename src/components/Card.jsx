@@ -18,7 +18,7 @@ const CardContainer = styled.article`
   margin: 1.5rem;
   position: relative;
   box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.65);
-  border: 1px solid #585858;
+  border: 1px solid #000000d7;
   overflow: hidden;
 
   /* Card Hover title transitions */

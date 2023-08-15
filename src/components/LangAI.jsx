@@ -9,8 +9,9 @@ import { GiButtonFinger, GiPiggyBank } from "react-icons/gi";
 import { useState } from "react";
 
 const lang_ai_android_build =
-  "https://expo.dev/artifacts/eas/eXbvroPVAikLoL31PhQ5b3.apk";
+  "https://expo.dev/artifacts/eas/tUT5fzFtbE4gBqM3ahBrDv.apk";
 
+// TODO: Clear up the styled components
 const PageContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -539,6 +540,39 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const SummaryStyles = styled.summary`
+  list-style: none;
+  cursor: pointer;
+  outline: none;
+  color: #333;
+  display: flex;
+  margin-top: 1rem;
+
+  /* Hide default */
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Add new arrow */
+  &::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: all 250ms ease-in-out;
+  }
+
+  details[open] &::before {
+    transform: rotate(90deg);
+    color: darkgreen;
+  }
+
+  @media screen and (max-width: 800px) {
+    color: #eee;
+  }
+`;
+
+// TODO: Breakdown into smaller comps
 const LangAI = () => {
   const location = useLocation();
   let project = location.state;
@@ -643,36 +677,69 @@ const LangAI = () => {
             </ParagraphStyles>
             <ParagraphStyles>
               <span>Patch Notes</span>
-              <p>Last Updated: 11/08/2023</p>
+              <p>Last Updated: 15/08/2023</p>
 
-              <p class="bolden mt-2">V0.0.5</p>
+              <p class="bolden">v0.0.6</p>
               <ul>
-                <li>Fixed heading border issue on stories page. </li>
-                <li>Non-styling improvements to all pages. </li>
                 <li>
-                  When the device is offline, the stories should now load
-                  correctly from cache.
+                  Translation box on the story page is now easier to read.
                 </li>
-                <li>Data fetching optimized / Cleaned up. </li>
+                <li> Fixed a problem with dictionary not loading all words.</li>
+                <li>New Splash/icon.</li>
                 <li>
-                  On the backend - votes automatically calculated after duration
-                  has been reached (WIP).
+                  When showing pinyin at different font sizes, it should jump
+                  less.
                 </li>
-                <li>Punctuation improvements on the backend.</li>
+                <li>
+                  Last week stories now show up on the home page (properly
+                  filtered).
+                </li>
+                <li>
+                  Various styling improvements to make the app look more
+                  cohesive.
+                </li>
               </ul>
 
-              <p class="bolden mt-2">V0.0.4</p>
-              <ul>
-                <li>Fixed haptics for android.</li>
-                <li>Added loading skeleton for the home page.</li>
-                <li>Internal code cleanup.</li>
-              </ul>
+              <details>
+                <SummaryStyles>
+                  <p class="bolden">v0.0.5</p>
+                </SummaryStyles>
+                <ul>
+                  <li>Fixed heading border issue on stories page. </li>
+                  <li>Non-styling improvements to all pages. </li>
+                  <li>
+                    When the device is offline, the stories should now load
+                    correctly from cache.
+                  </li>
+                  <li>Data fetching optimized / Cleaned up. </li>
+                  <li>
+                    On the backend - votes automatically calculated after
+                    duration has been reached (WIP).
+                  </li>
+                  <li>Punctuation improvements on the backend.</li>
+                </ul>
+              </details>
 
-              <p class="bolden mt-2">V0.0.3</p>
-              <ul>
-                <li>Initial release of .apk files.</li>
-                <li>Backend updated to handle voting duration cutoff.</li>
-              </ul>
+              <details>
+                <SummaryStyles>
+                  <p class="bolden">v0.0.4</p>
+                </SummaryStyles>
+                <ul>
+                  <li>Fixed haptics for android.</li>
+                  <li>Added loading skeleton for the home page.</li>
+                  <li>Internal code cleanup.</li>
+                </ul>
+              </details>
+
+              <details>
+                <SummaryStyles>
+                  <p class="bolden">v0.0.3</p>
+                </SummaryStyles>
+                <ul>
+                  <li>Initial release of .apk files.</li>
+                  <li>Backend updated to handle voting duration cutoff.</li>
+                </ul>
+              </details>
             </ParagraphStyles>
           </section>
 
@@ -687,25 +754,6 @@ const LangAI = () => {
                 to practice reading with.
               </p>
             </ParagraphStyles>
-            {/* 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "5rem",
-              }}
-            >
-              <img
-                style={{
-                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-                  borderRadius: "5px",
-                  border: "3px solid #333",
-                }}
-                src={`../../assets/${project.name}/LangAI-gif.gif`}
-                alt={project.name + " screenshot"}
-              />
-            </div> */}
 
             <ParagraphStyles>
               <span>

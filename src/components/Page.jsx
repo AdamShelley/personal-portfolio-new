@@ -331,6 +331,8 @@ const Page = () => {
     document.title = `${project.name} | Adam Shelley`;
   }, []);
 
+  console.log(project);
+
   return (
     <PageContainer>
       {project && (

@@ -7,7 +7,12 @@ export const projectData = [
     github: "https://github.com/AdamShelley/Guessagram",
     npm: "",
     skills: ["Typescript", "Tailwind", "Prisma", "Railway", "NextJS"],
-    screenshots: ["guesswords1.png", "guesswords2.png", "guesswords3.png"],
+    screenshots: [
+      "Guessagram1.png",
+      "Guessagram2.png",
+      "Guessagram3.png",
+      "Guessagram1.png",
+    ],
     description: "A word guessing game, automatically reset daily.",
     background:
       "With the success of Wordle, many have tried making their own small addictive game. This is my version. I used NextJS to handle the frontend and Tailwind for the styling. I used Prisma to link to a postgres database hosted on Railway. The database is automatically reset daily using a cron job.  ",
