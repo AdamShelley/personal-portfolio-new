@@ -29,6 +29,10 @@ const StyledFooter = styled.footer`
       color: #ccc;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    margin-top: 5rem;
+  }
 `;
 
 const Footer = () => {

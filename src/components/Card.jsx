@@ -179,6 +179,7 @@ const CardContainer = styled.article`
     margin-right: 0;
     margin-left: 0;
     position: relative;
+    box-shadow: none;
 
     &:hover a h3 {
       border-bottom: none;

@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
+import { HashLink } from "react-router-hash-link";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { projectsWIP } from "../../projects-wip";
 import { IoIosThumbsUp, IoMdArrowBack } from "react-icons/io";
 import { BiDownload, BiBookContent, BiBrain, BiWorld } from "react-icons/bi";
 import { GiButtonFinger, GiPiggyBank } from "react-icons/gi";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import { useState } from "react";
 
 const lang_ai_android_build =
@@ -33,15 +35,15 @@ const PageContainer = styled.section`
     margin-top: 2rem;
   }
 
-  .page-set:first-of-type {
+  /* .page-set:first-of-type {
     margin-top: 5rem;
-  }
+  } */
 
   .page-set {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 70%;
+    width: 80%;
     height: 400px;
     height: 100%;
     padding: 2rem;
@@ -51,7 +53,11 @@ const PageContainer = styled.section`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
+      /* width: 100%; */
+
+      > div {
+        margin-top: 0rem !important;
+      }
 
       p {
         font-weight: 200;
@@ -342,17 +348,15 @@ const PageContainer = styled.section`
   }
 `;
 
-const ParagraphStyles = styled.p`
-  margin-top: 2rem;
+const ParagraphStyles = styled.div`
+  margin: 2rem 0rem;
   line-height: 1.5;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 
   &.top-section {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-left: 1rem;
 
     .top-section-image {
       display: flex;
@@ -375,8 +379,6 @@ const ParagraphStyles = styled.p`
     margin-top: 1rem;
     list-style-type: square;
 
-    /* width: 70%; */
-
     li {
       line-height: 1.8;
       margin-left: 1rem;
@@ -385,30 +387,9 @@ const ParagraphStyles = styled.p`
     }
   }
 
-  .goals {
-    list-style: none;
-
-    li {
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    li > svg {
-      min-width: 30px;
-      min-height: 30px;
-      margin-right: 1rem;
-      color: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
   span {
     display: block;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     background-color: #1a1a1a;
     color: white;
     margin-right: 0.5rem;
@@ -422,8 +403,26 @@ const ParagraphStyles = styled.p`
   h3 {
   }
 
-  p {
+  > p {
     font-weight: 100;
+    margin-left: 1rem;
+  }
+
+  .toplink {
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+
+    &:hover {
+      color: green;
+    }
+
+    svg {
+      margin-right: 0.5rem;
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -432,7 +431,8 @@ const ParagraphStyles = styled.p`
     &.top-section {
       flex-direction: column;
       align-items: center;
-      margin-top: 5rem;
+      /* margin-top: 5rem; */
+      margin-left: 0;
 
       .top-section-image {
         width: 100%;
@@ -455,13 +455,59 @@ const ParagraphStyles = styled.p`
         margin-left: 0rem;
       }
     }
-    .goals li svg {
-      display: none;
-    }
 
     span {
       background-color: #f8f8f8;
       color: #1a1a1a;
+    }
+
+    > p {
+      margin-left: 0rem;
+    }
+
+    .toplink {
+      color: #eee;
+      margin-left: 0rem;
+    }
+  }
+`;
+
+const GoalItemStyles = styled.ul`
+  list-style: none;
+
+  li {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    color: #333;
+    font-size: 0.9rem;
+
+    /* margin-left: 0 !important; */
+  }
+
+  svg {
+    margin-right: 10px;
+    min-width: 30px;
+    min-height: 30px;
+    margin-right: 1rem;
+    color: #1a1a1a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    li {
+      margin-left: 0;
+      color: #eee;
+      display: inline;
+    }
+
+    li svg {
+      display: none;
     }
   }
 `;
@@ -499,6 +545,16 @@ const TechStackStyles = styled.ul`
     margin-top: 2rem !important;
     text-align: center;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    li {
+      display: inline;
+    }
   }
 `;
 
@@ -506,8 +562,8 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 2rem 0;
-  margin-left: 0.5rem;
+  margin: 0rem 0;
+  /* margin-left: 0.5rem; */
 
   a {
     display: inline-block;
@@ -537,6 +593,11 @@ const ButtonContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     justify-content: center;
+    margin: 2rem 0;
+
+    a {
+      border: 1px solid #eee;
+    }
   }
 `;
 
@@ -547,6 +608,7 @@ const SummaryStyles = styled.summary`
   color: #333;
   display: flex;
   margin-top: 1rem;
+  align-items: center;
 
   /* Hide default */
   &::-webkit-details-marker {
@@ -555,20 +617,91 @@ const SummaryStyles = styled.summary`
 
   /* Add new arrow */
   &::before {
-    content: "▶";
+    content: "";
     display: inline-block;
     margin-right: 8px;
     vertical-align: middle;
     transition: all 250ms ease-in-out;
+    width: 0;
+    height: 0;
+    border-left: 8px solid black;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    vertical-align: middle;
   }
 
   details[open] &::before {
     transform: rotate(90deg);
-    color: darkgreen;
   }
 
   @media screen and (max-width: 800px) {
     color: #eee;
+
+    &::before {
+      border-left: 8px solid #eee;
+    }
+  }
+`;
+
+const BoldText = styled.h5`
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+`;
+
+const DetailsStyles = styled.details`
+  margin-top: 1rem;
+  margin-left: 1rem;
+  color: #333;
+
+  @media screen and (max-width: 800px) {
+    color: #eee;
+    margin-left: 0;
+
+    ul {
+      margin-left: 1rem;
+    }
+  }
+`;
+
+const ContentsStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    color: #333;
+    font-size: 0.9rem;
+    /* margin-left: 0 !important; */
+    margin-left: 0.5rem;
+  }
+
+  a {
+    color: darkgreen;
+    font-weight: 500;
+
+    &:hover {
+      color: green;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    a {
+      color: #eee;
+    }
   }
 `;
 
@@ -613,27 +746,125 @@ const LangAI = () => {
               ))}
             </ul>
 
+            <ContentsStyles>
+              <h3>Contents:</h3>
+              <ul>
+                <li>
+                  <HashLink smooth to="#why">
+                    Why?
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink smooth to="#goals">
+                    Goals
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink smooth to="#download">
+                    Android Download
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink smooth to="#screenshots">
+                    Screenshots
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink smooth to="#tech">
+                    Tech & API's
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink smooth to="#patch-notes">
+                    Patch Notes
+                  </HashLink>
+                </li>
+              </ul>
+            </ContentsStyles>
+
+            {/* WHY */}
             <ParagraphStyles>
-              <span>Android Download</span>
+              <span id="why">Why?</span>
+
+              <p>
+                I wanted to create an app that could help me learn a language
+                (specifically Chinese). One of the major difficulties I found
+                with the learning process was finding enough content at my level
+                to practice reading with.
+              </p>
+            </ParagraphStyles>
+
+            {/* GOALS */}
+            <ParagraphStyles>
+              <span id="goals">Goals for the app:</span>
+              <GoalItemStyles>
+                <li>
+                  <BiBookContent />
+                  <BoldText>Creation of Stories: </BoldText> Designed to craft
+                  engaging stories tailored to different profiency levels and
+                  with different genres.
+                </li>
+                <li>
+                  <BiBrain />
+                  <BoldText>AI Integration: </BoldText> It should utilize AI to
+                  generate the stories and the cover pictures for them.
+                </li>
+                <li>
+                  <IoIosThumbsUp />
+                  <BoldText>UX: </BoldText> It should feel easy and comfortable
+                  to use.
+                </li>
+
+                <li>
+                  <GiPiggyBank />
+                  <BoldText>Cost Effective: </BoldText>Mindful of expenses
+                  related to AI APIs, utilizing Databases economically.
+                </li>
+                <li>
+                  <GiButtonFinger />
+                  <BoldText>Interativity: </BoldText>Giving the users the
+                  ability to vote on which direction the story should go in
+                  future, adding an interactive story aspect.
+                </li>
+                <li>
+                  <BiWorld />
+                  <BoldText>Multilingual Potential: </BoldText>Currently the
+                  focus is on Chinese but this app could be modified to include
+                  other languages too.
+                </li>
+              </GoalItemStyles>
+            </ParagraphStyles>
+
+            {/* ANDROID DL */}
+            <ParagraphStyles>
+              <span id="download">Android Download</span>
             </ParagraphStyles>
             <ParagraphStyles className="top-section">
               <div>
-                You can download the first .apk file below to try on android
-                phones.
+                <p>
+                  You can download the .apk file below to try on android phones.
+                </p>
                 <h3 className="mt-2">Features</h3>
                 <ul>
                   <li>Stories and Pictures generated by AI.</li>
-                  <li>Pressed words show translation in English.</li>
-                  <li>Stories can be filtered by genre and level.</li>
                   <li>
-                    Stories can be voted on by users if voting is enabled.
+                    Tap to translate unfamiliar words for instant English
+                    translations.
+                  </li>
+                  <li>
+                    Stories can be filtered by genre and level for a tailored
+                    reading experience.
+                  </li>
+                  <li>
+                    User-driven narratives, stories can be voted on by users for
+                    a more interactive experience.
                   </li>
                   <li>Dark mode and Light mode.</li>
                 </ul>
                 <h3 className="mt-2">Known Issues</h3>
                 <ul>
                   <li>
-                    It is not optimized, especially for very small/large android
+                    Not fully optimized, especially for very small/large android
                     phones.
                   </li>
                   <li>
@@ -659,7 +890,7 @@ const LangAI = () => {
                 <p style={{ marginTop: "1rem", fontWeight: 100 }}>
                   Thank you for testing my app.
                 </p>
-                <p className="mt-2">
+                <p className="mt-2" style={{ fontWeight: 300 }}>
                   Note - you might get a warning from Google Play Protect as
                   this app is not yet on the Play Store.
                 </p>
@@ -675,121 +906,12 @@ const LangAI = () => {
                 />
               </div>
             </ParagraphStyles>
-            <ParagraphStyles>
-              <span>Patch Notes</span>
-              <p>Last Updated: 15/08/2023</p>
-
-              <p class="bolden">v0.0.6</p>
-              <ul>
-                <li>
-                  Translation box on the story page is now easier to read.
-                </li>
-                <li> Fixed a problem with dictionary not loading all words.</li>
-                <li>New Splash/icon.</li>
-                <li>
-                  When showing pinyin at different font sizes, it should jump
-                  less.
-                </li>
-                <li>
-                  Last week stories now show up on the home page (properly
-                  filtered).
-                </li>
-                <li>
-                  Various styling improvements to make the app look more
-                  cohesive.
-                </li>
-              </ul>
-
-              <details>
-                <SummaryStyles>
-                  <p class="bolden">v0.0.5</p>
-                </SummaryStyles>
-                <ul>
-                  <li>Fixed heading border issue on stories page. </li>
-                  <li>Non-styling improvements to all pages. </li>
-                  <li>
-                    When the device is offline, the stories should now load
-                    correctly from cache.
-                  </li>
-                  <li>Data fetching optimized / Cleaned up. </li>
-                  <li>
-                    On the backend - votes automatically calculated after
-                    duration has been reached (WIP).
-                  </li>
-                  <li>Punctuation improvements on the backend.</li>
-                </ul>
-              </details>
-
-              <details>
-                <SummaryStyles>
-                  <p class="bolden">v0.0.4</p>
-                </SummaryStyles>
-                <ul>
-                  <li>Fixed haptics for android.</li>
-                  <li>Added loading skeleton for the home page.</li>
-                  <li>Internal code cleanup.</li>
-                </ul>
-              </details>
-
-              <details>
-                <SummaryStyles>
-                  <p class="bolden">v0.0.3</p>
-                </SummaryStyles>
-                <ul>
-                  <li>Initial release of .apk files.</li>
-                  <li>Backend updated to handle voting duration cutoff.</li>
-                </ul>
-              </details>
-            </ParagraphStyles>
           </section>
 
+          {/* PROJECT OVERVIEW */}
           <section>
             <ParagraphStyles>
-              <span>The Why</span>
-
-              <p>
-                I wanted to create an app that could help me learn a language
-                (specifically Chinese). One of the major difficulties I found
-                with the learning process was finding enough content at my level
-                to practice reading with.
-              </p>
-            </ParagraphStyles>
-
-            <ParagraphStyles>
-              <span>
-                I decided that it should have the following goals in mind:
-              </span>
-              <ul className="goals">
-                <li>
-                  <BiBookContent />
-                  It should create interesting stories at different levels and
-                  about different topics.
-                </li>
-                <li>
-                  <BiBrain />
-                  It should utilize AI to generate the stories and the cover
-                  pictures for them.
-                </li>
-                <li>
-                  <IoIosThumbsUp />
-                  It should feel easy and comfortable to use.
-                </li>
-
-                <li>
-                  <GiPiggyBank />
-                  It should be cheap to run, bearing in the mind that AI APIs
-                  cost money, so databases will be required to capture the data.
-                </li>
-                <li>
-                  <GiButtonFinger />A user interactivity aspect. Giving the
-                  users the ability to vote on which direction the story should
-                  go in future, adding an interactive story aspect.
-                </li>
-                <li>
-                  <BiWorld />
-                  This app could be modified to include other languages too.
-                </li>
-              </ul>
+              <span id="screenshots">Screenshots</span>
             </ParagraphStyles>
             <div
               style={{
@@ -803,7 +925,7 @@ const LangAI = () => {
               <section className="page-set">
                 <div className="set-content">
                   <ParagraphStyles>
-                    This is the story page, you can show/hide pinyin.
+                    <p>This is the story page, you can show/hide pinyin.</p>
                   </ParagraphStyles>
                 </div>
                 <li
@@ -857,15 +979,17 @@ const LangAI = () => {
                 </li>
                 <div className="set-content">
                   <ParagraphStyles>
-                    If you forget a word, it can be pressed and the definition
-                    will appear.
+                    <p>
+                      If you forget a word, it can be pressed and the definition
+                      will appear.
+                    </p>
                   </ParagraphStyles>
                 </div>
               </section>
               <section className="page-set">
                 <div className="set-content">
                   <ParagraphStyles>
-                    The stories can be filtered by genre and level.
+                    <p>The stories can be filtered by genre and level.</p>
                   </ParagraphStyles>
                 </div>
                 <li
@@ -900,7 +1024,7 @@ const LangAI = () => {
                 </li>
                 <div className="set-content">
                   <ParagraphStyles>
-                    Vote for where you want the story to go next.
+                    <p>Vote for where you want the story to go next.</p>
                   </ParagraphStyles>
                 </div>
               </section>
@@ -908,7 +1032,8 @@ const LangAI = () => {
           </section>
 
           <ParagraphStyles>
-            <span>Tech & API's</span>
+            {/* DETAILS ON STACK */}
+            <span id="tech">Tech & API's</span>
             <TechStackStyles>
               <li>
                 <h3>Frontend</h3> React Native with Expo GO
@@ -930,7 +1055,78 @@ const LangAI = () => {
               </li>
             </TechStackStyles>
           </ParagraphStyles>
+          {/* PATCH NOTES */}
+          <ParagraphStyles>
+            <span id="patch-notes">Patch Notes</span>
+            <p className="bolden">Last Updated: 15/08/2023</p>
 
+            <p className="bolden mt-2">v0.0.6</p>
+            <ul style={{ marginLeft: "1rem" }}>
+              <li>Translation box on the story page is now easier to read.</li>
+              <li> Fixed a problem with dictionary not loading all words.</li>
+              <li>New Splash/icon.</li>
+              <li>
+                When showing pinyin at different font sizes, it should jump
+                less.
+              </li>
+              <li>
+                Last week stories now show up on the home page (properly
+                filtered).
+              </li>
+              <li>
+                Various styling improvements to make the app look more cohesive.
+              </li>
+            </ul>
+
+            <DetailsStyles>
+              <SummaryStyles>
+                <p className="bolden">v0.0.5</p>
+              </SummaryStyles>
+              <ul>
+                <li>Fixed heading border issue on stories page. </li>
+                <li>Non-styling improvements to all pages. </li>
+                <li>
+                  When the device is offline, the stories should now load
+                  correctly from cache.
+                </li>
+                <li>Data fetching optimized / Cleaned up. </li>
+                <li>
+                  On the backend - votes automatically calculated after duration
+                  has been reached (WIP).
+                </li>
+                <li>Punctuation improvements on the backend.</li>
+              </ul>
+            </DetailsStyles>
+
+            <DetailsStyles>
+              <SummaryStyles>
+                <p className="bolden">v0.0.4</p>
+              </SummaryStyles>
+              <ul>
+                <li>Fixed haptics for android.</li>
+                <li>Added loading skeleton for the home page.</li>
+                <li>Internal code cleanup.</li>
+              </ul>
+            </DetailsStyles>
+
+            <DetailsStyles>
+              <SummaryStyles>
+                <p className="bolden">v0.0.3</p>
+              </SummaryStyles>
+              <ul>
+                <li>Initial release of .apk files.</li>
+                <li>Backend updated to handle voting duration cutoff.</li>
+              </ul>
+            </DetailsStyles>
+          </ParagraphStyles>
+
+          <ParagraphStyles>
+            <HashLink to="#top" className="toplink">
+              <AiOutlineArrowUp /> Go to top
+            </HashLink>
+          </ParagraphStyles>
+
+          {/* MODAL */}
           {selectedImage && (
             <ModalPortal>
               <ModalPortalStyles onClick={closeModal}>
