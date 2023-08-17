@@ -14,6 +14,13 @@
   min-height: 100vh;
 }
 
+
+@media screen and (min-width: 1600px) {
+  .App > div {
+    width: 60vw;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .App > div {
     width: 90vw;

@@ -17,7 +17,7 @@ const CardContainer = styled.article`
   border-radius: 6px;
   margin: 1.5rem;
   position: relative;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.65);
+  box-shadow: ${(props) => props.theme.cardShadow};
   border: 1px solid #000000d7;
   overflow: hidden;
 
@@ -185,9 +185,9 @@ const CardContainer = styled.article`
       border-bottom: none;
     }
 
-    &:first-child {
+    /* &:first-child {
       margin-top: 3rem;
-    }
+    } */
 
     .skills-container {
       justify-content: center;

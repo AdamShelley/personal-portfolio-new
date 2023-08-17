@@ -17,8 +17,8 @@ const PageContainer = styled.section`
 
   > div {
     margin: 4rem 0rem;
-    background-color: #e6e6e6;
-    border: 2px solid #e6e6e6;
+    background-color: ${(props) => props.theme.projectBackground};
+    border: 2px solid ${(props) => props.theme.text};
     min-height: 80vh;
     width: 100%;
     display: flex;
@@ -152,6 +152,10 @@ const PageContainer = styled.section`
     font-size: 2.5rem;
   }
 
+  @media screen and (min-width: 1600px) {
+    width: 40vw;
+  }
+
   @media screen and (max-width: 800px) {
     width: 105%;
 
@@ -159,7 +163,8 @@ const PageContainer = styled.section`
       margin-top: 0;
       background-color: transparent;
       border: 2px solid transparent;
-      color: white;
+      /* color: white; */
+      color: ${(props) => props.theme.text};
 
       h2 {
         margin-top: 0;
@@ -168,10 +173,10 @@ const PageContainer = styled.section`
       }
 
       section {
-        color: white;
+        color: ${(props) => props.theme.text};
 
         h4 {
-          color: #eee;
+          color: ${(props) => props.theme.text};
           margin-bottom: 0.5rem;
         }
 

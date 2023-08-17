@@ -8,7 +8,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: #ccc;
+  color: ${(props) => props.theme.contactFormText};
   border-radius: 5px;
   width: 40%;
   font-family: "Ubuntu", sans-serif;
@@ -25,7 +25,7 @@ const StyledForm = styled.form`
     width: 100%;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: #1a1a1a;
+    background-color: ${(props) => props.theme.contactFormBackground};
     color: #ccc;
     font-weight: 400;
     font-size: 1.2rem;

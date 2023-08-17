@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./styles/theme";
 
 import "./App.css";
 import Home from "./components/Home";
@@ -12,60 +14,76 @@ import ErrorPage from "./components/ErrorPage";
 import Page from "./components/Page";
 import LangAI from "./components/LangAI";
 
-const HeaderLayout = () => (
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.body};
+    color: ${(props) => props.theme.text};
+  }
+`;
+
+const HeaderLayout = ({ theme, themeToggler }) => (
   <>
-    <Navbar />
+    <Navbar theme={theme} themeToggler={themeToggler} />
     <Outlet />
   </>
 );
 
-const router = createBrowserRouter([
-  {
-    element: <HeaderLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/projects",
-        element: <Projects />,
-      },
-      {
-        path: "/projects/:projectname",
-        element: <Page />,
-      },
-      {
-        path: "/projects/wip/LangAI",
-        element: <LangAI />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/sitemap.xml",
-        element: <></>,
-      },
-    ],
-  },
-]);
-
 function App() {
+  const [theme, setTheme] = useState("dark");
+
+  const themeToggler = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
+
+  const router = createBrowserRouter([
+    {
+      element: <HeaderLayout theme={theme} themeToggler={themeToggler} />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/projects",
+          element: <Projects />,
+        },
+        {
+          path: "/projects/:projectname",
+          element: <Page />,
+        },
+        {
+          path: "/projects/wip/LangAI",
+          element: <LangAI />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/sitemap.xml",
+          element: <></>,
+        },
+      ],
+    },
+  ]);
+
   return (
-    <div className="App">
-      <div>
-        <React.Suspense fallback={<></>}>
-          <RouterProvider router={router} />
-        </React.Suspense>
-        <Footer />
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <GlobalStyles />
+      <div className="App">
+        <div>
+          <React.Suspense fallback={<></>}>
+            <RouterProvider router={router} />
+          </React.Suspense>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

@@ -19,11 +19,12 @@ const HomeContainer = styled.section`
 
   p:last-of-type {
     font-size: 1.5rem;
-    color: #d9d4d4;
+    color: ${(props) => props.theme.text};
+    opacity: 0.9;
   }
 
   a {
-    color: #ccc;
+    color: ${(props) => props.theme.text};
     font-weight: 900;
     padding: 0.5rem;
     transition: all 0.3s ease-in-out;

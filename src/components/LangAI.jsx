@@ -11,7 +11,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 import { useState } from "react";
 
 const lang_ai_android_build =
-  "https://expo.dev/artifacts/eas/tUT5fzFtbE4gBqM3ahBrDv.apk";
+  "https://expo.dev/artifacts/eas/vxfhyfTMjTfexT8Dvrakim.apk";
 
 // TODO: Clear up the styled components
 const PageContainer = styled.section`
@@ -20,7 +20,7 @@ const PageContainer = styled.section`
   align-items: center;
   justify-content: center;
   align-self: center;
-  width: 70vw;
+  width: 60vw;
 
   .strikethrough {
     text-decoration: line-through !important;
@@ -34,10 +34,6 @@ const PageContainer = styled.section`
     object-fit: contain;
     margin-top: 2rem;
   }
-
-  /* .page-set:first-of-type {
-    margin-top: 5rem;
-  } */
 
   .page-set {
     display: flex;
@@ -86,8 +82,8 @@ const PageContainer = styled.section`
 
   > div {
     margin: 4rem 0rem;
-    background-color: #e6e6e6;
-    border: 2px solid #e6e6e6;
+    background-color: ${(props) => props.theme.projectBackground};
+    border: 2px solid ${(props) => props.theme.text};
     min-height: 80vh;
     width: 100%;
     display: flex;
@@ -214,6 +210,10 @@ const PageContainer = styled.section`
     font-size: 2.5rem;
   }
 
+  @media screen and (min-width: 1700px) {
+    width: 40vw;
+  }
+
   @media screen and (max-width: 800px) {
     width: 105%;
 
@@ -228,8 +228,8 @@ const PageContainer = styled.section`
 
         p {
           /* background: linear-gradient(to bottom, #2a2a2a, #2a2a2a); */
-          background: #eee;
-          color: #615f5f;
+          background: ${(props) => props.theme.cardBackground};
+          color: #1a1a1a;
           box-shadow: none;
           border-radius: 15px;
           font-weight: 400;
@@ -247,7 +247,7 @@ const PageContainer = styled.section`
       margin-top: 0;
       background-color: transparent;
       border: 2px solid transparent;
-      color: white;
+      color: ${(props) => props.theme.text};
       padding: 1rem;
 
       img {
@@ -259,10 +259,11 @@ const PageContainer = styled.section`
         margin-top: 0;
         font-size: 2.5rem;
         margin-bottom: 2rem;
+        color: ${(props) => props.theme.text};
       }
 
       section {
-        color: white;
+        color: ${(props) => props.theme.text};
         width: 100%;
 
         ul {
@@ -356,7 +357,7 @@ const ParagraphStyles = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin-left: 1rem;
+    margin: 0 1rem;
 
     .top-section-image {
       display: flex;
@@ -384,6 +385,7 @@ const ParagraphStyles = styled.div`
       margin-left: 1rem;
       text-align: justify;
       font-weight: 100;
+      color: inherit;
     }
   }
 
@@ -432,7 +434,7 @@ const ParagraphStyles = styled.div`
       flex-direction: column;
       align-items: center;
       /* margin-top: 5rem; */
-      margin-left: 0;
+      /* margin-left: 0; */
 
       .top-section-image {
         width: 100%;
@@ -448,7 +450,7 @@ const ParagraphStyles = styled.div`
     }
 
     ul {
-      width: 100%;
+      /* width: 100%; */
       align-items: flex-start;
 
       li {
@@ -481,7 +483,7 @@ const GoalItemStyles = styled.ul`
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    color: #333;
+    color: ${(props) => props.theme.text};
     font-size: 0.9rem;
 
     /* margin-left: 0 !important; */
@@ -499,15 +501,33 @@ const GoalItemStyles = styled.ul`
     justify-content: center;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 1024px) and (max-width: 1420px) {
     li {
-      margin-left: 0;
-      color: #eee;
+      font-size: 0.85rem;
+      width: auto;
+
+      /* justify-content: space-between; */
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin: 0 1rem;
+
+    li {
       display: inline;
     }
 
     li svg {
       display: none;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    margin: 0;
+
+    li {
+      color: #eee;
+      margin-left: 0;
     }
   }
 `;
@@ -635,10 +655,10 @@ const SummaryStyles = styled.summary`
   }
 
   @media screen and (max-width: 800px) {
-    color: #eee;
+    color: ${(props) => props.theme.text};
 
     &::before {
-      border-left: 8px solid #eee;
+      border-left: 8px solid ${(props) => props.theme.text};
     }
   }
 `;
@@ -647,19 +667,24 @@ const BoldText = styled.h5`
   font-weight: 500;
   font-size: 1.1rem;
   margin-right: 0.5rem;
+
+  @media screen and (min-width: 1024px) {
+    width: 20%;
+    min-width: 20%;
+  }
 `;
 
 const DetailsStyles = styled.details`
   margin-top: 1rem;
   margin-left: 1rem;
-  color: #333;
+  color: ${(props) => props.theme.text};
 
   @media screen and (max-width: 800px) {
-    color: #eee;
+    color: ${(props) => props.theme.text};
     margin-left: 0;
 
     ul {
-      margin-left: 1rem;
+      margin: 0 1rem !important;
     }
   }
 `;
@@ -700,7 +725,7 @@ const ContentsStyles = styled.div`
 
   @media screen and (max-width: 800px) {
     a {
-      color: #eee;
+      color: ${(props) => props.theme.text};
     }
   }
 `;
@@ -737,7 +762,6 @@ const LangAI = () => {
           <h2>{project.name}</h2>
 
           <section>
-            <h4>Stack</h4>
             <ul>
               {project.skills.map((skill) => (
                 <li className="small-box" key={skill}>
@@ -800,37 +824,49 @@ const LangAI = () => {
               <GoalItemStyles>
                 <li>
                   <BiBookContent />
-                  <BoldText>Creation of Stories: </BoldText> Designed to craft
-                  engaging stories tailored to different profiency levels and
-                  with different genres.
+                  <BoldText>Story Creation: </BoldText>{" "}
+                  <p>
+                    Designed to craft engaging stories tailored to different
+                    profiency levels and with different genres.
+                  </p>
                 </li>
                 <li>
                   <BiBrain />
-                  <BoldText>AI Integration: </BoldText> It should utilize AI to
-                  generate the stories and the cover pictures for them.
+                  <BoldText>AI Integration: </BoldText>{" "}
+                  <p>
+                    It should utilize AI to generate the stories and the cover
+                    pictures for them.
+                  </p>
                 </li>
                 <li>
                   <IoIosThumbsUp />
-                  <BoldText>UX: </BoldText> It should feel easy and comfortable
-                  to use.
+                  <BoldText>UX: </BoldText>
+                  <p>It should feel easy and comfortable to use.</p>
                 </li>
 
                 <li>
                   <GiPiggyBank />
-                  <BoldText>Cost Effective: </BoldText>Mindful of expenses
-                  related to AI APIs, utilizing Databases economically.
+                  <BoldText>Cost Effective: </BoldText>
+                  <p>
+                    Mindful of expenses related to AI APIs, utilizing Databases
+                    economically.
+                  </p>
                 </li>
                 <li>
                   <GiButtonFinger />
-                  <BoldText>Interativity: </BoldText>Giving the users the
-                  ability to vote on which direction the story should go in
-                  future, adding an interactive story aspect.
+                  <BoldText>Interactivity: </BoldText>
+                  <p>
+                    Giving the users the ability to vote on which direction the
+                    story should go, adding an interactive story aspect.
+                  </p>
                 </li>
                 <li>
                   <BiWorld />
-                  <BoldText>Multilingual Potential: </BoldText>Currently the
-                  focus is on Chinese but this app could be modified to include
-                  other languages too.
+                  <BoldText>Multilingual Potential: </BoldText>
+                  <p>
+                    Currently the focus is on Chinese but this app could be
+                    modified to include other languages too.
+                  </p>
                 </li>
               </GoalItemStyles>
             </ParagraphStyles>
@@ -1058,25 +1094,39 @@ const LangAI = () => {
           {/* PATCH NOTES */}
           <ParagraphStyles>
             <span id="patch-notes">Patch Notes</span>
-            <p className="bolden">Last Updated: 15/08/2023</p>
+            <p className="bolden">Last Updated: 16/08/2023</p>
 
-            <p className="bolden mt-2">v0.0.6</p>
-            <ul style={{ marginLeft: "1rem" }}>
-              <li>Translation box on the story page is now easier to read.</li>
-              <li> Fixed a problem with dictionary not loading all words.</li>
-              <li>New Splash/icon.</li>
-              <li>
-                When showing pinyin at different font sizes, it should jump
-                less.
-              </li>
-              <li>
-                Last week stories now show up on the home page (properly
-                filtered).
-              </li>
-              <li>
-                Various styling improvements to make the app look more cohesive.
-              </li>
+            <p className="bolden mt-2">v0.0.7</p>
+            <ul style={{ margin: "0 1rem" }}>
+              <li>Added intro overlay to home page.</li>
+              <li>Fixed some android styling/animation issues.</li>
             </ul>
+
+            <DetailsStyles>
+              <SummaryStyles>
+                <p className="bolden">v0.0.6</p>
+              </SummaryStyles>
+
+              <ul>
+                <li>
+                  Translation box on the story page is now easier to read.
+                </li>
+                <li> Fixed a problem with dictionary not loading all words.</li>
+                <li>New Splash/icon.</li>
+                <li>
+                  When showing pinyin at different font sizes, it should jump
+                  less.
+                </li>
+                <li>
+                  Last week stories now show up on the home page (properly
+                  filtered).
+                </li>
+                <li>
+                  Various styling improvements to make the app look more
+                  cohesive.
+                </li>
+              </ul>
+            </DetailsStyles>
 
             <DetailsStyles>
               <SummaryStyles>
