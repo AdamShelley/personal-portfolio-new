@@ -179,23 +179,21 @@ const CardContainer = styled.article`
     margin-right: 0;
     margin-left: 0;
     position: relative;
-    box-shadow: none;
+    // If dark mode turn off box shadow
+    box-shadow: ${(props) =>
+      props.theme.name === "dark" ? "none !important" : props.theme.boxShadow};
+  }
 
-    &:hover a h3 {
-      border-bottom: none;
-    }
+  &:hover a h3 {
+    border-bottom: none;
+  }
 
-    /* &:first-child {
-      margin-top: 3rem;
-    } */
+  .skills-container {
+    justify-content: center;
+    margin: 0;
 
-    .skills-container {
-      justify-content: center;
-      margin: 0;
-
-      p {
-        margin: 0.2rem;
-      }
+    p {
+      margin: 0.2rem;
     }
   }
 `;

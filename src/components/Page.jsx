@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { projectData } from "../../projects-data";
 import { IoMdArrowBack } from "react-icons/io";
 import { HiExternalLink } from "react-icons/hi";
 import { useState } from "react";
+
+import { ParagraphStyles } from "../styles/styles";
+import ImageModal from "./ImageModal";
 
 const PageContainer = styled.section`
   display: flex;
@@ -250,62 +252,6 @@ const PageContainer = styled.section`
   }
 `;
 
-const ParagraphStyles = styled.p`
-  margin-top: 2rem;
-  line-height: 1.5;
-  font-weight: 100;
-
-  &:first-of-type {
-    margin-top: 5rem;
-  }
-
-  span {
-    display: block;
-    font-size: 1.1rem;
-    background-color: #1a1a1a;
-    color: white;
-    margin-right: 0.5rem;
-    padding: 0.4rem;
-    border-radius: 2px;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
-  }
-
-  p {
-    font-weight: 100;
-  }
-
-  @media screen and (max-width: 800px) {
-    line-height: 2;
-
-    span {
-      background-color: #f8f8f8;
-      color: #1a1a1a;
-    }
-  }
-`;
-
-const ModalPortalStyles = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-
-  img {
-    max-height: 80vh;
-    max-width: 80vw;
-    object-fit: contain;
-    border-radius: 10px;
-  }
-`;
-
 const Page = () => {
   const location = useLocation();
   let project = location.state;
@@ -436,31 +382,11 @@ const Page = () => {
             </ParagraphStyles>
           </section>
 
-          {selectedImage && (
-            <ModalPortal>
-              <ModalPortalStyles onClick={closeModal}>
-                <img src={selectedImage} alt="Expanded view" />
-              </ModalPortalStyles>
-            </ModalPortal>
-          )}
+          <ImageModal selectedImage={selectedImage} closeModal={closeModal} />
         </div>
       )}
     </PageContainer>
   );
-};
-
-const ModalPortal = ({ children }) => {
-  const modalRoot = document.getElementById("modal-root");
-  const el = document.createElement("div");
-
-  useEffect(() => {
-    modalRoot.appendChild(el);
-    return () => {
-      modalRoot.removeChild(el);
-    };
-  }, [el, modalRoot]);
-
-  return ReactDOM.createPortal(children, el);
 };
 
 export default Page;

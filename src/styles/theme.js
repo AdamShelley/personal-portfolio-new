@@ -1,4 +1,5 @@
 export const lightTheme = {
+  name: "light",
   body: "#eee",
   text: "#363537",
   toggleBorder: "#FFF",
@@ -11,6 +12,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+  name: "dark",
   body: "#1a1a1a",
   text: "#eee",
   lightGreen: "#40bd27",

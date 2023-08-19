@@ -1,7 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 const StyledNav = styled.nav`
   margin-top: 1rem;
@@ -135,6 +135,7 @@ const StyledNav = styled.nav`
         padding: 0.5rem;
         border: none;
         padding-bottom: 0.3rem;
+        border-bottom: 2px solid transparent;
       }
 
       a.active {
@@ -157,20 +158,52 @@ const StyledThemeToggler = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
-  padding: 1rem;
-  background-color: #1a1a1a;
+  align-self: center;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.text};
   margin-left: 2rem;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease, transform: 0.2s ease;
 
-  /* border: 1px solid ${(props) => props.theme.text}; */
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   svg {
-    color: #eee;
+    transition: all 500ms ease;
+    color: ${(props) => props.theme.body};
+  }
+
+  .fade-out.sun {
+    transform: translateY(-50%) translateX(100%);
+    opacity: 0;
+  }
+
+  .fade-out.moon {
+    transform: translateY(-30%) translateX(100%);
+    opacity: 0;
+  }
+
+  .fade-in.sun {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .fade-in.moon {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   @media screen and (max-width: 800px) {
     align-self: center;
     padding: 0.5rem;
+    width: 30px;
+    height: 30px;
 
     svg {
       width: 1rem;
@@ -180,6 +213,18 @@ const StyledThemeToggler = styled.div`
 `;
 
 const Navbar = ({ theme, themeToggler }) => {
+  const [isToggling, setIsToggling] = useState(false);
+
+  const handleThemeToggle = () => {
+    setIsToggling(true);
+    setTimeout(() => {
+      themeToggler();
+      setTimeout(() => {
+        setIsToggling(false);
+      }, 500);
+    }, 500);
+  };
+
   return (
     <StyledNav>
       <ul>
@@ -195,11 +240,33 @@ const Navbar = ({ theme, themeToggler }) => {
         <li>
           <NavLink to="/contact">Contact</NavLink>
         </li>
-        <StyledThemeToggler onClick={themeToggler}>
+
+        <StyledThemeToggler
+          onClick={handleThemeToggle}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
           {theme === "dark" ? (
-            <BsFillSunFill size={20} />
+            <BsFillSunFill
+              // size={20}
+              className={
+                isToggling && theme === "dark"
+                  ? "fade-out sun"
+                  : !isToggling && theme !== "dark"
+                  ? "fade-in sun"
+                  : ""
+              }
+            />
           ) : (
-            <BsMoonStarsFill size={20} />
+            <BsFillMoonFill
+              // size={20}
+              className={
+                isToggling && theme !== "dark"
+                  ? "fade-out moon"
+                  : !isToggling && theme === "dark"
+                  ? "fade-in moon"
+                  : ""
+              }
+            />
           )}
         </StyledThemeToggler>
       </ul>

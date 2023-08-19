@@ -29,10 +29,16 @@ const HeaderLayout = ({ theme, themeToggler }) => (
 );
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  // Get theme choice from localstorage if it exists
+  const localTheme = localStorage.getItem("theme");
+
+  const [theme, setTheme] = useState(localTheme || "dark");
 
   const themeToggler = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark");
+
+    // Save theme choice to localstorage
+    localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
   };
 
   const router = createBrowserRouter([
