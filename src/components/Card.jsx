@@ -112,6 +112,14 @@ const CardContainer = styled.article`
       align-self: center;
     }
 
+    a:focus {
+      outline: 3px solid green;
+      background-color: green;
+      color: white;
+      z-index: 100;
+      border-radius: 10px;
+    }
+
     h3 {
       margin-top: 1rem;
       font-size: 1.5rem;
@@ -218,7 +226,11 @@ const Card = ({ project, wipBanner, customPage }) => {
     <CardContainer image={`/assets/${imageName}-small.png`}>
       <div className={`img-container`}>
         {wipBanner && <WipBanner>Work In Progress</WipBanner>}
-        <Link to={customPage ? customPage : `${name}`} state={project}>
+        <Link
+          tabIndex="-1"
+          to={customPage ? customPage : `${name}`}
+          state={project}
+        >
           <img src={`/assets/${imageName}.png`} alt={name + " picture"} />
         </Link>
       </div>

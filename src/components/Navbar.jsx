@@ -21,6 +21,9 @@ const StyledNav = styled.nav`
     overflow: hidden;
   }
 
+  
+
+
   // The green block on active link/hovered link
   li::after {
     content: "";
@@ -60,6 +63,11 @@ const StyledNav = styled.nav`
     &.active:hover {
       color: #eee;
     }
+
+    &:focus {
+      background-color: green !important;
+    }
+
   }
 
   @supports selector(:has(h1)) {
@@ -116,6 +124,7 @@ const StyledNav = styled.nav`
     justify-content: center;
     width: 100%;
     margin-bottom: 3rem;
+    
 
     ul {
       align-items: center;
@@ -152,7 +161,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledThemeToggler = styled.div`
+const StyledThemeToggler = styled.button`
   cursor: pointer;
   z-index: 1;
   display: flex;
@@ -165,6 +174,7 @@ const StyledThemeToggler = styled.div`
   width: 40px;
   height: 40px;
   transition: background-color 0.3s ease, transform: 0.2s ease;
+  border: none;
 
   &:hover {
     opacity: 0.9;
@@ -242,6 +252,7 @@ const Navbar = ({ theme, themeToggler }) => {
         </li>
 
         <StyledThemeToggler
+          tabIndex="0"
           onClick={handleThemeToggle}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >

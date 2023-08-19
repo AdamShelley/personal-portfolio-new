@@ -34,6 +34,11 @@ const HomeContainer = styled.section`
     &:hover {
       color: green;
     }
+
+    &:focus {
+      outline: 3px solid green;
+      background-color: green;
+    }
   }
 
   @media screen and (max-width: 800px) {
