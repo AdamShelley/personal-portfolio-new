@@ -9,6 +9,7 @@ export const lightTheme = {
   cardShadow: "8px 8px 0 rgba(0, 0, 0, 0.25)",
   navLinkText: "#1a1a1a",
   projectBackground: "#f9f9f9",
+  linearBackground: "linear-gradient(to bottom,#2a2a2a,#2a2a2a)",
 };
 
 export const darkTheme = {
@@ -22,4 +23,5 @@ export const darkTheme = {
   cardShadow: "8px 8px 0 rgba(0, 0, 0, 0.65)",
   navLinkText: "#eee",
   projectBackground: "#e6e6e6",
+  linearBackground: "linear-gradient(to bottom,#2a2a2a,#2a2a2a)",
 };

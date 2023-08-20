@@ -33,6 +33,12 @@ const ContentsStyles = styled.div`
     &:hover {
       color: green;
     }
+
+    &:focus {
+      outline: 3px solid green;
+      background: green;
+      color: white;
+    }
   }
 
   @media screen and (max-width: 800px) {

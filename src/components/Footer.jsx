@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
 
@@ -27,6 +26,12 @@ const StyledFooter = styled.footer`
 
     &:hover {
       color: #ccc;
+    }
+
+    &:focus {
+      outline: 3px solid green;
+      background: green;
+      color: #fff;
     }
   }
 

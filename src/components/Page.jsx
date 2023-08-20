@@ -1,13 +1,17 @@
-import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { projectData } from "../../projects-data";
-import { IoMdArrowBack } from "react-icons/io";
-import { HiExternalLink } from "react-icons/hi";
-import { useState } from "react";
 
+// Data
+import { projectData } from "../../projects-data";
+import { HiExternalLink } from "react-icons/hi";
+
+// Components
+import ImageModal from "./shared/ImageModal";
+import PageBackButton from "./shared/BackButton";
+
+// Styles
 import { ParagraphStyles } from "../styles/styles";
-import ImageModal from "./ImageModal";
 
 const PageContainer = styled.section`
   display: flex;
@@ -18,7 +22,7 @@ const PageContainer = styled.section`
   width: 60vw;
 
   > div {
-    margin: 4rem 0rem;
+    margin: 0rem 0rem;
     background-color: ${(props) => props.theme.projectBackground};
     border: 2px solid ${(props) => props.theme.text};
     min-height: 80vh;
@@ -116,6 +120,10 @@ const PageContainer = styled.section`
             padding: 0.5rem;
             font-weight: 500;
             text-align: left;
+
+            &:focus {
+              outline: 3px solid green;
+            }
           }
         }
       }
@@ -145,6 +153,12 @@ const PageContainer = styled.section`
       &:hover {
         font-weight: 900;
         color: #eee;
+      }
+
+      &:focus {
+        outline: 3px solid green;
+        background: green;
+        color: #fff;
       }
     }
   }
@@ -276,21 +290,15 @@ const Page = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     document.title = `${project.name} | Adam Shelley`;
   }, []);
-
-  console.log(project);
 
   return (
     <PageContainer>
       {project && (
         <div>
-          <Link to="/projects">
-            <IoMdArrowBack />
-          </Link>
+          <PageBackButton />
+
           <h2>{project.name}</h2>
 
           <section>

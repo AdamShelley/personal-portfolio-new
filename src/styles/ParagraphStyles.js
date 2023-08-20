@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const ParagraphStyles = styled.div`
-  margin: 2rem 0rem;
+  margin: 1rem 0rem;
+
   line-height: 1.5;
 
   &.top-section {
@@ -44,12 +45,12 @@ export const ParagraphStyles = styled.div`
     display: block;
     font-size: 1.2rem;
     background-color: #1a1a1a;
-    color: white;
+    color: #eee;
     margin-right: 0.5rem;
     padding: 0.4rem;
     border-radius: 5px;
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 1rem 0rem;
     padding-left: 0.5rem;
   }
 
@@ -58,24 +59,7 @@ export const ParagraphStyles = styled.div`
 
   > p {
     font-weight: 100;
-    margin-left: 1rem;
-  }
-
-  .toplink {
-    color: #1a1a1a;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-left: 0.5rem;
-
-    &:hover {
-      color: green;
-    }
-
-    svg {
-      margin-right: 0.5rem;
-    }
+    margin: 0 1rem;
   }
 
   @media screen and (max-width: 800px) {
@@ -111,16 +95,13 @@ export const ParagraphStyles = styled.div`
     }
 
     span {
-      background-color: #f8f8f8;
-      color: #1a1a1a;
+      /* If dark mode, make the background white */
+      background-color: ${(props) =>
+        props.theme.name === "dark" ? "#f9f9f9" : "#1a1a1a"};
+      color: ${(props) => (props.theme.name === "dark" ? "#1a1a1a" : "#eee")};
     }
 
     > p {
-      margin-left: 0rem;
-    }
-
-    .toplink {
-      color: #eee;
       margin-left: 0rem;
     }
   }

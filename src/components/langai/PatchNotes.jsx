@@ -1,9 +1,9 @@
-import { HashLink } from "react-router-hash-link";
 import { ParagraphStyles } from "../../styles/styles";
 import styled from "styled-components";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 import { patches } from "./patches";
+import { GoToTopStyles } from "../../styles/styles";
 
 const SummaryStyles = styled.summary`
   list-style: none;
@@ -32,6 +32,16 @@ const SummaryStyles = styled.summary`
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     vertical-align: middle;
+  }
+
+  &:focus p {
+    outline: 3px solid green;
+    background: green;
+    color: white;
+  }
+
+  p {
+    font-weight: 900;
   }
 
   details[open] &::before {
@@ -86,9 +96,15 @@ const PatchNotes = () => (
       <span id="patch-notes">Patch Notes</span>
 
       {/*LATEST PATCH */}
-      <p className="bolden">Last Updated: {patches[0].date}</p>
+      <p
+        style={{
+          fontStyle: "italic",
+        }}
+      >
+        Last Updated: {patches[0].date}
+      </p>
 
-      <p className="bolden mt-2">{patches[0].version}</p>
+      <p style={{ fontWeight: 900, marginTop: "1rem" }}>{patches[0].version}</p>
       <ul style={{ margin: "0 1rem" }}>
         {patches[0].changes.map((change) => (
           <li key={change}>{change}</li>
@@ -100,7 +116,7 @@ const PatchNotes = () => (
     {patches.slice(1).map((patch) => (
       <DetailsStyles key={patch.version}>
         <SummaryStyles>
-          <p className="bolden">{patch.version}</p>
+          <p>{patch.version}</p>
         </SummaryStyles>
         <ul>
           {patch.changes.map((change) => (
@@ -110,11 +126,9 @@ const PatchNotes = () => (
       </DetailsStyles>
     ))}
 
-    <ParagraphStyles>
-      <HashLink to="#top" className="toplink">
-        <AiOutlineArrowUp /> Go to top
-      </HashLink>
-    </ParagraphStyles>
+    <GoToTopStyles to="#top" smooth>
+      <AiOutlineArrowUp /> Go to top
+    </GoToTopStyles>
   </>
 );
 

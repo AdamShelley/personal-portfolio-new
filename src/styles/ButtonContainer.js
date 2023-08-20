@@ -31,6 +31,10 @@ export const ButtonContainer = styled.div`
       transform: translateY(-2px);
       cursor: pointer;
     }
+
+    &:focus {
+      outline: 5px solid green;
+    }
   }
 
   @media screen and (max-width: 800px) {
