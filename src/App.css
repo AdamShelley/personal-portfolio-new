@@ -1,3 +1,9 @@
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #1a1a1a;
+}
+
 .App {
   display: flex;
   flex-direction: column;

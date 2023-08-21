@@ -43,7 +43,7 @@ export const SetImage = styled.img`
   object-fit: cover;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15) !important;
 
   @media screen and (max-width: 800px) {
     border: none;

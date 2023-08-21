@@ -17,7 +17,7 @@ export const PageContainer = styled.section`
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    border-radius: 2px;
+    border-radius: 30px;
     color: #1a1a1a;
 
     h2 {

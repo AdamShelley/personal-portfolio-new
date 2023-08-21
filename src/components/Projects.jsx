@@ -7,15 +7,17 @@ import { projectsWIP } from "../../projects-wip";
 
 const ProjectContainer = styled.section`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2rem;
-  width: 100%;
+  width: 80%;
   flex-grow: 1
-  margin-left: 0;;
+  margin-left: 0;
+  align-self: center;
 
   @media screen and (max-width: 900px) {
+    width: 90%;
     flex-direction: column;
     margin-top: 0
   }
