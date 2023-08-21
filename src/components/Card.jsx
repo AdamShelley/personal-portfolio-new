@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled.article`
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  color: #1a1a1a;
+  color: #fff;
   width: 25vw;
   max-width: 30vw;
   min-width: 25vw;
@@ -17,8 +17,8 @@ const CardContainer = styled.article`
   border-radius: 6px;
   margin: 1.5rem;
   position: relative;
-  box-shadow: ${(props) => props.theme.cardShadow};
-  border: 1px solid #000000d7;
+  /* box-shadow: ${(props) => props.theme.cardShadow}; */
+  /* border: 1px solid #000000d7; */
   overflow: hidden;
 
   /* Card Hover title transitions */

@@ -26,7 +26,7 @@ export const GoToTopStyles = styled(HashLink)`
   }
 
   @media screen and (max-width: 800px) {
-    color: #eee;
+    color: ${(props) => (props.theme.name === "dark" ? "white" : "black")};
     margin-left: 0rem;
   }
 `;
