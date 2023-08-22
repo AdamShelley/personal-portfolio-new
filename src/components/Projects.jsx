@@ -17,7 +17,7 @@ const ProjectContainer = styled.section`
   align-self: center;
 
   @media screen and (max-width: 900px) {
-    width: 90%;
+    width: 95%;
     flex-direction: column;
     margin-top: 0
   }

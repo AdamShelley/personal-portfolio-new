@@ -53,10 +53,11 @@ export const PageContainer = styled.section`
 
     > div {
       margin-top: 0;
-      background-color: transparent;
-      border: 2px solid transparent;
+      background-color: ${(props) => props.theme.body} !important;
+      border: 2px solid transparent !important;
       color: ${(props) => props.theme.text};
       padding: 1rem;
+      z-index: 5;
 
       img {
         max-height: 80vh;

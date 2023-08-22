@@ -1,10 +1,11 @@
+import { SetVideo } from "../../styles/PageStyles";
 import { ParagraphStyles, ButtonContainer } from "../../styles/styles";
 
 import { BiDownload } from "react-icons/bi";
 
 // TODO: Download link, move to external .env
 const lang_ai_android_build =
-  "https://expo.dev/artifacts/eas/gsMn97BG2wp8P1k51Lu8oq.apk";
+  "https://expo.dev/artifacts/eas/orrFY1zaCWqs4nmtxiNE9q.apk";
 
 const AndroidDownload = () => (
   <>
@@ -63,15 +64,10 @@ const AndroidDownload = () => (
         </p>
       </div>
       <div className="top-section-image">
-        <img
-          style={{
-            boxShadow: "6px 8px 0 rgba(0,0,0,0.15)",
-            borderRadius: "15px",
-          }}
-          //   src={"../../assets/langai/LangAI-Android.png"}
-          src={`../../assets/LangAI/LangAI-gif.gif`}
-          alt={"LangAI" + " screenshot"}
-        />
+        <SetVideo autoPlay mute loop>
+          <source src={`../../assets/LangAI/intro.mp4`} type="video/mp4" />
+          Video not supported
+        </SetVideo>
       </div>
     </ParagraphStyles>
   </>

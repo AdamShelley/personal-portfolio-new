@@ -31,7 +31,6 @@ const HeaderLayout = ({ theme, themeToggler }) => (
 function App() {
   // Get theme choice from localstorage if it exists
   const localTheme = localStorage.getItem("theme");
-
   const [theme, setTheme] = useState(localTheme || "dark");
 
   const themeToggler = () => {
@@ -48,7 +47,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home theme={theme} />,
         },
         {
           path: "/about",
@@ -81,6 +80,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyles />
+
       <div className="App">
         <div>
           <React.Suspense fallback={<></>}>

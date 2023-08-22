@@ -1,3 +1,4 @@
+import { SetVideo } from "../../styles/PageStyles";
 import {
   ParagraphStyles,
   PageSet,
@@ -100,16 +101,17 @@ const ProjectOverview = ({ project, openImage }) => {
         </PageSet>
         <PageSet>
           <Carousel
-            key={`${project.name}/voting-gif.gif`}
+            key={`${project.name}/voting.mp4`}
             style={{ justifyContent: "flex-end", paddingRight: "2rem" }}
-            onClick={() =>
-              openImage(`../../assets/${project.name}/voting-gif.gif`)
-            }
+            onClick={() => openImage(`../../assets/${project.name}/voting.mp4`)}
           >
-            <SetImage
-              src={`../../assets/${project.name}/voting-gif.gif`}
-              alt={project.name + " screenshot"}
-            />
+            <SetVideo autoPlay muted loop>
+              <source
+                src={`../../assets/${project.name}/voting.mp4`}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </SetVideo>
           </Carousel>
           <SetContent>
             <ParagraphStyles>

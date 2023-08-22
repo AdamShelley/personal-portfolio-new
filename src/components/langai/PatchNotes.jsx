@@ -67,7 +67,7 @@ const DetailsStyles = styled.details`
   }
 
   ul li {
-    margin-left: 1rem;
+    margin: 1rem;
     margin-top: 0.4rem;
     color: black;
     text-align: justify;
@@ -107,7 +107,14 @@ const PatchNotes = () => (
       <p style={{ fontWeight: 900, marginTop: "1rem" }}>{patches[0].version}</p>
       <ul style={{ margin: "0 1rem" }}>
         {patches[0].changes.map((change) => (
-          <li key={change}>{change}</li>
+          <li
+            style={{
+              marginRight: "1rem",
+            }}
+            key={change}
+          >
+            {change}
+          </li>
         ))}
       </ul>
     </ParagraphStyles>

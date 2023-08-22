@@ -21,18 +21,19 @@ export const SetContent = styled.div`
     color: #fff;
     background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
     box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
+  }
 
-    @media screen and (max-width: 800px) {
-      padding: 0rem;
+  @media screen and (max-width: 800px) {
+    display: none;
+    /* padding: 0rem;
 
-      p {
-        background: ${(props) => props.theme.cardBackground};
-        color: #1a1a1a;
-        box-shadow: none;
-        border-radius: 15px;
-        font-weight: 400;
-      }
-    }
+    p {
+      background: #323232;
+      color: #fff;
+      box-shadow: none;
+      border-radius: 15px;
+      font-weight: 400;
+    } */
   }
 `;
 
@@ -48,6 +49,23 @@ export const SetImage = styled.img`
   @media screen and (max-width: 800px) {
     border: none;
     box-shadow: none;
+  }
+`;
+
+export const SetVideo = styled.video`
+  max-width: 100%;
+  width: 100% !important;
+  height: 100%;
+  max-height: 35rem;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15) !important;
+
+  @media screen and (max-width: 800px) {
+    border: none;
+    box-shadow: none;
+    max-height: none;
   }
 `;
 
@@ -75,8 +93,8 @@ export const SmallBox = styled.li`
   font-size: 1rem;
   margin: 4px 0px;
   transition: all 0.3s ease-in-out;
-  /* min-height: 2rem;
-  min-width: 6rem; */
+  /* min-height: 2rem; */
+  min-width: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,10 +126,11 @@ export const SmallBox = styled.li`
   }
 
   @media screen and (max-width: 800px) {
-    min-width: 3rem;
+    min-width: 2rem;
     margin: 0;
-    margin-right: 0.4rem;
-    margin-top: 0.4rem;
+    margin-right: 0.3rem;
+    margin-top: 0.3rem;
+    padding: 0.75rem 1rem;
     background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
   }
 `;

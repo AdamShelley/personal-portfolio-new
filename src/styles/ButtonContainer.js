@@ -42,7 +42,7 @@ export const ButtonContainer = styled.div`
     margin: 2rem 0;
 
     a {
-      border: 1px solid #eee;
+      /* border: 1px solid #eee; */
     }
   }
 `;

@@ -1,20 +1,25 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ParticleBackground from "./shared/Particles";
 
 const HomeContainer = styled.section`
   flex-grow: 1;
   margin-top: 6rem;
 
   h1 {
+    position: relative;
     font-size: 3rem;
     letter-spacing: 0.05rem;
+    z-index: 10 !important;
   }
 
   p {
+    position: relative;
     margin-top: 2rem;
     font-size: 1.8rem;
     line-height: 1.6;
+    z-index: 10 !important;
   }
 
   p:last-of-type {
@@ -30,6 +35,7 @@ const HomeContainer = styled.section`
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     border-bottom: 2px solid green;
+    z-index: 10;
 
     &:hover {
       color: green;
@@ -47,22 +53,26 @@ const HomeContainer = styled.section`
     h1 {
       font-size: 2.5rem;
       white-space: nowrap;
+      z-index: 10;
     }
 
     p {
       margin-top: 3rem;
       font-size: 1.5rem;
       line-height: 1.8;
+      z-index: 10;
     }
   }
 `;
 
-const Home = () => {
+const Home = ({ theme }) => {
   useEffect(() => {
     document.title = "Adam Shelley | Home";
   }, []);
+
   return (
     <HomeContainer>
+      <ParticleBackground color={theme === "dark" ? "#323232" : "#e2e1d8"} />
       <h1>Hey! I'm Adam.</h1>
       <p>Web Developer</p>
       <p>

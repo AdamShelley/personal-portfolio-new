@@ -21,8 +21,11 @@ const TechStackStyles = styled.ul`
   }
 
   @media screen and (max-width: 800px) {
+    flex-wrap: wrap;
+
     li {
       display: inline;
+      width: 45%;
     }
   }
 `;
@@ -32,7 +35,7 @@ const TechStack = () => (
     <span id="tech">Tech & API's</span>
     <TechStackStyles>
       <li>
-        <h3>Frontend</h3> React Native with Expo GO
+        <h3>Frontend</h3> React Native
       </li>
       <li>
         <h3>Backend</h3> NodeJS (Express)

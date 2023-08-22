@@ -11,7 +11,7 @@ export const projectData = [
       "Guessagram1.png",
       "Guessagram2.png",
       "Guessagram3.png",
-      "Guessagram1.png",
+      "Guessagram4.png",
     ],
     description: "A word guessing game, automatically reset daily.",
     background:

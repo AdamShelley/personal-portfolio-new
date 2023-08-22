@@ -1,6 +1,15 @@
 // Patch Notes Object
 export const patches = [
   {
+    version: "v0.1.2",
+    date: "21/08/2023",
+    changes: [
+      "Making the app look even more beautiful: Revamped the look of the cards.",
+      "Buttons have more hitSlop/Retention offset to make it easier to press.",
+      "We think you're gonna love it.",
+    ],
+  },
+  {
     version: "v0.1.1",
     date: "18/08/2023",
     changes: [
@@ -9,7 +18,7 @@ export const patches = [
     ],
   },
   {
-    version: "v1.0.0",
+    version: "v0.1.0",
     date: "17/08/2023",
     changes: [
       "Added intro overlay to home page & story page.",

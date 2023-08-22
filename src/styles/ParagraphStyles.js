@@ -78,7 +78,6 @@ export const ParagraphStyles = styled.div`
         justify-content: center;
 
         > img {
-          /* width: 100%; */
           border-radius: 5px;
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
         }
@@ -102,7 +101,9 @@ export const ParagraphStyles = styled.div`
     }
 
     > p {
+      margin-top: 0.5rem !important;
       margin-left: 0rem;
+      /* padding: 0.5rem 1rem !important; */
     }
   }
 `;

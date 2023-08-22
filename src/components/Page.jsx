@@ -32,6 +32,7 @@ const PageContainer = styled.section`
     padding: 2rem;
     border-radius: 30px;
     color: #1a1a1a;
+    z-index: 5;
 
     h2 {
       margin-top: 4rem;
@@ -177,7 +178,7 @@ const PageContainer = styled.section`
 
     > div {
       margin-top: 0;
-      background-color: transparent;
+      background-color: ${(props) => props.theme.body};
       border: 2px solid transparent;
       /* color: white; */
       color: ${(props) => props.theme.text};
@@ -202,13 +203,12 @@ const PageContainer = styled.section`
           flex-wrap: wrap;
 
           .small-box {
-            min-width: 3rem;
+            min-width: 2rem;
             margin: 0;
-            margin-right: 0.4rem;
-            margin-top: 0.4rem;
-            /* background: #fff;
-            color: #1a1a1a; */
+            margin-right: 0.3rem;
+            margin-top: 0.3rem;
             background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
+            padding: 0.75rem 0.5rem !important;
           }
         }
 
