@@ -5,6 +5,10 @@ export const ParagraphStyles = styled.div`
 
   line-height: 1.5;
 
+  #why {
+    margin-top: 5rem;
+  }
+
   &.top-section {
     display: flex;
     align-items: center;
@@ -64,6 +68,10 @@ export const ParagraphStyles = styled.div`
 
   @media screen and (max-width: 800px) {
     line-height: 2;
+
+    #why {
+      margin-top: 2rem;
+    }
 
     &.top-section {
       flex-direction: column;

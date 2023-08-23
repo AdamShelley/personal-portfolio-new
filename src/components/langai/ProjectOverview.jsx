@@ -103,9 +103,9 @@ const ProjectOverview = ({ project, openImage }) => {
           <Carousel
             key={`${project.name}/voting.mp4`}
             style={{ justifyContent: "flex-end", paddingRight: "2rem" }}
-            onClick={() => openImage(`../../assets/${project.name}/voting.mp4`)}
+            // onClick={() => openImage(`../../assets/${project.name}/voting.mp4`)}
           >
-            <SetVideo autoPlay muted loop>
+            <SetVideo autoPlay muted loop playsInline>
               <source
                 src={`../../assets/${project.name}/voting.mp4`}
                 type="video/mp4"

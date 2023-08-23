@@ -55,10 +55,7 @@ const About = () => {
   return (
     <AboutContainer>
       <h2>About</h2>
-      <p>
-        Hi! My name is Adam and I am a developer from the UK 🇬🇧 currently living
-        and working in Singapore 🇸🇬.
-      </p>
+      <p>Hi! My name is Adam and I am a developer from the UK 🇬🇧</p>
 
       <p>Open to opportunities.</p>
     </AboutContainer>

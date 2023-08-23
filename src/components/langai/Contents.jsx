@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 
@@ -7,31 +8,51 @@ const ContentsStyles = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 
+  position: fixed;
+  top: 20%;
+  left: ${(props) => (props.isSticky ? "5%" : "-50%")};
+  transition: left 0.5s ease;
+  z-index: 100;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: transparent;
+
+  min-width: 13rem;
+
   h3 {
     margin-top: 2rem;
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
+    padding-left: 1rem;
+    color: ${(props) => props.theme.text};
   }
 
   li {
     margin-top: 0.5rem;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    color: #333;
     font-size: 0.9rem;
-    /* margin-left: 0 !important; */
     margin-left: 0.5rem;
   }
 
   a {
-    color: darkgreen;
+    color: ${(props) => props.theme.text};
     font-weight: 500;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
 
     &:hover {
-      color: green;
+      color: #ccc;
     }
 
     &:focus {
@@ -41,49 +62,108 @@ const ContentsStyles = styled.div`
     }
   }
 
+  .active a {
+    background-color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.body};
+    border-radius: 5px;
+  }
+
   @media screen and (max-width: 800px) {
+    position: initial;
+    padding: 0;
+
+    ul {
+      li {
+        margin-left: 0;
+        margin-top: 0.2rem;
+      }
+    }
+
+    h3 {
+      padding: 0;
+    }
+
     a {
       color: ${(props) => props.theme.text};
+      height: 1rem;
+      width: auto;
+
+      padding: 0;
+      margin-right: 0.5rem;
+      margin-top: 0.2rem;
     }
   }
 `;
 
-const Contents = () => (
-  <ContentsStyles>
-    <h3>Contents:</h3>
-    <ul>
-      <li>
-        <HashLink smooth to="#why">
-          Why?
-        </HashLink>
-      </li>
-      <li>
-        <HashLink smooth to="#goals">
-          Goals
-        </HashLink>
-      </li>
-      <li>
-        <HashLink smooth to="#download">
-          Android Download
-        </HashLink>
-      </li>
-      <li>
-        <HashLink smooth to="#screenshots">
-          Screenshots
-        </HashLink>
-      </li>
-      <li>
-        <HashLink smooth to="#tech">
-          Tech & API's
-        </HashLink>
-      </li>
-      <li>
-        <HashLink smooth to="#patch-notes">
-          Patch Notes
-        </HashLink>
-      </li>
-    </ul>
-  </ContentsStyles>
-);
+const Contents = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const [activeSelection, setActiveSelection] = useState(null);
+  const sections = [
+    "why",
+    "goals",
+    "download",
+    "screenshots",
+    "tech",
+    "patch-notes",
+  ];
+
+  // Handle scroll events & contents selection/highlighting
+  useEffect(() => {
+    // Check for mobile
+    if (window.innerWidth <= 800) return;
+
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 1);
+
+      // Check if end of page to select 'patch notes' section
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 5
+      ) {
+        setActiveSelection(sections[sections.length - 1]);
+        return;
+      }
+      let closestSectionId = null;
+      let smallestDistance = Infinity;
+
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        const distance = Math.abs(element.getBoundingClientRect().top);
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestSectionId = id;
+        }
+      });
+
+      setActiveSelection(closestSectionId);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sections]);
+
+  return (
+    <ContentsStyles isSticky={isSticky}>
+      <h3>Contents:</h3>
+      <ul>
+        {sections.map((section) => (
+          <li
+            key={section}
+            className={section === activeSelection ? "active" : ""}
+          >
+            <HashLink smooth to={`#${section}`}>
+              {section === "patch-notes"
+                ? "Patch Notes"
+                : section.charAt(0).toUpperCase() + section.slice(1)}
+            </HashLink>
+          </li>
+        ))}
+      </ul>
+    </ContentsStyles>
+  );
+};
 
 export default Contents;

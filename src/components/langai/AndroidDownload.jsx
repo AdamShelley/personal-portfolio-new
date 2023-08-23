@@ -64,7 +64,7 @@ const AndroidDownload = () => (
         </p>
       </div>
       <div className="top-section-image">
-        <SetVideo autoPlay mute loop>
+        <SetVideo autoPlay muted loop playsInline>
           <source src={`../../assets/LangAI/intro.mp4`} type="video/mp4" />
           Video not supported
         </SetVideo>
