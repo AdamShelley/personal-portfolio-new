@@ -16,6 +16,14 @@ const ProjectContainer = styled.section`
   margin-left: 0;
   align-self: center;
 
+  /* @media screen and (max-width: 1441px) {
+    width: 90%;
+  } */
+
+  @media screen and (max-width: 1250px){
+    width: 100%;
+  }
+
   @media screen and (max-width: 900px) {
     width: 95%;
     flex-direction: column;

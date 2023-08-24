@@ -25,22 +25,15 @@ export const SetContent = styled.div`
 
   @media screen and (max-width: 800px) {
     display: none;
-    /* padding: 0rem;
-
-    p {
-      background: #323232;
-      color: #fff;
-      box-shadow: none;
-      border-radius: 15px;
-      font-weight: 400;
-    } */
   }
 `;
 
 export const SetImage = styled.img`
-  max-width: 100%;
-  width: 100% !important;
-  height: 100%;
+  /* max-width: 100%; */
+  /* width: 20rem; */
+  /* height: 100%; */
+  height: 40rem;
+  max-height: 35rem;
   object-fit: cover;
   border-radius: 15px;
   cursor: pointer;
@@ -53,10 +46,10 @@ export const SetImage = styled.img`
 `;
 
 export const SetVideo = styled.video`
+  /* max-width: 100%; */
+  /* width: 100% !important; */
   max-width: 100%;
-  width: 100% !important;
   height: 100%;
-  max-height: 35rem;
   object-fit: cover;
   border-radius: 15px;
   cursor: pointer;
@@ -78,10 +71,22 @@ export const PageSet = styled.div`
   height: 100%;
   padding: 2rem;
 
+  @media screen and (min-width: 1000px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1500px) {
+    width: 60%;
+  }
+
   @media screen and (max-width: 800px) {
     flex-direction: column;
     padding: 0rem;
-    width: 80%;
+    width: 80% !important;
     align-items: center;
   }
 `;

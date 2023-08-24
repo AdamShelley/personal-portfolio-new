@@ -33,7 +33,7 @@ export const PageContainer = styled.section`
     }
 
     img {
-      max-height: 50vh;
+      /* max-height: 50vh; */
       object-fit: contain;
       border-radius: 2px;
     }

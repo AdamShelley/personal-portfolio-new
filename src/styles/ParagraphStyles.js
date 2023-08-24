@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ParagraphStyles = styled.div`
   margin: 1rem 0rem;
-
   line-height: 1.5;
 
   #why {
@@ -21,6 +20,7 @@ export const ParagraphStyles = styled.div`
       justify-content: flex-end;
       margin-left: 5rem;
       width: 50%;
+      max-width: 100%;
     }
   }
 
@@ -66,6 +66,14 @@ export const ParagraphStyles = styled.div`
     margin: 0 1rem;
   }
 
+  @media screen and (max-width: 500px) {
+    &.top-section {
+      .top-section-image {
+        width: 100%;
+      }
+    }
+  }
+
   @media screen and (max-width: 800px) {
     line-height: 2;
 
@@ -80,7 +88,7 @@ export const ParagraphStyles = styled.div`
       /* margin-left: 0; */
 
       .top-section-image {
-        width: 100%;
+        /* width: 100%; */
         margin: 5rem 0;
         border-radius: 5px;
         justify-content: center;

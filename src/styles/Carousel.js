@@ -8,17 +8,18 @@ export const Carousel = styled.li`
   height: 100%;
 
   img {
-    width: 50%;
+    /* width: 50%; */
     height: 100%;
     object-fit: cover;
+    -webkit-appearance: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
   }
 
   @media screen and (max-width: 800px) {
     margin-top: 1rem;
-    width: 100%;
-    max-width: 100%;
+    /* width: 100%; */
+    max-width: 90vw;
     display: flex;
     align-items: center;
     justify-content: center;

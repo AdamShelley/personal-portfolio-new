@@ -130,18 +130,13 @@ const CardContainer = styled.article`
   }
 
   @media screen and (min-width: 1800px) {
-    width: 25vw;
-    max-width: 20vw;
-    min-width: 20vw;
+    width: 20%;
+    max-width: 35% !important;
+    min-width: 35% !important;
   }
 
-  @media screen and (max-width: 1024px) {
-    max-width: 35vw;
-    min-width: 35vw;
-    min-height: 35rem;
-    max-height: 35rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+  @media screen and (min-width: 1024px) {
+    min-width: 40%;
   }
 
   @media screen and (max-width: 1000px) {
