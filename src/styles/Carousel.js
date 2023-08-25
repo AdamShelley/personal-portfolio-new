@@ -31,6 +31,7 @@ export const Carousel = styled.li`
       width: 100%;
       height: 100%;
       object-fit: contain;
+      box-shadow: none !important;
     }
   }
 `;

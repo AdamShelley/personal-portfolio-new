@@ -1,54 +1,73 @@
 import styled from "styled-components";
 
 export const ParagraphStyles = styled.div`
-  margin: 1rem 0rem;
-  line-height: 1.5;
+  line-height: 1.6;
 
-  #why {
-    margin-top: 5rem;
+  #background {
+    margin-top: 2rem;
   }
 
   &.top-section {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 1rem;
+
+    > div:first-child {
+      width: 60%;
+    }
 
     .top-section-image {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      margin-left: 5rem;
-      width: 50%;
+      margin-left: 2rem;
+      width: 40%;
+      height: 90%;
       max-width: 100%;
+
+      > video {
+        cursor: default;
+      }
+    }
+
+    .langai-source {
+      display: block;
+      margin-top: 1rem;
+      color: #323232;
+      font-weight: 400;
+
+      &:hover {
+        color: #888;
+      }
     }
   }
 
   .mt-2 {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
-  &:first-of-type {
+  /* &:first-of-type {
     margin-top: 5rem;
-  }
+  } */
 
   ul {
     margin-top: 1rem;
     list-style-type: square;
 
     li {
-      line-height: 1.8;
+      line-height: 1.6;
       margin-left: 1rem;
-      text-align: justify;
-      font-weight: 100;
-      color: inherit;
+      text-align: left;
+      font-weight: 400;
+      color: #323232;
     }
   }
 
   span {
     display: block;
     font-size: 1.2rem;
-    background-color: #1a1a1a;
+    background-color: #424242;
     color: #eee;
     margin-right: 0.5rem;
     padding: 0.4rem;
@@ -62,8 +81,9 @@ export const ParagraphStyles = styled.div`
   }
 
   > p {
-    font-weight: 100;
-    margin: 0 1rem;
+    font-weight: 300;
+    color: #323232;
+    line-height: 1.5;
   }
 
   @media screen and (max-width: 500px) {
@@ -87,6 +107,11 @@ export const ParagraphStyles = styled.div`
       /* margin-top: 5rem; */
       /* margin-left: 0; */
 
+      > div:first-child {
+        width: 100%;
+        text-align: left;
+      }
+
       .top-section-image {
         /* width: 100%; */
         margin: 5rem 0;
@@ -98,6 +123,12 @@ export const ParagraphStyles = styled.div`
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
         }
       }
+
+      .langai-source {
+        color: ${(props) => props.theme.text};
+      }
+      text-align: center;
+      margin-top: 0.5rem;
     }
 
     ul {
@@ -106,20 +137,19 @@ export const ParagraphStyles = styled.div`
 
       li {
         margin-left: 0rem;
+        color: ${(props) => props.theme.text};
+        align-items: flex-start;
       }
     }
 
     span {
-      /* If dark mode, make the background white */
-      background-color: ${(props) =>
-        props.theme.name === "dark" ? "#f9f9f9" : "#1a1a1a"};
-      color: ${(props) => (props.theme.name === "dark" ? "#1a1a1a" : "#eee")};
+      margin-top: 2rem;
     }
 
     > p {
       margin-top: 0.5rem !important;
       margin-left: 0rem;
-      /* padding: 0.5rem 1rem !important; */
+      color: ${(props) => props.theme.text};
     }
   }
 `;

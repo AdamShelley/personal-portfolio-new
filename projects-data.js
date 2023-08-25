@@ -44,7 +44,7 @@ export const projectData = [
     screenshots: [, "onboarding2.png", "onboarding3.png", "onboarding1.jpg"],
     description:
       "This is a tool for React that is easily implemented into your website to create an onboarding experience for first-time users. ",
-    background: `I created this tool as a way to introduce new users to my websites. Instead of creating an introduction or a guide page for each individual website, I could provide an interactive experience.`,
+    background: `Developed to offer an engaging introduction to new users across websites, this tool replaced the need for individual guides with a uniform, interactive experience.`,
     learnings:
       "Creating this tool was a lesson in package development and distribution. It was my first experience publishing to NPM, and I learned a lot about the process of creating a package, documenting and versioning it in an understandable way.",
   },
@@ -66,8 +66,8 @@ export const projectData = [
       "scribbler7.png",
       "scribbler2.jpg",
     ],
-    background: `I wanted to create a website that would be both helpful for my learning and useful in daily life. This tool is built using react on the frontend with firebase storage on the backend.`,
+    background: `Motivated by a desire to create a practical, everyday tool, I built Scribbler using React for frontend development, and Firebase for backend storage.`,
     learnings:
-      "Firebase deployment, authentication using email, authentication using github signin. ",
+      "Enhanced my understanding of Firebase deployment, email authentication, and GitHub sign-in integration.",
   },
 ];

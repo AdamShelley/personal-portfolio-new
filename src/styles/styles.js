@@ -13,6 +13,7 @@ import {
 import { BackButton } from "./BackButton";
 import { Carousel } from "./Carousel";
 import { GoToTopStyles } from "./GoToTop";
+import { PageContainer } from "./PageContainer";
 
 export {
   BoldText,
@@ -26,4 +27,6 @@ export {
   BackButton,
   Carousel,
   GoToTopStyles,
+  SetVideo,
+  PageContainer,
 };

@@ -24,9 +24,7 @@ const ProjectOverview = ({ project, openImage }) => {
       >
         <PageSet>
           <SetContent>
-            <ParagraphStyles>
-              <p>This is the story page.</p>
-            </ParagraphStyles>
+            <p>This is the story page.</p>
           </SetContent>
           <Carousel
             key={`${project.name}/LangAI1.5.png`}
@@ -60,19 +58,15 @@ const ProjectOverview = ({ project, openImage }) => {
             />
           </Carousel>
           <SetContent>
-            <ParagraphStyles>
-              <p>You can show and hide pinyin.</p>
-            </ParagraphStyles>
+            <p>You can show and hide pinyin.</p>
           </SetContent>
         </PageSet>
         <PageSet>
           <SetContent>
-            <ParagraphStyles>
-              <p>
-                If you forget a word, it can be pressed and the definition will
-                appear.
-              </p>
-            </ParagraphStyles>
+            <p>
+              If you forget a word, it can be pressed and the definition will
+              appear.
+            </p>
           </SetContent>
           <Carousel
             key={`${project.name}/LangAI3.png`}
@@ -101,16 +95,12 @@ const ProjectOverview = ({ project, openImage }) => {
             />
           </Carousel>
           <SetContent>
-            <ParagraphStyles>
-              <p>The stories can be filtered by genre and level.</p>
-            </ParagraphStyles>
+            <p>The stories can be filtered by genre and level.</p>
           </SetContent>
         </PageSet>
         <PageSet>
           <SetContent>
-            <ParagraphStyles>
-              <p>Vote for where you want the story to go next.</p>
-            </ParagraphStyles>
+            <p>Vote for where you want the story to go next.</p>
           </SetContent>
           <Carousel
             key={`${project.name}/voting.mp4`}

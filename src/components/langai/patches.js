@@ -1,6 +1,16 @@
 // Patch Notes Object
 export const patches = [
   {
+    version: "v0.1.3",
+    date: "24/08/2023",
+    changes: [
+      "Added a Report Issue page for users to report issues with stories.",
+      "Improved the visuals of the Stories tab, to align with the styles on the home page",
+      "Updated visuals for the Genre/Level filters and the Story Full Translation box.",
+      "It's our best app yet.",
+    ],
+  },
+  {
     version: "v0.1.2",
     date: "21/08/2023",
     changes: [

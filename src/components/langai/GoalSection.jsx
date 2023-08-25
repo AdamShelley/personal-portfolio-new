@@ -1,23 +1,26 @@
 import styled from "styled-components";
-import { BiBookContent, BiBrain, BiWorld } from "react-icons/bi";
-import { GiButtonFinger, GiPiggyBank } from "react-icons/gi";
-import { IoIosThumbsUp } from "react-icons/io";
 
 import { ParagraphStyles, BoldText } from "../../styles/styles";
 
 const GoalItemStyles = styled.ul`
   list-style: none;
+  margin-bottom: 1rem;
 
   li {
     margin-top: 1.5rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
     position: relative;
     color: ${(props) => props.theme.text};
     font-size: 0.9rem;
 
-    /* margin-left: 0 !important; */
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
   }
 
   svg {
@@ -26,10 +29,6 @@ const GoalItemStyles = styled.ul`
     min-height: 30px;
     margin-right: 1rem;
     color: #1a1a1a;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1420px) {
@@ -57,7 +56,7 @@ const GoalItemStyles = styled.ul`
     margin: 0;
 
     li {
-      color: #eee;
+      color: "#eee";
       margin-left: 0;
     }
   }
@@ -69,29 +68,25 @@ const GoalSection = () => {
       <span id="goals">Goals for the app:</span>
       <GoalItemStyles>
         <li>
-          <BiBookContent />
-          <BoldText>Story Creation: </BoldText>{" "}
+          <BoldText>Story Creation: </BoldText>
           <p>
             Designed to craft engaging stories tailored to different profiency
             levels and with different genres.
           </p>
         </li>
         <li>
-          <BiBrain />
-          <BoldText>AI Integration: </BoldText>{" "}
+          <BoldText>AI Integration: </BoldText>
           <p>
             It should utilize AI to generate the stories and the cover pictures
             for them.
           </p>
         </li>
         <li>
-          <IoIosThumbsUp />
           <BoldText>UX: </BoldText>
           <p>It should feel easy and comfortable to use.</p>
         </li>
 
         <li>
-          <GiPiggyBank />
           <BoldText>Cost Effective: </BoldText>
           <p>
             Mindful of expenses related to AI APIs, utilizing Databases
@@ -99,7 +94,6 @@ const GoalSection = () => {
           </p>
         </li>
         <li>
-          <GiButtonFinger />
           <BoldText>Interactivity: </BoldText>
           <p>
             Giving the users the ability to vote on which direction the story
@@ -107,7 +101,6 @@ const GoalSection = () => {
           </p>
         </li>
         <li>
-          <BiWorld />
           <BoldText>Multilingual Potential: </BoldText>
           <p>
             Currently the focus is on Chinese but this app could be modified to

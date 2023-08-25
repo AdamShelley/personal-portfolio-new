@@ -67,12 +67,12 @@ const DetailsStyles = styled.details`
   }
 
   ul li {
-    margin: 1rem;
-    margin-top: 0.4rem;
-    color: black;
+    margin: 0.2rem 1rem;
+    /* margin-top: 0.4rem; */
+    color: #424242;
     text-align: justify;
-    font-weight: 100;
-    line-height: 1.8;
+    font-weight: 400;
+    line-height: 1.6;
   }
 
   @media screen and (max-width: 800px) {

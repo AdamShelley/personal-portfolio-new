@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/shared/Footer";
 import ErrorPage from "./components/ErrorPage";
 import Page from "./components/Page";
 import LangAI from "./components/LangAI";

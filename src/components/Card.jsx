@@ -13,12 +13,8 @@ const CardContainer = styled.article`
   margin: 0.5rem;
   position: relative;
   overflow: hidden;
-  perspective: 1000px;
-  box-shadow: ${(props) => props.theme.cardShadow};
 
-  &:focus {
-    outline: 3px solid green;
-  }
+  box-shadow: ${(props) => props.theme.cardShadow};
 
   .card-bottom {
     display: flex;
@@ -55,6 +51,10 @@ const CardContainer = styled.article`
       background: ${(props) => props.theme.cardBackgroundGradient};
       opacity: 1;
       transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     picture,
@@ -102,6 +102,11 @@ const CardContainer = styled.article`
       width: 100%;
       color: #fff;
     }
+  }
+
+  .img-container a:focus::before {
+    outline: none;
+    border: 3px solid green;
   }
 
   .skills-container {
@@ -167,14 +172,13 @@ const Card = ({ project, customPage }) => {
   return (
     <CardContainer
       image={`/assets/${imageName}-small.png`}
-      tabIndex="0"
       aria-label={`project-${project.name}`}
     >
       <div className={`img-container`}>
         <Link
-          tabIndex="-1"
           to={customPage ? customPage : `${name}`}
           state={project}
+          tabIndex="0"
         >
           <img src={`/assets/${imageName}.png`} alt={name + " picture"} />
 

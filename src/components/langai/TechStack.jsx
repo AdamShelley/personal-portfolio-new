@@ -9,6 +9,7 @@ const TechStackStyles = styled.ul`
   justify-items: center;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 2rem;
 
   li {
     margin-top: 2rem !important;

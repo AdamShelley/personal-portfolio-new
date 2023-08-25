@@ -19,7 +19,7 @@ export const SetContent = styled.div`
     margin: 1rem 0rem;
     min-width: 100%;
     color: #fff;
-    background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+    background: linear-gradient(to bottom, #424242, #323232);
     box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
   }
 
@@ -52,7 +52,7 @@ export const SetVideo = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
-  cursor: pointer;
+  cursor: default;
   box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15) !important;
 
   @media screen and (max-width: 800px) {
@@ -80,7 +80,7 @@ export const PageSet = styled.div`
   }
 
   @media screen and (min-width: 1500px) {
-    width: 60%;
+    width: 80%;
   }
 
   @media screen and (max-width: 800px) {
@@ -93,7 +93,7 @@ export const PageSet = styled.div`
 
 export const SmallBox = styled.li`
   /* background-color: #1a1a1a; */
-  background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+  background: linear-gradient(to bottom, #424242, #323232);
   color: #eee;
   font-size: 1rem;
   margin: 4px 0px;
@@ -106,16 +106,12 @@ export const SmallBox = styled.li`
   margin-right: 1rem;
   border-radius: 6px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding: 0.75rem 1.5rem;
   letter-spacing: 0.5px;
   font-size: 0.8rem;
   font-weight: 500;
 
   &:hover {
-    background: linear-gradient(115deg, green, green);
-    color: #fff;
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
   }
 
   > a {
@@ -128,6 +124,11 @@ export const SmallBox = styled.li`
     padding: 0.5rem;
     font-weight: 500;
     text-align: left;
+    padding: 1rem;
+  }
+
+  > p {
+    padding: 1rem;
   }
 
   @media screen and (max-width: 800px) {
@@ -137,5 +138,10 @@ export const SmallBox = styled.li`
     margin-top: 0.3rem;
     padding: 0.75rem 1rem;
     background: linear-gradient(to bottom, #2a2a2a, #2a2a2a);
+
+    > a,
+    p {
+      padding: 0.2rem;
+    }
   }
 `;

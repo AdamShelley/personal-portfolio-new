@@ -30,12 +30,7 @@ export const PageContainer = styled.section`
       display: flex;
       align-items: center;
       justify-content: flex-start;
-    }
-
-    img {
-      /* max-height: 50vh; */
-      object-fit: contain;
-      border-radius: 2px;
+      margin-top: 2rem;
     }
   }
 
@@ -45,6 +40,10 @@ export const PageContainer = styled.section`
   }
 
   @media screen and (min-width: 1700px) {
+    width: 50vw;
+  }
+
+  @media screen and (min-width: 1900px) {
     width: 40vw;
   }
 
@@ -67,7 +66,7 @@ export const PageContainer = styled.section`
       h2 {
         margin-top: 0;
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
         color: ${(props) => props.theme.text};
       }
 
@@ -75,7 +74,7 @@ export const PageContainer = styled.section`
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        width: 100%;
+        /* width: 100%; */
       }
 
       .wip-set {

@@ -44,18 +44,18 @@ const ParticleBackground = ({ color = "#323232" }) => {
           number: {
             density: {
               enable: true,
-              area: 1000,
+              area: 500,
             },
-            value: 10,
+            value: 5,
           },
           opacity: {
-            value: 0.5,
+            value: 0.3,
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: { min: 15, max: 20 },
+            value: { min: 20, max: 30 },
           },
         },
         detectRetina: true,

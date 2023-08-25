@@ -72,7 +72,7 @@ const Home = ({ theme }) => {
 
   return (
     <HomeContainer>
-      <ParticleBackground color={theme === "dark" ? "#323232" : "#e2e1d8"} />
+      <ParticleBackground color={theme === "dark" ? "#252525" : "#e2e1d8"} />
       <h1>Hey! I'm Adam.</h1>
       <p>Web Developer</p>
       <p>

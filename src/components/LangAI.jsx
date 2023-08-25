@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { projectsWIP } from "../../projects-wip";
 
 // Components
-import WhyContent from "./langai/WhyContent";
+import Background from "./langai/Background";
 import Contents from "./langai/Contents";
 import GoalSection from "./langai/GoalSection";
 import AndroidDownload from "./langai/AndroidDownload";
@@ -51,12 +51,14 @@ const LangAI = () => {
 
           <ul>
             {project.skills.map((skill) => (
-              <SmallBox key={skill}>{skill}</SmallBox>
+              <SmallBox key={skill}>
+                <p>{skill}</p>
+              </SmallBox>
             ))}
           </ul>
 
           <Contents />
-          <WhyContent />
+          <Background />
           <GoalSection />
           <AndroidDownload />
           <ProjectOverview project={project} openImage={openImage} />

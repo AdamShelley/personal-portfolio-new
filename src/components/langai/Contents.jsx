@@ -9,7 +9,7 @@ const ContentsStyles = styled.div`
   justify-content: flex-start;
 
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: ${(props) => (props.isSticky ? "5%" : "-50%")};
   transition: left 0.5s ease;
   z-index: 100;
@@ -48,8 +48,8 @@ const ContentsStyles = styled.div`
     padding: 0.5rem;
     border: 1px solid transparent;
     border-radius: 5px;
-    transition: all 0.3s ease-in-out;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       color: #ccc;
@@ -66,6 +66,26 @@ const ContentsStyles = styled.div`
     background-color: ${(props) => props.theme.text};
     color: ${(props) => props.theme.body};
     border-radius: 5px;
+    animation: push-in 0.5s ease-in-out;
+  }
+
+  @keyframes push-in {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    left: ${(props) => (props.isSticky ? "20%" : "-50%")};
   }
 
   @media screen and (max-width: 800px) {
@@ -99,7 +119,7 @@ const Contents = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [activeSelection, setActiveSelection] = useState(null);
   const sections = [
-    "why",
+    "background",
     "goals",
     "download",
     "screenshots",
@@ -107,13 +127,18 @@ const Contents = () => {
     "patch-notes",
   ];
 
+  const handleFocus = (section) => {
+    setIsSticky(true);
+    setActiveSelection(section);
+  };
+
   // Handle scroll events & contents selection/highlighting
   useEffect(() => {
     // Check for mobile
     if (window.innerWidth <= 800) return;
 
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 1);
+      setIsSticky(window.scrollY > 0.1);
 
       // Check if end of page to select 'patch notes' section
       if (
@@ -154,7 +179,11 @@ const Contents = () => {
             key={section}
             className={section === activeSelection ? "active" : ""}
           >
-            <HashLink smooth to={`#${section}`}>
+            <HashLink
+              smooth
+              to={`#${section}`}
+              onFocus={() => handleFocus(section)}
+            >
               {section === "patch-notes"
                 ? "Patch Notes"
                 : section.charAt(0).toUpperCase() + section.slice(1)}

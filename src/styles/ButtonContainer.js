@@ -5,7 +5,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin: 0rem 0;
-  /* margin-left: 0.5rem; */
+  margin-top: 2rem;
 
   a {
     display: inline-block;
@@ -20,6 +20,7 @@ export const ButtonContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.9rem;
 
     svg {
       margin-right: 0.5rem;
@@ -38,7 +39,7 @@ export const ButtonContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    justify-content: center;
+    justify-content: flex-start;
     margin: 2rem 0;
 
     a {
