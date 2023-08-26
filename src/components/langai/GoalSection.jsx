@@ -58,6 +58,12 @@ const GoalItemStyles = styled.ul`
     li {
       color: "#eee";
       margin-left: 0;
+      margin-top: 1rem !important;
+
+      > p {
+        margin-top: 0.3rem;
+        color: ${(props) => (props.theme.name === "dark" ? "#ccc" : "#666")};
+      }
     }
   }
 `;

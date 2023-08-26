@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ParagraphStyles = styled.div`
-  line-height: 1.6;
+  line-height: 1.5;
 
   #background {
     margin-top: 2rem;
@@ -56,7 +56,7 @@ export const ParagraphStyles = styled.div`
     list-style-type: square;
 
     li {
-      line-height: 1.6;
+      line-height: 1.5;
       margin-left: 1rem;
       text-align: left;
       font-weight: 400;
@@ -138,7 +138,9 @@ export const ParagraphStyles = styled.div`
       li {
         margin-left: 0rem;
         color: ${(props) => props.theme.text};
+
         align-items: flex-start;
+        margin-top: 0.5rem;
       }
     }
 

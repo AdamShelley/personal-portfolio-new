@@ -169,6 +169,8 @@ const CardContainer = styled.article`
 const Card = ({ project, customPage }) => {
   const { name, skills, description, imageName } = project;
 
+  console.log(`/assets/${imageName}.webp`);
+
   return (
     <CardContainer
       image={`/assets/${imageName}-small.png`}
