@@ -119,7 +119,7 @@ export const ParagraphStyles = styled.div`
         justify-content: center;
 
         > img {
-          border-radius: 5px;
+          border-radius: 15px;
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
         }
       }

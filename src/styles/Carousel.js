@@ -13,7 +13,7 @@ export const Carousel = styled.li`
     object-fit: cover;
     -webkit-appearance: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   @media screen and (max-width: 800px) {

@@ -118,13 +118,15 @@ export const SmallBox = styled.li`
     color: inherit;
     font-family: inherit;
     text-decoration: none;
-    display: block;
+    display: flex;
     height: 100%;
     width: 100%;
     padding: 0.5rem;
     font-weight: 500;
     text-align: left;
     padding: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 
   > p {
