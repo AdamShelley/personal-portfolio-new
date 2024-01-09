@@ -67,7 +67,7 @@ export const ParagraphStyles = styled.div`
   span {
     display: block;
     font-size: 1.2rem;
-    background-color: #424242;
+    background-color: #2a2a2a;
     color: #eee;
     margin-right: 0.5rem;
     padding: 0.4rem;

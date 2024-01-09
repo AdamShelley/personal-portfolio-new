@@ -93,7 +93,7 @@ export const PageSet = styled.div`
 
 export const SmallBox = styled.li`
   /* background-color: #1a1a1a; */
-  background: linear-gradient(to bottom, #424242, #323232);
+  background: linear-gradient(to bottom, #2a2a2a, #222);
   color: #eee;
   font-size: 1rem;
   margin: 4px 0px;

@@ -23,10 +23,14 @@ const AboutContainer = styled.section`
   }
 
   p {
-    margin-top: 2rem;
+    margin-top: 0.2rem;
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.7;
+  }
+
+  p:last-of-type {
+    margin-top: 2rem;
   }
 
   @media screen and (max-width: 800px) {
@@ -52,10 +56,15 @@ const About = () => {
   useEffect(() => {
     document.title = "Adam Shelley | About";
   }, []);
+
   return (
     <AboutContainer>
       <h2>About</h2>
       <p>Hi! My name is Adam and I am a developer from the UK 🇬🇧</p>
+      <p>
+        Currently working as a Web Developer for a leading Energy Consultancy in
+        Warwickshire.
+      </p>
 
       <p>Open to opportunities.</p>
     </AboutContainer>
