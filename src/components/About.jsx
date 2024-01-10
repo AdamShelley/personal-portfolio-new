@@ -48,6 +48,7 @@ const AboutContainer = styled.section`
 
     p {
       font-size: 1rem;
+      margin-top: 1rem;
     }
   }
 `;
