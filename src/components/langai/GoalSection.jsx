@@ -16,6 +16,10 @@ const GoalItemStyles = styled.ul`
     color: ${(props) => props.theme.text};
     font-size: 0.9rem;
 
+    > h5 {
+      font-weight: 600;
+    }
+
     > div {
       display: flex;
       align-items: center;
